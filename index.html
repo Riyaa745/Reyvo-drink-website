@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260528-reality-tune">
 </head>
 
 <body class="landing-page">
@@ -24,12 +24,12 @@
 
         <!-- RIGHT NAVIGATION -->
         <nav class="header-nav">
-            <a href="#zestiva">Zestiva</a>
-            <a href="#velora">Velora</a>
+            <a href="#ingredients">Zestiva</a>
+            <a href="#ingredients">Velora</a>
             <a href="#about">About</a>
             <a href="#learn">Learn</a>
 
-            <a class="shop-btn" href="#shop">
+            <a class="shop-btn" href="#pricing">
                 Shop Now
             </a>
         </nav>
@@ -70,7 +70,7 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a class="button hero-cta" href="#">Explore the Range</a>
+                    <a class="button hero-cta" href="#ingredients">Explore the Range</a>
                     <a class="button hero-cta " href="#">Our Story ➝</a>
                 </div>
 
@@ -159,6 +159,18 @@
                         REYVO was.
                     </p>
 
+                    <div class="energy-panel">
+
+                        <h4>3PM</h4>
+
+                        <p>
+                            The consistent energy dip experienced by millions of
+                            working professionals every single day.
+                            REYVO was built to address exactly this moment.
+                        </p>
+
+                    </div>
+
                 </div>
 
                 <!-- RIGHT CARDS -->
@@ -166,7 +178,11 @@
                 <div class="reality-cards">
 
                     <article class="reality-card">
-                        <div class="card-icon">⚡</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" focusable="false">
+                                <path d="M13 2 5 14h7l-1 8 8-12h-7l1-8Z" />
+                            </svg>
+                        </div>
 
                         <h3>THE SPIKE</h3>
 
@@ -177,7 +193,13 @@
                     </article>
 
                     <article class="reality-card">
-                        <div class="card-icon">📉</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" focusable="false">
+                                <path d="M4 19h16" />
+                                <path d="M5 6l5 5 4-4 5 6" />
+                                <path d="M19 13v-5h-5" />
+                            </svg>
+                        </div>
 
                         <h3>THE CRASH</h3>
 
@@ -188,7 +210,15 @@
                     </article>
 
                     <article class="reality-card">
-                        <div class="card-icon">🧠</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" focusable="false">
+                                <path d="M9 4.5A3.5 3.5 0 0 0 5.5 8v.4A3.7 3.7 0 0 0 4 15a3.5 3.5 0 0 0 5.5 2.9" />
+                                <path d="M15 4.5A3.5 3.5 0 0 1 18.5 8v.4A3.7 3.7 0 0 1 20 15a3.5 3.5 0 0 1-5.5 2.9" />
+                                <path d="M12 5v14" />
+                                <path d="M9 10h3" />
+                                <path d="M12 14h3" />
+                            </svg>
+                        </div>
 
                         <h3>BRAIN FOG</h3>
 
@@ -203,21 +233,69 @@
                 </div>
 
             </div>
-            <!-- FULL WIDTH PANEL -->
 
-            <div class="energy-panel">
 
-                <h4>3PM</h4>
+        </section>
 
-                <p>
-                    The consistent energy dip experienced by millions of
-                    working professionals every single day.
-                    REYVO was built to address exactly this moment.
-                </p>
+        <section class="ingredient-story" id="ingredients">
+            <div class="ingredient-story-pin">
+                <div class="ingredient-story-copy">
+                    <div class="section-kicker">What's inside</div>
+                    <h2 class="section-title">Formulated with<br><em>intention.</em></h2>
+                    <p class="section-subtitle">Every ingredient has a defined role, selected to support clean output,
+                        hydration, calm, and daily consistency.</p>
+                    <a class="ingredient-story-cta" href="#pricing">Build Your Stack →</a>
+                </div>
 
+                <div class="ingredient-stage">
+                    <figure class="ingredient-visual z-product is-active" data-visual="z-product">
+                        <img src="Assets/zestiva-img-removed.png" alt="Zestiva sachet">
+                        <figcaption class="ingredient-product-name">Zestiva</figcaption>
+                    </figure>
+
+                    <figure class="ingredient-visual v-product" data-visual="v-product">
+                        <img src="Assets/velora-img-removed.png" alt="Velora sachet">
+                        <figcaption class="ingredient-product-name">Velora</figcaption>
+                    </figure>
+
+                    <div class="ingredient-card-stack">
+                        <article class="story-ingredient-card" data-card="z-1">
+                            <span class="ingredient-label">Zestiva</span>
+                            <h3>Lion's Mane Mushroom — Cognitive Support</h3>
+                            <p>Supports mental clarity and focus for demanding daytime work, helping your rhythm feel
+                                clean instead of overstimulated.</p>
+                        </article>
+
+                        <article class="story-ingredient-card" data-card="z-2">
+                            <span class="ingredient-label">Zestiva</span>
+                            <h3>Rhodiola Rosea — Stress-Adaptive Energy</h3>
+                            <p>Adaptogenic support for high-output days, helping reduce fatigue while keeping energy
+                                steady and functional.</p>
+                        </article>
+
+                        <article class="story-ingredient-card" data-card="v-1">
+                            <span class="ingredient-label velora">Velora</span>
+                            <h3>Ashwagandha KSM-66 — Recovery & Calm</h3>
+                            <p>Designed for the evening transition, supporting calm, recovery, and a smoother shift away
+                                from the day's pressure.</p>
+                        </article>
+
+                        <article class="story-ingredient-card" data-card="v-2">
+                            <span class="ingredient-label velora">Velora</span>
+                            <h3>Magnesium Glycinate — Deep Sleep Support</h3>
+                            <p>A gentle magnesium form that supports relaxation, muscle function, and a more grounded
+                                wind-down routine.</p>
+                        </article>
+
+                        <article class="story-ingredient-card" data-card="both">
+                            <span class="ingredient-label both">Both</span>
+                            <h3>Our No-Compromise Formula Standard</h3>
+                            <p>No added sugar, no artificial colours, no preservatives. Just intentional ingredients
+                                built for daily use.</p>
+                        </article>
+                    </div>
+                </div>
             </div>
-
-
         </section>
 
         <section class="alternative-section reveal" id="learn">
@@ -295,11 +373,6 @@
 
                 </div>
 
-                <!-- BOTTOM IMAGE -->
-                <!-- 
-            <div class="alternative-image">
-                <img src="Assets/table.png" alt="REYVO Drink">
-            </div> -->
 
             </div>
 
@@ -346,7 +419,7 @@
                             <li>Citrus Zing — refreshing, every time</li>
                         </ul>
 
-                        <a href="#" class="system-btn zestiva-btn">
+                        <a href="#ingredients" class="system-btn zestiva-btn">
                             EXPLORE ZESTIVA →
                         </a>
                     </div>
@@ -366,7 +439,7 @@
                             <li>Berry Bliss — smooth, not medicinal</li>
                         </ul>
 
-                        <a href="#" class="system-btn velora-btn">
+                        <a href="#ingredients" class="system-btn velora-btn">
                             EXPLORE VELORA →
                         </a>
                     </div>
@@ -374,102 +447,136 @@
             </div>
         </section>
 
-        <section class="formulation-section reveal" id="formulation">
-            <div class="formulation-inner">
-                <div class="formulation-copy">
-                    <div class="mini-tag formulation-tag">
-                        <span class="tag-line"></span>
-                        <p>FORMULATION</p>
-                    </div>
-                    <h2>Designed to work<br>with your body</h2>
-                    <p>Every ingredient has a defined role. Nothing added for trend. Nothing removed for cost. Clean,
-                        intentional formulations built for consistent daily use.</p>
+
+
+
+        <section class="fit-split-section reveal" id="real-life-fit">
+            <div class="fit-split-inner">
+                <div class="fit-split-header">
+                    <h2>Real-Life Fit</h2>
+                    <p class="fit-split-subtitle">Where Reyvo Fits In</p>
+                    <p class="fit-split-lede">One system, different moments. Reyvo supports the demanding parts of the
+                        day without turning your rhythm into another stimulant cycle.</p>
                 </div>
 
-                <div class="formulation-deck-wrap">
-                    <div class="formulation-deck" aria-live="polite">
-                        <article class="formulation-card is-active">
-                            <span class="formulation-icon">🌿</span>
-                            <h3>L-Theanine</h3>
-                            <p>Amino acid from green tea. Studied in 13 RCTs for promoting relaxation without
-                                drowsiness. Works synergistically with caffeine for calm, sustained focus.</p>
-                            <small>FROM GREEN TEA</small>
+                <div class="fit-split-copy">
+                    <div class="fit-accordion" data-fit-accordion>
+                        <article class="fit-accordion-item">
+                            <button class="fit-accordion-head" type="button" aria-expanded="false">
+                                <span class="fit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" focusable="false">
+                                        <path d="M4 18h16" />
+                                        <path d="M7 15a5 5 0 0 1 10 0" />
+                                        <path d="M12 4v4" />
+                                        <path d="M5 9l2.5 2.5" />
+                                        <path d="M19 9l-2.5 2.5" />
+                                    </svg>
+                                </span>
+                                <strong>Zestiva · Morning start</strong>
+                                <em>+</em>
+                            </button>
+                            <p>Replace your first coffee with something that supports alertness without the acid and
+                                jitter. Mix, drink, go.</p>
                         </article>
 
-                        <article class="formulation-card">
-                            <span class="formulation-icon">☕</span>
-                            <h3>Green Coffee Bean</h3>
-                            <p>Unroasted coffee retains high chlorogenic acid content. Natural caffeine source studied
-                                for metabolic support and alertness. Gentler absorption than roasted coffee.</p>
-                            <small>NATURAL CAFFEINE SOURCE</small>
+                        <article class="fit-accordion-item">
+                            <button class="fit-accordion-head" type="button" aria-expanded="false">
+                                <span class="fit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" focusable="false">
+                                        <rect x="5" y="5" width="14" height="10" rx="1.5" />
+                                        <path d="M3 19h18" />
+                                        <path d="M9 15v4" />
+                                        <path d="M15 15v4" />
+                                    </svg>
+                                </span>
+                                <strong>Zestiva · The 3PM dip</strong>
+                                <em>+</em>
+                            </button>
+                            <p>When energy starts slipping and another coffee feels wrong, Zestiva bridges the gap
+                                without disrupting sleep later.</p>
                         </article>
 
-                        <article class="formulation-card">
-                            <span class="formulation-icon">🌾</span>
-                            <h3>Green Tea Extract</h3>
-                            <p>Rich in EGCG polyphenols. Studied in human research for antioxidant properties and
-                                support for cognitive function and sustained mental performance.</p>
-                            <small>EGCG + ANTIOXIDANTS</small>
+                        <article class="fit-accordion-item">
+                            <button class="fit-accordion-head" type="button" aria-expanded="false">
+                                <span class="fit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" focusable="false">
+                                        <path d="M4 15h16" />
+                                        <path d="M7 15l2.2-5h5.6L17 15" />
+                                        <path d="M7 18h.1" />
+                                        <path d="M17 18h.1" />
+                                        <path d="M5 18h14" />
+                                    </svg>
+                                </span>
+                                <strong>Zestiva · Long drives</strong>
+                                <em>+</em>
+                            </button>
+                            <p>Single sachet fits anywhere. Mix with a bottle of water and stay alert through long
+                                commutes or journeys.</p>
                         </article>
 
-                        <article class="formulation-card">
-                            <span class="formulation-icon">⚡</span>
-                            <h3>Magnesium Gluconate</h3>
-                            <p>Highly bioavailable organic magnesium. Involved in 300+ enzymatic reactions including
-                                energy production and normal muscle function.</p>
-                            <small>HIGH BIOAVAILABILITY FORM</small>
+                        <article class="fit-accordion-item">
+                            <button class="fit-accordion-head" type="button" aria-expanded="false">
+                                <span class="fit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" focusable="false">
+                                        <path d="M4 20h16" />
+                                        <path d="M6 20V9l5-3v14" />
+                                        <path d="M13 20V7l5 3v10" />
+                                        <path d="M8.5 12h.1" />
+                                        <path d="M8.5 16h.1" />
+                                        <path d="M15.5 13h.1" />
+                                    </svg>
+                                </span>
+                                <strong>Velora · After work</strong>
+                                <em>+</em>
+                            </button>
+                            <p>The day ends but the mind doesn't. Velora supports the transition, calming mental noise
+                                without forcing shutdown.</p>
                         </article>
 
-                        <article class="formulation-card">
-                            <span class="formulation-icon">🍊</span>
-                            <h3>Vitamin C</h3>
-                            <p>Contributes to normal immune function and energy-yielding metabolism. Antioxidant
-                                protection for cells across multiple functional roles.</p>
-                            <small>EFSA CONFIRMED</small>
+                        <article class="fit-accordion-item">
+                            <button class="fit-accordion-head" type="button" aria-expanded="false">
+                                <span class="fit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" focusable="false">
+                                        <path d="M6 5h9a3 3 0 0 1 3 3v11H9a3 3 0 0 0-3 3V5Z" />
+                                        <path d="M6 5a3 3 0 0 0-3 3v11h6" />
+                                        <path d="M9 9h5" />
+                                        <path d="M9 13h6" />
+                                    </svg>
+                                </span>
+                                <strong>Velora · High-pressure phases</strong>
+                                <em>+</em>
+                            </button>
+                            <p>Difficult weeks, heavy deadlines, and high-stress moments where your nervous system
+                                needs support, not more stimulation.</p>
                         </article>
 
-                        <article class="formulation-card">
-                            <span class="formulation-icon">🔋</span>
-                            <h3>B-Vitamin Complex</h3>
-                            <p>B3, B6 and B12 each contribute to normal energy-yielding metabolism, psychological
-                                function, and reduction of tiredness.</p>
-                            <small>B3 + B6 + B12</small>
+                        <article class="fit-accordion-item">
+                            <button class="fit-accordion-head" type="button" aria-expanded="false">
+                                <span class="fit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" focusable="false">
+                                        <path d="M18 16.4A7 7 0 0 1 9.6 6a8 8 0 1 0 8.4 10.4Z" />
+                                        <path d="M16 5h.1" />
+                                        <path d="M20 9h.1" />
+                                    </svg>
+                                </span>
+                                <strong>Velora · Before rest</strong>
+                                <em>+</em>
+                            </button>
+                            <p>L-Theanine and magnesium work together to ease the body and mind toward rest without
+                                sedation.</p>
                         </article>
-
-                        <article class="formulation-card">
-                            <span class="formulation-icon">💧</span>
-                            <h3>Electrolytes</h3>
-                            <p>Sodium and potassium support normal hydration and muscle function. Clinical evidence
-                                confirms electrolyte beverages hydrate effectively as water.</p>
-                            <small>SODIUM + POTASSIUM</small>
-                        </article>
-
-                        <article class="formulation-card">
-                            <span class="formulation-icon">🧩</span>
-                            <h3>Zinc</h3>
-                            <p>Supports normal cognitive function and immune defence. An essential trace mineral often
-                                depleted in high-stress, high-output lifestyles.</p>
-                            <small>41.7% RDA PER SERVE</small>
-                        </article>
-                    </div>
-
-                    <div class="formulation-controls" aria-label="Formulation cards">
-                        <button class="formulation-arrow formulation-prev" type="button" aria-label="Previous card">‹</button>
-                        <button class="formulation-arrow formulation-next" type="button" aria-label="Next card">›</button>
                     </div>
                 </div>
 
-                <div class="formulation-badges" aria-label="Product credentials">
-                    <span>✓ FSSAI Category 14.1.4.3</span>
-                    <span>✓ No Added Sugar</span>
-                    <span>✓ No Artificial Colours</span>
-                    <span>✓ No Preservatives</span>
-                    <span>✓ Natural Sweetener (Stevia)</span>
-                    <span>✓ Made in India</span>
-                    <span>✓ Vegetarian</span>
+                <div class="fit-split-visual" aria-hidden="true">
+                    <div class="fit-cream-panel"></div>
+                    <figure class="fit-image-frame">
+                        <img src="Assets/fit-img.png" alt="">
+                    </figure>
                 </div>
             </div>
         </section>
+
 
         <section class="pricing-section reveal" id="pricing">
             <div class="pricing-inner">
@@ -482,12 +589,12 @@
                 <p class="pricing-subtitle">Less than your daily coffee habit. Designed to replace it.</p>
 
                 <div class="pricing-toggle" aria-label="Choose product">
-                    <button class="pricing-toggle-btn is-active" type="button">✱ Zestiva</button>
-                    <button class="pricing-toggle-btn" type="button">🌙 Velora</button>
+                    <button class="pricing-toggle-btn is-active" type="button" data-product="zestiva">✱ Zestiva</button>
+                    <button class="pricing-toggle-btn" type="button" data-product="velora">🌙 Velora</button>
                 </div>
 
                 <div class="pricing-grid">
-                    <article class="pricing-card">
+                    <article class="pricing-card" data-pack="6">
                         <div class="pricing-product-shot">
                             <img src="Assets/pack of 6.png" alt="Zestiva pack">
                         </div>
@@ -496,14 +603,14 @@
                             <p class="pricing-note">Good to start</p>
                             <strong class="pricing-price">₹239</strong>
                             <p class="pricing-unit">₹39.83 per sachet</p>
-                            <a class="pricing-btn" href="#shop">Add to cart</a>
+                            <a class="pricing-btn" href="#pricing">Add to cart</a>
                             <span class="pricing-footnote">vs ₹80+ for a café coffee</span>
                         </div>
                     </article>
 
-                    <article class="pricing-card">
+                    <article class="pricing-card" data-pack="12">
                         <div class="pricing-product-shot">
-                            <img src="Assets/pack of 12.png" alt="Velora pack">
+                            <img src="Assets/pack of 12.png" alt="Zestiva pack">
                         </div>
                         <div class="pricing-card-content">
                             <h3>12 Pack</h3>
@@ -511,12 +618,12 @@
                             <strong class="pricing-price">₹449</strong>
                             <p class="pricing-unit">₹37.42 per sachet</p>
                             <p class="pricing-save">Save 6%</p>
-                            <a class="pricing-btn" href="#shop">Add to cart</a>
+                            <a class="pricing-btn" href="#pricing">Add to cart</a>
                             <span class="pricing-footnote">2 weeks of daily use</span>
                         </div>
                     </article>
 
-                    <article class="pricing-card pricing-card-featured">
+                    <article class="pricing-card pricing-card-featured" data-pack="30">
                         <span class="pricing-badge">✦ Best value</span>
                         <div class="pricing-product-shot">
                             <img src="Assets/packof 30.png" alt="Zestiva monthly pack">
@@ -528,7 +635,7 @@
                             <strong class="pricing-price">₹999</strong>
                             <p class="pricing-unit">₹33.30 per sachet</p>
                             <p class="pricing-save">Save 33% · Most popular</p>
-                            <a class="pricing-btn" href="#shop">Add to cart</a>
+                            <a class="pricing-btn" href="#pricing">Add to cart</a>
                             <span class="pricing-footnote">Full month · Best habit</span>
                         </div>
                     </article>
@@ -536,79 +643,6 @@
             </div>
         </section>
 
-
-        <section class="stack-story-section" id="routine">
-            <div class="stack-story-pin">
-                <div class="stack-story-copy">
-                    <div class="mini-tag">
-                        <span class="tag-line"></span>
-                        <p>REAL-LIFE FIT</p>
-                    </div>
-                    <h2>WHERE REYVO FITS IN</h2>
-                    <p>One system, different moments. REYVO supports the demanding parts of the day without turning your
-                        rhythm into another stimulant cycle.</p>
-                    <a class="stack-story-cta" href="#shop">EXPLORE THE SYSTEM →</a>
-                    <div class="stack-progress-dots" aria-label="Stacked card progress">
-                        <span class="is-active"></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-
-                <div class="stack-story-stage swiper stack-mobile-swiper">
-                    <div class="stack-card-list swiper-wrapper">
-                        <article class="stack-card swiper-slide">
-                            <span class="stack-icon">🌅</span>
-                            <p>ZESTIVA · MORNING</p>
-                            <h3>Morning Start</h3>
-                            <span>Replace the first coffee with steady alertness minus the acid and jitter.</span>
-                        </article>
-
-                        <article class="stack-card swiper-slide">
-                            <span class="stack-icon">💻</span>
-                            <p>ZESTIVA · MIDDAY</p>
-                            <h3>The 3PM Dip</h3>
-                            <span>Bridge the gap when energy starts slipping and another coffee feels wrong.</span>
-                        </article>
-
-                        <article class="stack-card swiper-slide">
-                            <span class="stack-icon">🚗</span>
-                            <p>ZESTIVA · ON-GO</p>
-                            <h3>Long Drives</h3>
-                            <span>Stay clear on long commutes, travel days, and packed schedules.</span>
-                        </article>
-
-                        <article class="stack-card swiper-slide">
-                            <span class="stack-icon">🏙️</span>
-                            <p>VELORA · EVENING</p>
-                            <h3>After Work</h3>
-                            <span>The day ends but the mind does not. Velora supports the shift into a calmer
-                                evening.</span>
-                        </article>
-
-                        <article class="stack-card swiper-slide">
-                            <span class="stack-icon">📚</span>
-                            <p>VELORA · HIGH-STRESS</p>
-                            <h3>Pressure Phases</h3>
-                            <span>For heavy weeks and long deadlines when your nervous system needs support, not more
-                                stimulation.</span>
-                        </article>
-
-                        <article class="stack-card swiper-slide">
-                            <span class="stack-icon">🌙</span>
-                            <p>VELORA · WIND-DOWN</p>
-                            <h3>Before Rest</h3>
-                            <span>L-Theanine and magnesium support a smoother wind-down without making the night feel
-                                heavy.</span>
-                        </article>
-                    </div>
-                    <div class="stack-mobile-pagination"></div>
-                </div>
-            </div>
-        </section>
 
         <section class="reviews-section reveal" id="reviews">
             <div class="reviews-panel">
@@ -724,8 +758,8 @@
                     existing one.</p>
 
                 <div class="switch-actions">
-                    <a class="switch-btn switch-zestiva" href="#zestiva">SHOP ZESTIVA ✱</a>
-                    <a class="switch-btn switch-velora" href="#velora">SHOP VELORA 🌙</a>
+                    <a class="switch-btn switch-zestiva" href="#pricing">SHOP ZESTIVA ✱</a>
+                    <a class="switch-btn switch-velora" href="#pricing">SHOP VELORA 🌙</a>
                 </div>
             </div>
         </section>
@@ -748,9 +782,9 @@
 
                 <nav class="footer-column" aria-label="Products">
                     <h2>Products</h2>
-                    <a href="index.html#zestiva">Zestiva — Citrus Zing</a>
-                    <a href="index.html#velora">Velora — Berry Bliss</a>
-                    <a href="index.html#shop">Shop All</a>
+                    <a href="#ingredients">Zestiva — Citrus Zing</a>
+                    <a href="#ingredients">Velora — Berry Bliss</a>
+                    <a href="#pricing">Shop All</a>
                 </nav>
 
                 <nav class="footer-column" aria-label="Company">
@@ -787,7 +821,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js?v=20260522-formulation"></script>
+    <script src="script.js?v=20260527-fit-split"></script>
 </body>
 
 </html>

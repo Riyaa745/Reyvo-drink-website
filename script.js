@@ -195,99 +195,6 @@ function initSystemIntro() {
   }
 }
 
-function initStackStory() {
-  const section = document.querySelector(".stack-story-section");
-  const cards = [...document.querySelectorAll(".stack-card")];
-  const dots = [...document.querySelectorAll(".stack-progress-dots span")];
-
-  if (!section || !cards.length) return;
-
-  const isMobile = window.matchMedia("(max-width: 760px)").matches;
-
-  if (isMobile) {
-    if (typeof Swiper !== "undefined") {
-      new Swiper(".stack-mobile-swiper", {
-        slidesPerView: 1.08,
-        spaceBetween: 18,
-        speed: 760,
-        grabCursor: true,
-        autoplay: false,
-        pagination: {
-          el: ".stack-mobile-pagination",
-          clickable: true,
-        },
-      });
-    }
-    return;
-  }
-
-  cards.forEach((card, index) => {
-    card.style.zIndex = String(cards.length - index);
-    card.classList.toggle("is-active", index === 0);
-  });
-
-  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
-    return;
-  }
-
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.set(cards, {
-    y: (index) => index * 34,
-    scale: (index) => Math.max(1 - index * 0.05, 0.76),
-    opacity: (index) => index === 0 ? 1 : Math.max(0.78 - index * 0.14, 0.16),
-    zIndex: (index) => cards.length - index,
-  });
-
-  const timeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "top top",
-      end: `+=${cards.length * 620}`,
-      pin: true,
-      scrub: 0.85,
-      anticipatePin: 1,
-      onUpdate(self) {
-        const activeIndex = Math.min(cards.length - 1, Math.round(self.progress * (cards.length - 1)));
-        dots.forEach((dot, index) => dot.classList.toggle("is-active", index === activeIndex));
-        cards.forEach((card, index) => card.classList.toggle("is-active", index === activeIndex));
-      },
-    },
-  });
-
-  cards.forEach((card, index) => {
-    if (index === 0) return;
-    timeline
-      .to(cards[index - 1], {
-        y: -520,
-        scale: 0.86,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.inOut",
-      })
-      .fromTo(card, {
-        y: 160,
-        scale: 0.9,
-        opacity: 0.24,
-      }, {
-        y: 0,
-        scale: 1,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.inOut",
-      }, "<0.18");
-
-    cards.slice(index + 1).forEach((queuedCard, queuedIndex) => {
-      timeline.to(queuedCard, {
-        y: (queuedIndex + 1) * 34,
-        scale: Math.max(0.95 - queuedIndex * 0.05, 0.76),
-        opacity: Math.max(0.72 - queuedIndex * 0.16, 0.16),
-        duration: 1,
-        ease: "power2.inOut",
-      }, "<");
-    });
-  });
-}
-
 function initJournalCards() {
   const section = document.querySelector(".news-section");
   const cards = [...document.querySelectorAll(".news-card")];
@@ -341,85 +248,179 @@ function initJournalCards() {
 
 function initPricingToggle() {
   const buttons = [...document.querySelectorAll(".pricing-toggle-btn")];
+  const cards = [...document.querySelectorAll(".pricing-card[data-pack]")];
+  const productImages = {
+    zestiva: {
+      6: { src: "Assets/pack of 6.png", alt: "Zestiva 6 pack" },
+      12: { src: "Assets/pack of 12.png", alt: "Zestiva 12 pack" },
+      30: { src: "Assets/packof 30.png", alt: "Zestiva 30 pack" },
+    },
+    velora: {
+      6: { src: "Assets/v-pack of 6.png", alt: "Velora 6 pack" },
+      12: { src: "Assets/v-pack of 12.png", alt: "Velora 12 pack" },
+      30: { src: "Assets/v-pack of 30.png", alt: "Velora 30 pack" },
+    },
+  };
 
   if (!buttons.length) return;
 
+  const setProduct = (product) => {
+    buttons.forEach((item) => {
+      const isActive = item.dataset.product === product;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-pressed", String(isActive));
+    });
+
+    cards.forEach((card) => {
+      const image = card.querySelector(".pricing-product-shot img");
+      const imageData = productImages[product]?.[card.dataset.pack];
+      if (!image || !imageData) return;
+
+      card.classList.add("is-switching");
+      window.setTimeout(() => {
+        image.src = imageData.src;
+        image.alt = imageData.alt;
+        card.classList.remove("is-switching");
+      }, 140);
+    });
+  };
+
   buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      buttons.forEach((item) => item.classList.toggle("is-active", item === button));
+    button.setAttribute("aria-pressed", String(button.classList.contains("is-active")));
+    button.addEventListener("click", () => setProduct(button.dataset.product || "zestiva"));
+  });
+}
+
+function initFitSplitAccordion() {
+  const accordions = [...document.querySelectorAll("[data-fit-accordion]")];
+
+  accordions.forEach((accordion) => {
+    const items = [...accordion.querySelectorAll(".fit-accordion-item")];
+
+    items.forEach((item) => {
+      const button = item.querySelector(".fit-accordion-head");
+      if (!button) return;
+
+      button.addEventListener("click", () => {
+        const shouldOpen = !item.classList.contains("is-open");
+
+        items.forEach((otherItem) => {
+          const isActive = otherItem === item && shouldOpen;
+          otherItem.classList.toggle("is-open", isActive);
+          otherItem.querySelector(".fit-accordion-head")?.setAttribute("aria-expanded", String(isActive));
+        });
+      });
     });
   });
 }
 
-function initFormulationDeck() {
-  const deck = document.querySelector(".formulation-deck");
-  const cards = [...document.querySelectorAll(".formulation-card")];
-  const prev = document.querySelector(".formulation-prev");
-  const next = document.querySelector(".formulation-next");
+function initIngredientStory() {
+  const section = document.querySelector(".ingredient-story");
+  if (!section) return;
 
-  if (!deck || !cards.length || !prev || !next) return;
+  const pin = section.querySelector(".ingredient-story-pin");
+  const copy = section.querySelector(".ingredient-story-copy");
+  const zVisual = section.querySelector("[data-visual='z-product']");
+  const vVisual = section.querySelector("[data-visual='v-product']");
+  const zTitle = zVisual?.querySelector(".ingredient-product-name");
+  const vTitle = vVisual?.querySelector(".ingredient-product-name");
+  const zCards = [...section.querySelectorAll("[data-card^='z-']")];
+  const vCards = [...section.querySelectorAll("[data-card^='v-'], [data-card='both']")];
+  const allCards = [...section.querySelectorAll(".story-ingredient-card")];
+  const mobile = window.matchMedia("(max-width: 980px)").matches;
 
-  let activeIndex = 0;
-  let isAnimating = false;
+  const showStatic = () => {
+    [zVisual, vVisual].forEach((visual) => {
+      if (!visual) return;
+      visual.style.opacity = "1";
+      visual.style.transform = "none";
+      visual.style.filter = "none";
+    });
 
-  const paintDeck = () => {
-    cards.forEach((card, index) => {
-      const offset = (index - activeIndex + cards.length) % cards.length;
-      card.classList.toggle("is-active", offset === 0);
-      card.classList.toggle("is-next", offset === 1);
-      card.classList.toggle("is-after", offset === 2);
-      card.style.zIndex = String(cards.length - offset);
-      card.setAttribute("aria-hidden", offset === 0 ? "false" : "true");
+    [zTitle, vTitle].forEach((title) => {
+      if (title) title.style.opacity = "1";
+    });
+
+    allCards.forEach((card) => {
+      card.style.opacity = "1";
+      card.style.transform = "none";
+      card.style.filter = "none";
     });
   };
 
-  const moveDeck = (direction) => {
-    if (isAnimating) return;
-    isAnimating = true;
-    const current = cards[activeIndex];
-    activeIndex = (activeIndex + direction + cards.length) % cards.length;
+  if (mobile || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+    showStatic();
+    return;
+  }
 
-    if (typeof gsap !== "undefined") {
-      gsap.to(current, {
-        x: direction > 0 ? -130 : 130,
-        y: -20,
-        opacity: 0,
-        rotate: direction > 0 ? -5 : 5,
-        duration: 0.36,
-        ease: "power2.in",
-        onComplete: () => {
-          gsap.set(current, { clearProps: "transform,opacity" });
-          paintDeck();
-          gsap.fromTo(cards[activeIndex], {
-            x: direction > 0 ? 96 : -96,
-            y: 34,
-            opacity: 0,
-            scale: 0.94,
-          }, {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 0.58,
-            ease: "power3.out",
-            onComplete: () => {
-              isAnimating = false;
-            },
-          });
-        },
-      });
-      return;
-    }
+  section.classList.add("is-animated");
+  gsap.registerPlugin(ScrollTrigger);
 
-    paintDeck();
-    setTimeout(() => {
-      isAnimating = false;
-    }, 420);
+  gsap.set(zVisual, { xPercent: -50, yPercent: -50, x: 0, scale: 1, opacity: 1, filter: "blur(0px)" });
+  gsap.set(vVisual, { xPercent: -50, yPercent: -50, x: 320, scale: 0.8, opacity: 0, filter: "blur(18px)" });
+  gsap.set([zTitle, vTitle], { opacity: 0, y: -8 });
+  gsap.set(allCards, { y: 96, scale: 0.9, opacity: 0, filter: "blur(10px)", transformOrigin: "50% 100%" });
+
+  const revealCard = (card, index, at, group) => {
+    const earlierCards = group.slice(0, index);
+    return gsap.timeline()
+      .to(card, {
+        y: -index * 22,
+        scale: 1 - index * 0.035,
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.72,
+        ease: "power3.out",
+      }, at)
+      .to(earlierCards, {
+        y: (i) => -(i + 1) * 28,
+        scale: (i) => 0.96 - i * 0.035,
+        opacity: (i) => Math.max(0.58 - i * 0.12, 0.32),
+        filter: (i) => `blur(${Math.min((i + 1) * 1.2, 4)}px)`,
+        duration: 0.72,
+        ease: "power3.out",
+      }, at);
   };
 
-  prev.addEventListener("click", () => moveDeck(-1));
-  next.addEventListener("click", () => moveDeck(1));
-  paintDeck();
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "top top",
+      end: "+=4300",
+      pin,
+      scrub: 0.9,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  timeline.to(copy, { autoAlpha: 0, y: -44, duration: 0.75, ease: "power2.out" }, 0.15)
+    .to(zVisual, { x: -410, scale: 0.9, duration: 1, ease: "power3.inOut" }, 0.22)
+    .to(zTitle, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.72)
+    .to(vVisual, { opacity: 0.34, x: 250, scale: 0.78, filter: "blur(16px)", duration: 0.85, ease: "power2.out" }, 0.7);
+
+  zCards.forEach((card, index) => {
+    timeline.add(revealCard(card, index, 0, zCards), 1.1 + index * 0.42);
+  });
+
+  timeline.to(zCards, {
+    y: -150,
+    opacity: 0,
+    scale: 0.82,
+    filter: "blur(10px)",
+    duration: 0.75,
+    ease: "power2.inOut",
+  }, 2.1)
+    .to(zVisual, { opacity: 0, x: -540, scale: 0.76, filter: "blur(18px)", duration: 0.9, ease: "power2.inOut" }, 2.1)
+    .to(zTitle, { opacity: 0, y: -10, duration: 0.35 }, 2.12)
+    .to(vVisual, { opacity: 1, x: -410, scale: 0.9, filter: "blur(0px)", duration: 1, ease: "power3.inOut" }, 2.15)
+    .to(vTitle, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 2.65);
+
+  vCards.forEach((card, index) => {
+    timeline.add(revealCard(card, index, 0, vCards), 2.95 + index * 0.42);
+  });
+
+  timeline.to({}, { duration: 0.6 });
 }
 
 applyBrandFont();
@@ -430,7 +431,7 @@ initCursor();
 initReveals();
 initContactForm();
 initSystemIntro();
-initStackStory();
 initJournalCards();
 initPricingToggle();
-initFormulationDeck();
+initFitSplitAccordion();
+initIngredientStory();
