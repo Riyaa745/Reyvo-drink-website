@@ -291,6 +291,34 @@ function initPricingToggle() {
   });
 }
 
+function initPackSelectors() {
+  const productCards = [...document.querySelectorAll(".product-card")];
+
+  productCards.forEach((card) => {
+    const select = card.querySelector(".pack-select");
+    const price = card.querySelector(".selected-pack-price");
+    const unit = card.querySelector(".selected-pack-unit");
+    const save = card.querySelector(".selected-pack-save");
+
+    if (!select || !price || !unit) return;
+
+    const setPack = () => {
+      const option = select.selectedOptions[0];
+      if (!option) return;
+
+      price.textContent = `\u20B9${option.dataset.price}`;
+      unit.textContent = option.dataset.unit || "";
+
+      if (save) {
+        save.textContent = option.dataset.save || "";
+      }
+    };
+
+    select.addEventListener("change", setPack);
+    setPack();
+  });
+}
+
 function initFitSplitAccordion() {
   const accordions = [...document.querySelectorAll("[data-fit-accordion]")];
 
@@ -433,5 +461,6 @@ initContactForm();
 initSystemIntro();
 initJournalCards();
 initPricingToggle();
+initPackSelectors();
 initFitSplitAccordion();
 initIngredientStory();
