@@ -10,7 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;800;900&family=Playfair+Display:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260608-product-flow-fix">
+    <link rel="stylesheet" href="style.css?v=20260610-zestiva-black-gold">
 </head>
 
 <body class="product-detail-page">
@@ -24,7 +24,7 @@
             <a href="velora.html">Velora</a>
             <a href="index.html#about">About</a>
             <a href="index.html#learn">Learn</a>
-            <a class="shop-btn" href="#product-showcase">Shop Now</a>
+            <a class="shop-btn" href="#product-showcase">Try the Shift</a>
         </nav>
     </header>
 
@@ -36,10 +36,10 @@
                     <h1>REYVO Zestiva</h1>
                     <p class="product-support-line">Supports alertness &amp; daily hydration</p>
                     <div class="product-scroll-btn" aria-hidden="true">
-                        Scroll Down
+                        Buy Now
                         <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M12 5v14" />
-                            <path d="m19 12-7 7-7-7" />
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
                         </svg>
                     </div>
                 </div>
@@ -49,142 +49,361 @@
                 </figure>
 
                 <div class="product-transition-copy product-transition-story-copy">
-                    <p class="product-story-copy">A functional daily beverage designed to support mental clarity and steady alertness without relying on extreme stimulants. Mix with 400-500ml water. Clean ingredients you can actually read.</p>
+                    <p class="product-story-copy">A functional daily beverage designed to support mental clarity and
+                        steady alertness without relying on extreme stimulants. Mix with 400-500ml water. Clean
+                        ingredients you can actually read.</p>
                     <div class="product-scroll-btn" aria-hidden="true">
-                        Scroll Down
+                        Buy Now
                         <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M12 5v14" />
-                            <path d="m19 12-7 7-7-7" />
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
                         </svg>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="product-showcase-section" id="product-showcase">
-            <div class="product-showcase-pin">
-                <div class="product-showcase-left">
-                    <figure class="product-showcase-visual">
-                        <img src="Assets/zestiva-img-removed.png" alt="REYVO Zestiva sachet">
-                    </figure>
-
-                    <div class="product-card-stack" aria-label="Zestiva ingredients">
-                        <article class="product-info-card">
-                            <strong>☕ Natural Caffeine - 70mg (Green Coffee Bean)</strong>
-                            <p>Supports alertness without extreme stimulation. Unroasted green coffee retains high chlorogenic acid content and a gentler absorption profile than roasted coffee.</p>
-                        </article>
-                        <article class="product-info-card">
-                            <strong>🍃 L-Theanine - 70mg (Green Tea)</strong>
-                            <p>Helps balance the caffeine response. Studied in 13 RCTs (n=550). 1:1 ratio with caffeine calibrated for sustained attention and reduced jitters.</p>
-                        </article>
-                        <article class="product-info-card">
-                            <strong>🌿 Green Tea Extract</strong>
-                            <p>Rich in EGCG. Studied in 21 human studies for antioxidant properties and cognitive support. Contributes to sustained energy without a harsh spike.</p>
-                        </article>
-                        <article class="product-info-card">
-                            <strong>💧 Electrolytes - Na 230mg · K 160mg · Mg 35mg</strong>
-                            <p>Support hydration and daily electrolyte balance. Clinical evidence confirms moderate caffeine + adequate electrolytes hydrates as effectively as plain water.</p>
-                        </article>
-                        <article class="product-info-card">
-                            <strong>🔋 Vitamins C, B3, B6, B12 · Zinc</strong>
-                            <p>Each contributes to normal energy-yielding metabolism, reduction of tiredness, and immune function. EFSA confirmed. Zinc 41.7% RDA per serving.</p>
-                        </article>
+        <section class="product-showcase-section zestiva-shop-section" id="product-showcase">
+            <div class="product-showcase-pin zestiva-shop-layout">
+                <div class="zestiva-gallery" data-zestiva-gallery>
+                    <div class="zestiva-gallery-main">
+                        <button class="zestiva-gallery-arrow is-prev" type="button"
+                            aria-label="Previous product image">&#8592;</button>
+                        <img data-zestiva-main src="Assets/zestiva-img-removed.png" alt="REYVO Zestiva sachet">
+                        <button class="zestiva-gallery-arrow is-next" type="button"
+                            aria-label="Next product image">&#8594;</button>
+                    </div>
+                    <div class="zestiva-gallery-thumbnails" aria-label="Zestiva product images">
+                        <button class="is-active" type="button" data-zestiva-image="Assets/zestiva-img-removed.png"
+                            data-zestiva-alt="REYVO Zestiva sachet"><img src="Assets/zestiva-img-removed.png"
+                                alt=""></button>
+                        <button type="button" data-zestiva-image="Assets/zestiva-img-new.jpeg"
+                            data-zestiva-alt="REYVO Zestiva product pack"><img src="Assets/zestiva-img-new.jpeg"
+                                alt=""></button>
+                        <button type="button" data-zestiva-image="Assets/zestiva-hand-img.png"
+                            data-zestiva-alt="REYVO Zestiva held in hand"><img src="Assets/zestiva-hand-img.png"
+                                alt=""></button>
+                        <button type="button" data-zestiva-image="Assets/pack of 12.png"
+                            data-zestiva-alt="REYVO Zestiva 12 pack"><img src="Assets/pack of 12.png" alt=""></button>
                     </div>
                 </div>
 
-                <div class="product-showcase-copy product-detail-switch" data-product-switch>
-                    <div class="product-copy-panel is-active" data-product-panel="default">
-                        <p class="section-kicker">Ingredient "Citrus Zing"</p>
-                        <h2>Stay On Through the Day</h2>
-                        <p>Supports alertness &amp; daily hydration</p>
+                <div class="zestiva-shop-copy" data-zestiva-pack-selector>
+                    <span class="product-badge">Day Formula</span>
+                    <p class="zestiva-brand">REYVO</p>
+                    <h2>ZESTIVA</h2>
+                    <h3>Supports alertness &amp; daily hydration</h3>
+                    <p class="zestiva-shop-description">A functional daily beverage designed to support mental clarity
+                        and steady alertness without relying on extreme stimulants. Mix with 400-500ml water. Clean
+                        ingredients you can actually read.</p>
 
-                        <button class="showcase-ingredients-btn" type="button" data-show-ingredients>See Your Ingredients</button>
+                    <div class="zestiva-pack-section">
+                        <span class="zestiva-pack-kicker">Choose Your Pack</span>
+                        <div class="zestiva-pack-options" aria-label="Choose your Zestiva pack">
+                            <button class="is-selected" type="button" data-pack-size="6" data-pack-price="399"><strong>6
+                                    Pack</strong><small>&#8377;399</small></button>
+                            <button type="button" data-pack-size="12" data-pack-price="749"><strong>12
+                                    Pack</strong><small>&#8377;749</small></button>
+                            <button type="button" data-pack-size="18" data-pack-price="1049"><strong>18
+                                    Pack</strong><small>&#8377;1,049</small></button>
+                            <button type="button" data-pack-size="24" data-pack-price="1349"><strong>24
+                                    Pack</strong><small>&#8377;1,349</small></button>
+                            <button type="button" data-pack-size="30" data-pack-price="1599"><strong>30
+                                    Pack</strong><small>&#8377;1,599</small></button>
+                        </div>
+                        <div class="zestiva-selected-price">
+                            <strong data-selected-price>&#8377;399</strong>
+                            <span data-selected-unit>That's &#8377;66.5 per serve</span>
+                            <em data-selected-saving>No savings on trial pack</em>
+                        </div>
                     </div>
 
-                    <div class="product-copy-panel product-ingredients-panel" data-product-panel="ingredients" aria-hidden="true" hidden>
-                        <button class="ingredients-back-btn" type="button" data-show-default>Back to Product</button>
-                        <span class="product-ingredients-kicker">Zestiva Formula</span>
-                        <h2>What's Inside</h2>
-                        <p class="product-ingredients-support">Daily alertness, steady focus, and hydration support in one clean sachet.</p>
+                    <div class="zestiva-shop-actions">
+                        <a class="zestiva-cart-btn" href="index.html#pricing">Add to Cart &#8594;</a>
+                        <a class="zestiva-buy-btn" href="index.html#pricing">Buy Now</a>
+                    </div>
+                    <div class="zestiva-trust-row">
+                        <span>Free shipping above &#8377;499</span>
+                        <span>COD available</span>
+                        <span>Easy returns</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="zestiva-benefits-marquee" aria-label="Zestiva benefits">
+            <div class="zestiva-benefits-track">
+                <div><span>Free Shipping</span><span>Natural Caffeine</span><span>Zero Sugar</span><span>FSSAI
+                        Approved</span><span>No Artificial Colours</span><span>12-Day Shift Guarantee</span></div>
+                <div aria-hidden="true"><span>Free Shipping</span><span>Natural Caffeine</span><span>Zero
+                        Sugar</span><span>FSSAI Approved</span><span>No Artificial Colours</span><span>12-Day Shift
+                        Guarantee</span></div>
+            </div>
+        </section>
 
-                        <div class="product-pack-row product-pack-row-dark">
-                            <label for="zestiva-detail-pack">Pick Your Pack</label>
-                            <select class="product-pack-select" id="zestiva-detail-pack">
-                                <option value="6">6 sachets</option>
-                                <option value="12">12 sachets</option>
-                                <option value="18">18 sachets</option>
-                                <option value="24">24 sachets</option>
-                                <option value="30">30 sachets</option>
-                            </select>
+        <section class="zestiva-features-section">
+            <div class="zestiva-section-inner">
+                <div class="zestiva-features-layout">
+                    <div class="zestiva-feature-grid" aria-label="Zestiva ingredients">
+                        <article class="zestiva-flip-card" tabindex="0">
+                            <div class="zestiva-flip-card-inner">
+                                <div class="zestiva-flip-card-front"
+                                    style="--card-image: url('Assets/natural-caffeine.jpg')">
+                                    <h3>Natural Caffeine</h3><strong>70mg</strong>
+                                </div>
+                                <div class="zestiva-flip-card-back">
+                                    <h3>Natural Caffeine - 70mg</h3>
+                                    <p>Supports alertness without extreme stimulation. Unroasted green coffee retains
+                                        high
+                                        chlorogenic acid content and a gentler absorption profile than roasted coffee.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="zestiva-flip-card" tabindex="0">
+                            <div class="zestiva-flip-card-inner">
+                                <div class="zestiva-flip-card-front"
+                                    style="--card-image: url('Assets/L-Theanine.jpg')">
+                                    <h3>L-Theanine</h3><strong>70mg</strong>
+                                </div>
+                                <div class="zestiva-flip-card-back">
+                                    <h3>L-Theanine - 70mg</h3>
+                                    <p>Helps balance the caffeine response. Studied in 13 RCTs with a 1:1 ratio
+                                        calibrated
+                                        for sustained attention and reduced jitters.</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="zestiva-flip-card" tabindex="0">
+                            <div class="zestiva-flip-card-inner">
+                                <div class="zestiva-flip-card-front"
+                                    style="--card-image: url('Assets/Green Tea Extract.jpg')">
+                                    <h3>Green Tea Extract</h3><strong>EGCG</strong>
+                                </div>
+                                <div class="zestiva-flip-card-back">
+                                    <h3>Green Tea Extract</h3>
+                                    <p>Rich in EGCG. Studied for antioxidant properties and cognitive support.
+                                        Contributes
+                                        to sustained energy without a harsh spike.</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="zestiva-flip-card" tabindex="0">
+                            <div class="zestiva-flip-card-inner">
+                                <div class="zestiva-flip-card-front"
+                                    style="--card-image: url('Assets/Electrolytes.jpg')">
+                                    <h3>Electrolytes</h3><strong>Na + K + Mg</strong>
+                                </div>
+                                <div class="zestiva-flip-card-back">
+                                    <h3>Electrolytes</h3>
+                                    <p>Sodium 230mg, potassium 160mg, and magnesium 35mg support hydration and daily
+                                        electrolyte balance.</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="zestiva-flip-card" tabindex="0">
+                            <div class="zestiva-flip-card-inner">
+                                <div class="zestiva-flip-card-front"
+                                    style="--card-image: url('Assets/vitamin+zince.jpg')">
+                                    <h3>Vitamins + Zinc</h3><strong>Full Complex</strong>
+                                </div>
+                                <div class="zestiva-flip-card-back">
+                                    <h3>Vitamins C, B3, B6, B12 + Zinc</h3>
+                                    <p>Each contributes to normal energy-yielding metabolism, reduction of tiredness,
+                                        and
+                                        immune function. Zinc provides 41.7% RDA per serving.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="zestiva-features-copy">
+                        <div class="zestiva-section-heading">
+                            <span>Inside Every Sachet</span>
+                            <h2>What's Inside</h2>
+                            <p>Five purposeful components, arranged around one balanced daily formula.</p>
                         </div>
-
-                        <div class="detail-pack-options detail-pack-options-dark" aria-label="Zestiva pack options">
-                            <button type="button">6 Pack<small>Trial</small></button>
-                            <button type="button">12 Pack<small>Daily start</small></button>
-                            <button class="is-selected" type="button">30 Pack<small>Best value</small></button>
-                        </div>
-
-                        <div class="product-action-row product-action-row-dark">
-                            <a class="detail-cart-btn" href="index.html#pricing">Add to Cart</a>
-                            <a class="detail-buy-btn" href="index.html#pricing">Buy Now</a>
-                        </div>
-
-                        <div class="product-trust-row product-trust-row-dark">
-                            <span>No added sugar</span>
-                            <span>COD available</span>
-                            <span>Daily use friendly</span>
-                        </div>
-
-                        <div class="ingredient-line-list">
+                        <div class="zestiva-feature-points">
                             <article>
-                                <strong>Natural Caffeine - 70mg</strong>
-                                <p>Green coffee bean caffeine for alertness without an extreme stimulant feel.</p>
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="m13 2-8 12h6l-1 8 9-13h-6z" />
+                                </svg>
+                                <div><h3>Not an energy drink.</h3>
+                                    <p>No synthetic stimulants. No neon. No crash built into the formula.</p>
+                                </div>
                             </article>
                             <article>
-                                <strong>L-Theanine - 70mg</strong>
-                                <p>Balances the caffeine response for smoother focus and fewer jitters.</p>
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M20 4c-8 0-14 4-14 10 0 2.5 1.5 4.5 4 5-1-6 4-10 8-12-3 3-5 7-6 12 6-1 9-6 8-15Z" />
+                                </svg>
+                                <div><h3>Not a supplement.</h3>
+                                    <p>No capsules. No clinical sterility. No ingredients hiding behind a "proprietary
+                                        blend."</p>
+                                </div>
                             </article>
                             <article>
-                                <strong>Green Tea Extract</strong>
-                                <p>EGCG-rich botanical support for sustained daily energy.</p>
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 3s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12Z" />
+                                </svg>
+                                <div><h3>A functional beverage.</h3>
+                                    <p>Real ingredients. Real doses. Dissolved in water. Designed for the way you
+                                        actually live.</p>
+                                </div>
                             </article>
-                            <article>
-                                <strong>Electrolytes</strong>
-                                <p>Na 230mg, K 160mg, and Mg 35mg to support hydration.</p>
-                            </article>
-                            <article>
-                                <strong>Vitamins + Zinc</strong>
-                                <p>C, B3, B6, B12, and zinc for energy metabolism and immune support.</p>
-                            </article>
-                        </div>
-
-                        <div class="ingredient-info-grid">
-                            <div><span>01</span>Add 400-500ml water</div>
-                            <div><span>02</span>Pour the sachet</div>
-                            <div><span>03</span>Shake or stir</div>
-                            <div><span>04</span>Drink during the day</div>
-                        </div>
-
-                        <div class="ingredient-benefit-list">
-                            <span>More steady alertness</span>
-                            <span>No added sugar</span>
-                            <span>No harsh crash</span>
-                        </div>
-
-                        <div class="detail-mini-faq detail-mini-faq-dark">
-                            <details>
-                                <summary>When is the best time?</summary>
-                                <p>Morning to afternoon works best for daily focus and hydration support.</p>
-                            </details>
-                            <details>
-                                <summary>Will it cause jitters?</summary>
-                                <p>The caffeine and L-Theanine balance is designed to feel smoother than regular coffee.</p>
-                            </details>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="zestiva-how-section">
+            <div class="zestiva-section-inner">
+                <div class="zestiva-section-heading">
+                    <span>Simple by Design</span>
+                    <h2>How to Use</h2>
+                    <p>No brewing. No blending. No measuring.</p>
+                </div>
+                <div class="zestiva-use-steps">
+                    <article><span>01</span>
+                        <div class="zestiva-use-icon">&#9632;</div>
+                        <h3>Pour</h3>
+                        <p>400-500ml cold water into a glass or bottle.</p>
+                    </article>
+                    <article><span>02</span>
+                        <div class="zestiva-use-icon">&#9670;</div>
+                        <h3>Tear</h3>
+                        <p>One sachet. Empty it in.</p>
+                    </article>
+                    <article><span>03</span>
+                        <div class="zestiva-use-icon">&#8635;</div>
+                        <h3>Shake</h3>
+                        <p>10 seconds. Done.</p>
+                    </article>
+                    <article><span>04</span>
+                        <div class="zestiva-use-icon">&#8594;</div>
+                        <h3>Go.</h3>
+                        <p>That's it. The whole thing.</p>
+                    </article>
+                </div>
+                <p class="zestiva-use-note">Made with real natural extracts - it may take a few extra seconds to fully
+                    dissolve. That's not a flaw. That's the real stuff doing its thing.</p>
+            </div>
+        </section>
+
+        <section class="zestiva-comparison-section">
+            <div class="zestiva-section-inner">
+                <div class="zestiva-section-heading zestiva-section-heading-light">
+                    <span>A Better Daily Choice</span>
+                    <h2>Zestiva vs What You Use Today</h2>
+                    <p>See how a balanced daily formula compares with the usual quick fixes.</p>
+                </div>
+                <div class="zestiva-comparison-shell">
+                    <div class="zestiva-comparison-table" role="table" aria-label="Zestiva product comparison">
+                        <div class="zestiva-comparison-row zestiva-comparison-head" role="row">
+                            <div role="columnheader">Compare</div>
+                            <div role="columnheader">Coffee</div>
+                            <div role="columnheader">Energy Drink</div>
+                            <div role="columnheader">Zestiva</div>
+                        </div>
+                        <div class="zestiva-comparison-row" role="row">
+                            <strong role="rowheader">Energy Pattern</strong>
+                            <span role="cell">Short burst</span>
+                            <span role="cell">Spike</span>
+                            <span role="cell">More steady</span>
+                        </div>
+                        <div class="zestiva-comparison-row" role="row">
+                            <strong role="rowheader">Sugar</strong>
+                            <span role="cell">Low</span>
+                            <span role="cell">High (6-11g/100ml)</span>
+                            <span role="cell">No added sugar</span>
+                        </div>
+                        <div class="zestiva-comparison-row" role="row">
+                            <strong role="rowheader">After-Effect</strong>
+                            <span role="cell">Jitters, dip</span>
+                            <span role="cell">Crash</span>
+                            <span role="cell">Balanced landing</span>
+                        </div>
+                        <div class="zestiva-comparison-row" role="row">
+                            <strong role="rowheader">Daily Use</strong>
+                            <span role="cell">Habit only</span>
+                            <span role="cell">Occasional</span>
+                            <span role="cell">Designed for daily</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="zestiva-faq-section">
+            <div class="zestiva-section-inner">
+                <div class="zestiva-section-heading">
+                    <span>Good to Know</span>
+                    <h2>Frequently Asked</h2>
+                </div>
+                <div class="zestiva-faq-list">
+                    <details>
+                        <summary>Is it safe for daily use?</summary>
+                        <p>Yes. Zestiva is formulated specifically for regular daily consumption. The caffeine level of
+                            70mg per serving is well within safe daily limits for adults.</p>
+                    </details>
+                    <details>
+                        <summary>Does it replace coffee?</summary>
+                        <p>It can be used as a full alternative depending on your routine. Many people use Zestiva for
+                            their afternoon slot instead of a second or third coffee.</p>
+                    </details>
+                    <details>
+                        <summary>Will it cause jitters?</summary>
+                        <p>Zestiva is formulated for a more balanced experience. The L-Theanine specifically moderates
+                            the caffeine response, reducing the likelihood of jitters compared to conventional
+                            stimulants.</p>
+                    </details>
+                    <details>
+                        <summary>When is the best time?</summary>
+                        <p>Anytime you need support for alertness during the day. Morning to start, or mid-day to avoid
+                            the afternoon dip. Not recommended within 4-5 hours of intended sleep time.</p>
+                    </details>
+                    <details>
+                        <summary>Is it suitable for everyone?</summary>
+                        <p>Not recommended for children under 12, pregnant women, lactating mothers, or
+                            caffeine-sensitive individuals. Consult your doctor if you have a medical condition.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="zestiva-reviews-section">
+            <div class="zestiva-section-inner">
+                <div class="zestiva-section-heading">
+                    <span>Real Routines. Real Results.</span>
+                    <h2>Customer Reviews</h2>
+                </div>
+                <div class="zestiva-review-summary">
+                    <div><strong>4.7</strong><span class="zestiva-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <p>Based on 115 reviews</p>
+                    </div>
+                    <div class="zestiva-rating-bars">
+                        <span>5 <i style="--rating-width: 86%"></i><em>85</em></span>
+                        <span>4 <i style="--rating-width: 42%"></i><em>30</em></span>
+                        <span>3 <i style="--rating-width: 4%"></i><em>0</em></span>
+                    </div>
+                    <a href="contact-us.html">Write a Review</a>
+                </div>
+                <div class="zestiva-review-grid">
+                    <article><span class="zestiva-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                        <p>"Genuinely works. It helps me focus better and gives my afternoon a much more structured
+                            rhythm."</p><strong>Junejakanav</strong><small>Verified customer</small>
+                    </article>
+                    <article><span class="zestiva-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <p>"Smooth energy without the sharp coffee spike. The Citrus Zing flavour makes it easy to reach
+                            for every day."</p><strong>Nisarga Pokharel</strong><small>Verified customer</small>
+                    </article>
+                    <article><span class="zestiva-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <p>"My go-to before the afternoon slump. Clear-headed, hydrating, and simple enough to keep at
+                            my desk."</p><strong>Arjun M.</strong><small>Verified customer</small>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
     </main>
 
     <footer class="footer site-footer">
@@ -192,7 +411,8 @@
             <div class="footer-grid">
                 <div class="footer-brand-block">
                     <a class="footer-logo" href="index.html#top" aria-label="REYVO home">REYVO</a>
-                    <p>Clean. Intentional. Built for daily use. A functional performance drink brand by Sharpy Innovations Pvt. Ltd.</p>
+                    <p>Clean. Intentional. Built for daily use. A functional performance drink brand by Sharpy
+                        Innovations Pvt. Ltd.</p>
                 </div>
                 <nav class="footer-column" aria-label="Products">
                     <h2>Products</h2>
@@ -219,7 +439,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="product-page.js?v=20260608-product-flow-fix"></script>
+    <script src="product-page.js?v=20260610-zestiva-light-sections"></script>
 </body>
 
 </html>

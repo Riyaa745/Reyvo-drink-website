@@ -5166,3 +5166,412 @@ textarea {
         display: none;
     }
 }
+
+/* Zestiva lower product shop */
+.zestiva-shop-section {
+    padding-top: 0;
+}
+
+.zestiva-shop-layout {
+    align-items: center;
+}
+
+.zestiva-gallery {
+    min-width: 0;
+}
+
+.zestiva-gallery-main {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: clamp(410px, 58vh, 600px);
+    border: 1px solid rgba(184, 150, 46, 0.16);
+    border-radius: 10px;
+    background:
+        radial-gradient(circle at 50% 40%, rgba(253, 193, 5, 0.23), transparent 35%),
+        rgba(255, 255, 255, 0.82);
+    box-shadow: 0 28px 80px rgba(92, 67, 31, 0.12);
+    overflow: hidden;
+}
+
+.zestiva-gallery-main img {
+    width: 88%;
+    height: clamp(360px, 53vh, 540px);
+    object-fit: contain;
+    filter: drop-shadow(0 28px 34px rgba(84, 60, 32, 0.2));
+    transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.zestiva-gallery-main img.is-changing {
+    opacity: 0;
+    transform: scale(0.97);
+}
+
+.zestiva-gallery-arrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(17, 17, 17, 0.13);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #111;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.zestiva-gallery-arrow.is-prev {
+    left: 16px;
+}
+
+.zestiva-gallery-arrow.is-next {
+    right: 16px;
+}
+
+.zestiva-gallery-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.zestiva-gallery-thumbnails button {
+    height: 84px;
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    border-radius: 8px;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+}
+
+.zestiva-gallery-thumbnails button.is-active {
+    border-color: #ff7a1a;
+    box-shadow: inset 0 0 0 1px #ff7a1a;
+}
+
+.zestiva-gallery-thumbnails img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.zestiva-shop-copy .product-badge {
+    margin-bottom: 18px;
+}
+
+.zestiva-brand {
+    margin: 0 0 8px;
+    color: #8b6d20;
+    font: 900 12px "Space Mono", "Courier New", monospace;
+    letter-spacing: 0.24em;
+}
+
+.zestiva-shop-copy h2 {
+    margin: 0;
+    color: #111;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 900;
+    line-height: 0.9;
+}
+
+.zestiva-shop-copy h3 {
+    margin: 24px 0 12px;
+    color: #111;
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1.2;
+}
+
+.zestiva-shop-description {
+    margin: 0;
+    color: rgba(17, 17, 17, 0.64);
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.zestiva-pack-section {
+    margin-top: 30px;
+}
+
+.zestiva-pack-kicker {
+    display: block;
+    margin-bottom: 12px;
+    color: rgba(17, 17, 17, 0.58);
+    font: 900 10px "Space Mono", "Courier New", monospace;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.zestiva-pack-options {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.zestiva-pack-options button {
+    min-height: 72px;
+    border: 1px solid rgba(17, 17, 17, 0.12);
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.72);
+    color: #111;
+    cursor: pointer;
+}
+
+.zestiva-pack-options strong,
+.zestiva-pack-options small {
+    display: block;
+}
+
+.zestiva-pack-options strong {
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.zestiva-pack-options small {
+    margin-top: 5px;
+    color: rgba(17, 17, 17, 0.58);
+    font-size: 10px;
+}
+
+.zestiva-pack-options button.is-selected {
+    border-color: #ff7a1a;
+    background: #ff7a1a;
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(255, 106, 0, 0.22);
+}
+
+.zestiva-pack-options button.is-selected small {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.zestiva-selected-price {
+    display: grid;
+    gap: 5px;
+    margin: 22px 0;
+}
+
+.zestiva-selected-price strong {
+    color: #111;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(44px, 5vw, 64px);
+    font-style: italic;
+    line-height: 1;
+}
+
+.zestiva-selected-price span {
+    color: rgba(17, 17, 17, 0.58);
+    font: 400 11px "Space Mono", "Courier New", monospace;
+}
+
+.zestiva-selected-price em {
+    color: #d25c00;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 900;
+}
+
+.zestiva-shop-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.zestiva-shop-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.zestiva-cart-btn {
+    background: #ff7a1a;
+    color: #fff;
+}
+
+.zestiva-buy-btn {
+    border: 1px solid rgba(17, 17, 17, 0.2);
+    color: #111;
+}
+
+.zestiva-trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-top: 16px;
+}
+
+.zestiva-trust-row span {
+    color: rgba(17, 17, 17, 0.58);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.zestiva-trust-row span::before {
+    content: "\2713";
+    margin-right: 5px;
+    color: #ff7a1a;
+}
+
+@media (max-width: 991px) {
+    .zestiva-shop-layout {
+        gap: 42px;
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 620px) {
+    .zestiva-gallery-main {
+        min-height: 340px;
+    }
+
+    .zestiva-gallery-main img {
+        height: 310px;
+    }
+
+    .zestiva-gallery-thumbnails {
+        gap: 6px;
+    }
+
+    .zestiva-gallery-thumbnails button {
+        height: 64px;
+    }
+
+    .zestiva-pack-options {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .zestiva-shop-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Zestiva supporting sections */
+.zestiva-section-inner { width:min(1240px,calc(100% - 40px)); margin:0 auto; }
+.zestiva-section-heading { max-width:760px; margin-bottom:48px; }
+.zestiva-section-heading span { color:#d25c00; font:900 10px "Space Mono","Courier New",monospace; letter-spacing:.14em; text-transform:uppercase; }
+.zestiva-section-heading h2 { margin:10px 0 12px; color:#111; font-size:clamp(42px,6vw,78px); font-weight:900; line-height:.92; text-transform:uppercase; }
+.zestiva-section-heading p { margin:0; color:rgba(17,17,17,.58); font-size:16px; line-height:1.6; }
+.zestiva-section-heading-light h2 { color:#fff; }
+.zestiva-section-heading-light p { color:rgba(255,255,255,.56); }
+
+.zestiva-features-section { padding:clamp(88px,10vw,140px) 0; background:radial-gradient(circle at 82% 18%,rgba(198,158,68,.1),transparent 32%),#0b0b0b; color:#f6f1e7; }
+.zestiva-features-layout { display:grid; grid-template-columns:minmax(340px,.86fr) minmax(0,1.14fr); align-items:center; gap:clamp(48px,7vw,96px); }
+.zestiva-feature-grid { grid-column:2; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); width:min(100%,570px); justify-self:end; gap:16px; }
+.zestiva-flip-card:nth-child(1) { grid-column:1; grid-row:1; }
+.zestiva-flip-card:nth-child(2) { grid-column:2; grid-row:1; }
+.zestiva-flip-card:nth-child(3) { grid-column:1; grid-row:2; width:auto; }
+.zestiva-flip-card:nth-child(4) { grid-column:2; grid-row:2; }
+.zestiva-flip-card:nth-child(5) { grid-column:1/-1; grid-row:3; width:calc((100% - 16px)/2); justify-self:center; }
+.zestiva-flip-card { aspect-ratio:1/1; perspective:1100px; outline:none; }
+.zestiva-flip-card-inner { position:relative; width:100%; height:100%; transform-style:preserve-3d; transition:transform 650ms cubic-bezier(.16,1,.3,1); }
+.zestiva-flip-card:hover .zestiva-flip-card-inner,.zestiva-flip-card:focus .zestiva-flip-card-inner { transform:rotateY(180deg); }
+.zestiva-flip-card-front,.zestiva-flip-card-back { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; border:1px solid rgba(210,173,87,.42); border-radius:14px; padding:20px; backface-visibility:hidden; overflow:hidden; box-shadow:0 18px 46px rgba(0,0,0,.34); transition:border-color 280ms ease,box-shadow 280ms ease; }
+.zestiva-flip-card-front { isolation:isolate; background:#111; color:#f8f3e8; }
+.zestiva-flip-card-front::before { content:""; position:absolute; z-index:-2; inset:12px 12px 58px; background:var(--card-image) center/contain no-repeat; opacity:.88; transition:opacity 300ms ease,transform 650ms cubic-bezier(.16,1,.3,1); }
+.zestiva-flip-card-front::after { content:""; position:absolute; z-index:-1; inset:0; background:linear-gradient(180deg,rgba(10,10,10,.02) 42%,rgba(8,8,8,.96) 86%); }
+.zestiva-flip-card:hover .zestiva-flip-card-front,.zestiva-flip-card:focus .zestiva-flip-card-front { border-color:#d7b45e; box-shadow:0 22px 54px rgba(210,173,87,.18); }
+.zestiva-flip-card:hover .zestiva-flip-card-front::before,.zestiva-flip-card:focus .zestiva-flip-card-front::before { opacity:1; transform:scale(1.025); }
+.zestiva-flip-card h3 { margin:0 0 7px; font-size:17px; line-height:1.2; }
+.zestiva-flip-card-front strong { color:#d7b45e; font:900 13px "Space Mono",monospace; }
+.zestiva-flip-card-back { justify-content:center; background:linear-gradient(145deg,#1b1811,#080808); color:#f8f3e8; transform:rotateY(180deg); }
+.zestiva-flip-card-back h3 { color:#d7b45e; }
+.zestiva-flip-card-back p { margin:0; color:rgba(248,243,232,.72); font-size:12px; line-height:1.65; }
+.zestiva-features-copy { grid-column:1; grid-row:1; }
+.zestiva-features-copy .zestiva-section-heading { max-width:none; margin-bottom:36px; }
+.zestiva-features-copy .zestiva-section-heading span { color:#d7b45e; }
+.zestiva-features-copy .zestiva-section-heading h2 { color:#f8f3e8; font-size:clamp(40px,5vw,68px); white-space:nowrap; }
+.zestiva-features-copy .zestiva-section-heading p { color:rgba(248,243,232,.58); }
+.zestiva-feature-points { display:grid; gap:25px; }
+.zestiva-feature-points article { display:grid; grid-template-columns:32px 1fr; gap:14px; align-items:start; padding-top:24px; border-top:1px solid rgba(210,173,87,.2); }
+.zestiva-feature-points svg { width:18px; height:18px; margin:2px 0 0 2px; fill:none; stroke:#d7b45e; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.zestiva-feature-points h3 { margin:0 0 7px; color:#f8f3e8; font-size:17px; }
+.zestiva-feature-points p { margin:0; color:rgba(248,243,232,.58); font-size:13px; line-height:1.7; }
+
+.zestiva-how-section { padding:clamp(88px,10vw,140px) 0; background:#f2efe8; }
+.zestiva-how-section .zestiva-section-heading { margin-right:auto; margin-left:auto; text-align:center; }
+.zestiva-use-steps { position:relative; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; }
+.zestiva-use-steps::before { content:""; position:absolute; top:49px; left:12%; right:12%; height:1px; background:rgba(17,17,17,.14); }
+.zestiva-use-steps article { position:relative; z-index:1; text-align:center; }
+.zestiva-use-steps article>span { display:block; margin-bottom:10px; color:#d25c00; font:900 10px "Space Mono",monospace; }
+.zestiva-use-icon { display:grid; place-items:center; width:72px; height:72px; margin:0 auto 20px; border-radius:50%; background:#fff; color:#ff7a1a; font-size:24px; box-shadow:0 14px 32px rgba(50,35,18,.1); }
+.zestiva-use-steps h3 { margin:0 0 8px; color:#111; font-size:24px; }
+.zestiva-use-steps p { max-width:220px; margin:0 auto; color:rgba(17,17,17,.58); font-size:13px; line-height:1.6; }
+.zestiva-use-note { max-width:620px; margin:50px auto 0; border-left:3px solid #ff7a1a; border-radius:7px; padding:18px 22px; background:rgba(255,255,255,.55); color:rgba(17,17,17,.58); font-size:13px; font-style:italic; line-height:1.7; }
+
+.zestiva-comparison-section { padding:clamp(88px,10vw,140px) 0; background:radial-gradient(circle at 80% 12%,rgba(255,122,26,.12),transparent 30%),#0c0c10; color:#fff; }
+.zestiva-comparison-shell { border:1px solid rgba(255,122,26,.24); border-radius:16px; padding:10px; background:rgba(255,255,255,.025); box-shadow:0 35px 90px rgba(0,0,0,.28); overflow-x:auto; }
+.zestiva-comparison-table { min-width:760px; border-radius:10px; overflow:hidden; }
+.zestiva-comparison-row { display:grid; grid-template-columns:1.05fr 1fr 1fr 1.28fr; }
+.zestiva-comparison-row>* { display:flex; align-items:center; min-height:64px; border-right:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08); padding:15px 20px; color:rgba(255,255,255,.56); font-size:13px; line-height:1.45; transition:background 220ms ease,color 220ms ease,transform 220ms ease; }
+.zestiva-comparison-row>*:last-child { border-right:0; background:rgba(255,122,26,.075); color:#fff; font-weight:900; }
+.zestiva-comparison-row>*:last-child::before { content:"\2713"; margin-right:8px; color:#c5f900; font-size:16px; }
+.zestiva-comparison-row strong { color:#fff; font-size:13px; }
+.zestiva-comparison-row:hover>* { background:rgba(255,255,255,.035); color:rgba(255,255,255,.8); }
+.zestiva-comparison-row:hover>*:last-child { background:rgba(255,122,26,.16); color:#fff; }
+.zestiva-comparison-head>* { min-height:58px; color:rgba(255,255,255,.72); font:900 10px "Space Mono",monospace; letter-spacing:.12em; text-transform:uppercase; }
+.zestiva-comparison-head>*:last-child { background:#ff7a1a; color:#fff; }
+.zestiva-comparison-head>*:last-child::before { display:none; }
+.zestiva-comparison-row:last-child>* { border-bottom:0; }
+
+.zestiva-faq-section { padding:clamp(88px,10vw,140px) 0; background:#f6f0e5; }
+.zestiva-faq-list { display:grid; gap:10px; }
+.zestiva-faq-list details { border:1px solid rgba(82,63,38,.12); border-radius:11px; background:rgba(255,252,246,.82); overflow:hidden; box-shadow:0 10px 30px rgba(76,57,34,.05); transition:border-color 240ms ease,background 240ms ease,box-shadow 240ms ease; }
+.zestiva-faq-list details[open] { border-color:rgba(210,92,0,.42); background:#fffaf1; box-shadow:0 14px 38px rgba(76,57,34,.08); }
+.zestiva-faq-list summary { position:relative; padding:20px 58px 20px 20px; color:#201b16; cursor:pointer; font-size:14px; font-weight:900; list-style:none; }
+.zestiva-faq-list summary::-webkit-details-marker { display:none; }
+.zestiva-faq-list summary::after { content:"+"; position:absolute; top:50%; right:20px; display:grid; place-items:center; width:24px; height:24px; border:1px solid #ff7a1a; border-radius:50%; color:#ff7a1a; transform:translateY(-50%); transition:transform 260ms ease,background 260ms ease,color 260ms ease; }
+.zestiva-faq-list details[open] summary::after { background:#ff7a1a; color:#fff; transform:translateY(-50%) rotate(45deg); }
+.zestiva-faq-list p { margin:0; padding:0 58px 22px 20px; color:rgba(32,27,22,.62); font-size:13px; line-height:1.8; animation:zestivaFaqIn 300ms ease; }
+@keyframes zestivaFaqIn { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:none; } }
+
+.zestiva-reviews-section { padding:clamp(88px,10vw,140px) 0; background:#fffaf0; }
+.zestiva-reviews-section .zestiva-section-heading { margin-right:auto; margin-left:auto; text-align:center; }
+.zestiva-review-summary { display:grid; grid-template-columns:1fr 1.2fr .8fr; align-items:center; gap:40px; margin-bottom:52px; border-top:1px solid rgba(17,17,17,.08); border-bottom:1px solid rgba(17,17,17,.08); padding:34px 0; }
+.zestiva-review-summary>div:first-child { display:grid; gap:5px; }
+.zestiva-review-summary strong { color:#111; font-size:48px; line-height:1; }
+.zestiva-review-summary p { margin:0; color:rgba(17,17,17,.55); font-size:12px; }
+.zestiva-stars { color:#ff6438; letter-spacing:2px; }
+.zestiva-rating-bars { display:grid; gap:8px; }
+.zestiva-rating-bars span { display:grid; grid-template-columns:16px 1fr 24px; gap:10px; align-items:center; color:rgba(17,17,17,.55); font-size:11px; }
+.zestiva-rating-bars i { position:relative; height:8px; background:#e6e4df; overflow:hidden; }
+.zestiva-rating-bars i::after { content:""; position:absolute; inset:0 auto 0 0; width:var(--rating-width); background:#ff6438; }
+.zestiva-rating-bars em { font-style:normal; }
+.zestiva-review-summary>a { display:inline-flex; align-items:center; justify-content:center; min-height:46px; background:#ff6438; color:#fff; font-size:12px; font-weight:900; text-transform:uppercase; }
+.zestiva-review-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.zestiva-review-grid article { display:flex; flex-direction:column; min-height:230px; border:1px solid rgba(17,17,17,.08); border-radius:9px; padding:24px; background:#fff; box-shadow:0 18px 50px rgba(80,55,30,.07); }
+.zestiva-review-grid p { flex:1; color:rgba(17,17,17,.64); font-size:14px; line-height:1.75; }
+.zestiva-review-grid strong { color:#111; font-size:13px; }
+.zestiva-review-grid small { margin-top:4px; color:#d25c00; font-size:10px; font-weight:800; text-transform:uppercase; }
+
+.zestiva-benefits-marquee { overflow:hidden; padding:28px 0; background:#FF7A1A; }
+.zestiva-benefits-track { display:flex; width:max-content; animation:zestivaMarquee 28s linear infinite; }
+.zestiva-benefits-track>div { display:flex; align-items:center; }
+.zestiva-benefits-track span { display:inline-flex; align-items:center; margin-right:54px; color:#fff; font:700 12px "Space Mono",monospace; letter-spacing:.08em; text-transform:uppercase; white-space:nowrap; }
+.zestiva-benefits-track span::before { content:"\2713"; margin-right:9px; color:#c5f900; font-weight:900; }
+@keyframes zestivaMarquee { to { transform:translateX(-50%); } }
+
+@media (max-width:991px) {
+    .zestiva-features-layout { grid-template-columns:1fr; }
+    .zestiva-features-copy { grid-column:1; grid-row:1; }
+    .zestiva-feature-grid { grid-column:1; grid-row:2; width:min(100%,570px); margin:0 auto; justify-self:center; }
+    .zestiva-review-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .zestiva-use-steps { grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px 20px; }
+    .zestiva-use-steps::before { display:none; }
+    .zestiva-review-summary { grid-template-columns:1fr 1fr; }
+    .zestiva-review-summary>a { grid-column:1/-1; }
+}
+
+@media (max-width:620px) {
+    .zestiva-section-inner { width:min(100% - 28px,1240px); }
+    .zestiva-review-grid,.zestiva-review-summary { grid-template-columns:1fr; }
+    .zestiva-feature-grid { grid-template-columns:1fr; width:min(100%,380px); gap:14px; }
+    .zestiva-flip-card:nth-child(n) { grid-column:auto; grid-row:auto; width:100%; }
+    .zestiva-features-copy .zestiva-section-heading h2 { font-size:clamp(34px,11vw,48px); }
+    .zestiva-use-steps { grid-template-columns:1fr; }
+    .zestiva-section-heading { margin-bottom:34px; }
+    .zestiva-comparison-shell { margin-right:-14px; border-radius:12px 0 0 12px; }
+}

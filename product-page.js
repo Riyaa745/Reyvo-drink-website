@@ -89,7 +89,80 @@ function initProductDetailSwitch() {
   });
 }
 
+function initZestivaGallery() {
+  const gallery = document.querySelector("[data-zestiva-gallery]");
+  if (!gallery) return;
+
+  const mainImage = gallery.querySelector("[data-zestiva-main]");
+  const thumbnails = [...gallery.querySelectorAll("[data-zestiva-image]")];
+  let activeIndex = 0;
+
+  const showImage = (index) => {
+    activeIndex = (index + thumbnails.length) % thumbnails.length;
+    const thumbnail = thumbnails[activeIndex];
+    mainImage.classList.add("is-changing");
+
+    window.setTimeout(() => {
+      mainImage.src = thumbnail.dataset.zestivaImage;
+      mainImage.alt = thumbnail.dataset.zestivaAlt;
+      mainImage.classList.remove("is-changing");
+    }, 120);
+
+    thumbnails.forEach((button, buttonIndex) => {
+      button.classList.toggle("is-active", buttonIndex === activeIndex);
+    });
+  };
+
+  thumbnails.forEach((button, index) => button.addEventListener("click", () => showImage(index)));
+  gallery.querySelector(".is-prev")?.addEventListener("click", () => showImage(activeIndex - 1));
+  gallery.querySelector(".is-next")?.addEventListener("click", () => showImage(activeIndex + 1));
+}
+
+function initZestivaPackSelector() {
+  const selector = document.querySelector("[data-zestiva-pack-selector]");
+  if (!selector) return;
+
+  const options = [...selector.querySelectorAll("[data-pack-size]")];
+  const selectedPrice = selector.querySelector("[data-selected-price]");
+  const selectedUnit = selector.querySelector("[data-selected-unit]");
+  const selectedSaving = selector.querySelector("[data-selected-saving]");
+  const baseUnitPrice = 399 / 6;
+
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      const packSize = Number(option.dataset.packSize);
+      const packPrice = Number(option.dataset.packPrice);
+      const regularPrice = baseUnitPrice * packSize;
+      const savedAmount = Math.max(0, Math.round(regularPrice - packPrice));
+      const savedPercent = Math.max(0, Math.round((savedAmount / regularPrice) * 100));
+
+      options.forEach((button) => button.classList.toggle("is-selected", button === option));
+      selectedPrice.textContent = `₹${packPrice.toLocaleString("en-IN")}`;
+      selectedUnit.textContent = `That's ₹${(packPrice / packSize).toFixed(1)} per serve`;
+      selectedSaving.textContent = savedAmount
+        ? `You Save ₹${savedAmount.toLocaleString("en-IN")} (${savedPercent}%)`
+        : "No savings on trial pack";
+    });
+  });
+}
+
+function initZestivaFaq() {
+  const faqItems = [...document.querySelectorAll(".zestiva-faq-list details")];
+
+  faqItems.forEach((item) => {
+    item.addEventListener("toggle", () => {
+      if (!item.open) return;
+      faqItems.forEach((otherItem) => {
+        if (otherItem !== item) otherItem.open = false;
+      });
+    });
+  });
+}
+
 updateProductHeader();
 window.addEventListener("scroll", updateProductHeader, { passive: true });
 initProductDetailSwitch();
 initProductScrollAnimations();
+initZestivaGallery();
+initZestivaPackSelector();
+initZestivaFaq();
