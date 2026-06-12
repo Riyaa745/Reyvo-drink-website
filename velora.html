@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REYVO Velora</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;800;900&family=Playfair+Display:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260608-product-flow-fix">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;800;900&family=Playfair+Display:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260612-velora-gold">
 </head>
-
-<body class="product-detail-page">
+<body class="product-detail-page velora-detail-page">
     <header class="site-header landing-header">
-        <a class="brand" href="index.html#top" aria-label="REYVO home">
-            <img src="Assets/reyvo-logo.png" alt="REYVO">
-        </a>
-
+        <a class="brand" href="index.html#top" aria-label="REYVO home"><img src="Assets/reyvo-logo.png" alt="REYVO"></a>
         <nav class="header-nav">
-            <a href="zestiva.html">Zestiva</a>
-            <a href="velora.html">Velora</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#learn">Learn</a>
-            <a class="shop-btn" href="#product-showcase">Shop Now</a>
+            <a href="zestiva.html">Zestiva</a><a href="velora.html">Velora</a><a href="index.html#about">About</a><a href="index.html#learn">Learn</a>
+            <a class="shop-btn" href="#product-showcase">Try the Shift</a>
         </nav>
     </header>
 
@@ -35,191 +25,123 @@
                     <span class="product-badge">Evening Formula</span>
                     <h1>REYVO Velora</h1>
                     <p class="product-support-line">Supports calm &amp; mental balance</p>
-                    <div class="product-scroll-btn" aria-hidden="true">
-                        Scroll Down
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M12 5v14" />
-                            <path d="m19 12-7 7-7-7" />
-                        </svg>
-                    </div>
+                    <a class="product-scroll-btn" href="#product-showcase" data-scroll-purchase>Buy Now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
                 </div>
-
-                <figure class="product-transition-visual">
-                    <img src="Assets/velora-img-removed.png" alt="REYVO Velora sachet">
-                </figure>
-
+                <figure class="product-transition-visual"><img src="Assets/velora-img-removed.png" alt="REYVO Velora sachet"></figure>
                 <div class="product-transition-copy product-transition-story-copy">
                     <p class="product-story-copy">A functional evening beverage designed to help you slow down, reset, and transition out of high-stress days - without feeling switched off. Higher L-Theanine. Magnesium. Berry Bliss flavour.</p>
-                    <div class="product-scroll-btn" aria-hidden="true">
-                        Scroll Down
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M12 5v14" />
-                            <path d="m19 12-7 7-7-7" />
-                        </svg>
+                    <a class="product-scroll-btn" href="#product-showcase" data-scroll-purchase>Buy Now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-showcase-section zestiva-shop-section" id="product-showcase">
+            <div class="product-showcase-pin zestiva-shop-layout">
+                <div class="zestiva-gallery" data-zestiva-gallery>
+                    <div class="zestiva-gallery-main">
+                        <button class="zestiva-gallery-arrow is-prev" type="button" aria-label="Previous product image">&#8592;</button>
+                        <img data-zestiva-main src="Assets/velora-img-removed.png" alt="REYVO Velora sachet">
+                        <button class="zestiva-gallery-arrow is-next" type="button" aria-label="Next product image">&#8594;</button>
+                    </div>
+                    <div class="zestiva-gallery-thumbnails" aria-label="Velora product images">
+                        <button class="is-active" type="button" data-zestiva-image="Assets/velora-img-removed.png" data-zestiva-alt="REYVO Velora sachet"><img src="Assets/velora-img-removed.png" alt=""></button>
+                        <button type="button" data-zestiva-image="Assets/velora-img-new.jpeg" data-zestiva-alt="REYVO Velora product pack"><img src="Assets/velora-img-new.jpeg" alt=""></button>
+                        <button type="button" data-zestiva-image="Assets/velora-hand-img.png" data-zestiva-alt="REYVO Velora held in hand"><img src="Assets/velora-hand-img.png" alt=""></button>
+                        <button type="button" data-zestiva-image="Assets/v-pack of 12.png" data-zestiva-alt="REYVO Velora 12 pack"><img src="Assets/v-pack of 12.png" alt=""></button>
+                    </div>
+                </div>
+                <div class="zestiva-shop-copy" data-zestiva-pack-selector>
+                    <span class="product-badge">Evening Formula</span>
+                    <p class="zestiva-brand">REYVO</p>
+                    <h2>VELORA</h2>
+                    <h3>Supports calm &amp; mental balance</h3>
+                    <p class="zestiva-shop-description">A functional evening beverage designed to help you slow down, reset, and transition out of high-stress days - without feeling switched off. Higher L-Theanine. Magnesium. Berry Bliss flavour.</p>
+                    <div class="zestiva-pack-section">
+                        <span class="zestiva-pack-kicker">Choose Your Pack</span>
+                        <div class="zestiva-pack-options" aria-label="Choose your Velora pack">
+                            <button class="is-selected" type="button" data-pack-size="6" data-pack-price="239"><strong>6 Pack</strong><small>&#8377;239</small></button>
+                            <button type="button" data-pack-size="12" data-pack-price="449"><strong>12 Pack</strong><small>&#8377;449</small></button>
+                            <button type="button" data-pack-size="30" data-pack-price="999"><strong>30 Pack</strong><small>&#8377;999</small></button>
+                        </div>
+                        <div class="zestiva-selected-price">
+                            <strong data-selected-price>&#8377;239</strong><span data-selected-unit>That's &#8377;39.8 per serve</span><em data-selected-saving>No savings on trial pack</em>
+                        </div>
+                    </div>
+                    <div class="zestiva-shop-actions"><a class="zestiva-cart-btn" href="index.html#pricing">Add to Cart &#8594;</a><a class="zestiva-buy-btn" href="index.html#pricing">Buy Now</a></div>
+                    <div class="zestiva-trust-row"><span>COD available</span><span>Easy returns</span><span>Daily use friendly</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="zestiva-benefits-marquee" aria-label="Velora benefits">
+            <div class="zestiva-benefits-track">
+                <div><span>Calm Alertness</span><span>Berry Bliss</span><span>Zero Sugar</span><span>FSSAI Approved</span><span>No Artificial Colours</span><span>Daily Use Friendly</span></div>
+                <div aria-hidden="true"><span>Calm Alertness</span><span>Berry Bliss</span><span>Zero Sugar</span><span>FSSAI Approved</span><span>No Artificial Colours</span><span>Daily Use Friendly</span></div>
+            </div>
+        </section>
+
+        <section class="zestiva-features-section">
+            <div class="zestiva-section-inner">
+                <div class="zestiva-features-layout">
+                    <div class="zestiva-feature-grid" aria-label="Velora ingredients">
+                        <article class="zestiva-flip-card" tabindex="0"><div class="zestiva-flip-card-inner"><div class="zestiva-flip-card-front" style="--card-image:url('Assets/L-Theanine.jpg')"><h3>L-Theanine</h3><strong>100mg</strong></div><div class="zestiva-flip-card-back"><h3>L-Theanine - 100mg</h3><p>Higher dose than Zestiva for relaxation support and a calm, alert evening state.</p></div></div></article>
+                        <article class="zestiva-flip-card" tabindex="0"><div class="zestiva-flip-card-inner"><div class="zestiva-flip-card-front" style="--card-image:url('Assets/Magnesium Gluconate.jpg')"><h3>Magnesium Gluconate</h3><strong>66mg</strong></div><div class="zestiva-flip-card-back"><h3>Magnesium Gluconate - 66mg</h3><p>Highly bioavailable organic magnesium that supports calm, body relaxation, and normal muscle function.</p></div></div></article>
+                        <article class="zestiva-flip-card" tabindex="0"><div class="zestiva-flip-card-inner"><div class="zestiva-flip-card-front" style="--card-image:url('Assets/natural-caffeine.jpg')"><h3>Natural Caffeine</h3><strong>30mg</strong></div><div class="zestiva-flip-card-back"><h3>Natural Caffeine - 30mg</h3><p>Lower caffeine than Zestiva, supporting mental clarity without disrupting your wind-down.</p></div></div></article>
+                        <article class="zestiva-flip-card" tabindex="0"><div class="zestiva-flip-card-inner"><div class="zestiva-flip-card-front" style="--card-image:url('Assets/Electrolytes.jpg')"><h3>Electrolytes</h3><strong>Na + K</strong></div><div class="zestiva-flip-card-back"><h3>Electrolytes</h3><p>Sodium 230mg and potassium 160mg support normal fluid balance and gentle restoration after long days.</p></div></div></article>
+                        <article class="zestiva-flip-card" tabindex="0"><div class="zestiva-flip-card-inner"><div class="zestiva-flip-card-front" style="--card-image:url('Assets/vitamin+zince.jpg')"><h3>Vitamins + Zinc</h3><strong>Full Complex</strong></div><div class="zestiva-flip-card-back"><h3>Vitamins C, B3, B6, B12 + Zinc</h3><p>Support recovery, immune function, and normal psychological function after demanding days.</p></div></div></article>
+                    </div>
+                    <div class="zestiva-features-copy">
+                        <div class="zestiva-section-heading"><span>Inside Every Sachet</span><h2>What's Inside</h2><p>Five purposeful components designed for a calm, clear evening transition.</p></div>
+                        <div class="zestiva-feature-points">
+                            <article><svg viewBox="0 0 24 24"><path d="M18 16.4A7 7 0 0 1 9.6 6a8 8 0 1 0 8.4 10.4Z"/></svg><div><h3>You're done with work. Your mind isn't.</h3><p>Velora helps you land properly without knocking you out.</p></div></article>
+                            <article><svg viewBox="0 0 24 24"><path d="M12 3s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12Z"/></svg><div><h3>Calm, not sedated.</h3><p>Designed to support relaxation while keeping you clear-headed.</p></div></article>
+                            <article><svg viewBox="0 0 24 24"><path d="M20 4c-8 0-14 4-14 10 0 2.5 1.5 4.5 4 5-1-6 4-10 8-12-3 3-5 7-6 12 6-1 9-6 8-15Z"/></svg><div><h3>A natural wind-down.</h3><p>Real ingredients and intentional doses, built for a consistent evening ritual.</p></div></article>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="product-showcase-section" id="product-showcase">
-            <div class="product-showcase-pin">
-                <div class="product-showcase-left">
-                    <figure class="product-showcase-visual">
-                        <img src="Assets/velora-img-removed.png" alt="REYVO Velora sachet">
-                    </figure>
-
-                    <div class="product-card-stack" aria-label="Velora ingredients">
-                        <article class="product-info-card">
-                            <strong>🍃 L-Theanine - 100mg (Green Tea)</strong>
-                            <p>Higher dose than Zestiva - for relaxation support. Studied in a 4-week RCT (n=30) showing significant reduction in anxiety scores and improved sleep quality markers at 200mg daily.</p>
-                        </article>
-                        <article class="product-info-card">
-                            <strong>⚡ Magnesium Gluconate - 66mg (17.9% RDA)</strong>
-                            <p>Highly bioavailable organic magnesium. Helps support calm and body relaxation. Contributes to normal muscle function after long days. Studied for improved sleep quality outcomes.</p>
-                        </article>
-                        <article class="product-info-card">
-                            <strong>☕ Natural Caffeine - 30mg (Green Coffee Bean)</strong>
-                            <p>Lower caffeine than Zestiva - enough to support mental clarity without disrupting wind-down. The L-Theanine ratio (100mg:30mg) is calibrated for a calm, alert evening state.</p>
-                        </article>
-                        <article class="product-info-card">
-                            <strong>💧 Electrolytes - Na 230mg · K 160mg</strong>
-                            <p>Support normal fluid balance and electrolyte restoration. Long days often deplete electrolytes through stress sweat - Velora helps replenish them gently.</p>
-                        </article>
-                        <article class="product-info-card">
-                            <strong>🔋 Vitamins C, B3, B6, B12 · Zinc</strong>
-                            <p>Support recovery, immune function, and psychological wellbeing. B6 and B12 both contribute to normal psychological function - relevant for evening recovery after demanding days.</p>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="product-showcase-copy product-detail-switch" data-product-switch>
-                    <div class="product-copy-panel is-active" data-product-panel="default">
-                        <p class="section-kicker">Ingredient "Bliss Berry"</p>
-                        <h2>Wind Down the Right Way</h2>
-                        <p>Supports calm &amp; mental balance</p>
-
-                        <button class="showcase-ingredients-btn" type="button" data-show-ingredients>See Your Ingredients</button>
-                    </div>
-
-                    <div class="product-copy-panel product-ingredients-panel product-ingredients-velora" data-product-panel="ingredients" aria-hidden="true" hidden>
-                        <button class="ingredients-back-btn" type="button" data-show-default>Back to Product</button>
-                        <span class="product-ingredients-kicker">Velora Formula</span>
-                        <h2>What's Inside</h2>
-                        <p class="product-ingredients-support">Evening calm, mental balance, and gentle hydration support without feeling switched off.</p>
-
-                        <div class="product-pack-row product-pack-row-dark">
-                            <label for="velora-detail-pack">Pick Your Pack</label>
-                            <select class="product-pack-select" id="velora-detail-pack">
-                                <option value="6">6 sachets</option>
-                                <option value="12">12 sachets</option>
-                                <option value="18">18 sachets</option>
-                                <option value="24">24 sachets</option>
-                                <option value="30">30 sachets</option>
-                            </select>
-                        </div>
-
-                        <div class="detail-pack-options detail-pack-options-dark" aria-label="Velora pack options">
-                            <button type="button">6 Pack<small>Trial</small></button>
-                            <button type="button">12 Pack<small>Evening start</small></button>
-                            <button class="is-selected" type="button">30 Pack<small>Best value</small></button>
-                        </div>
-
-                        <div class="product-action-row product-action-row-dark">
-                            <a class="detail-cart-btn" href="index.html#pricing">Add to Cart</a>
-                            <a class="detail-buy-btn" href="index.html#pricing">Buy Now</a>
-                        </div>
-
-                        <div class="product-trust-row product-trust-row-dark">
-                            <span>Calm available</span>
-                            <span>COD available</span>
-                            <span>Daily use friendly</span>
-                        </div>
-
-                        <div class="ingredient-line-list">
-                            <article>
-                                <strong>L-Theanine - 100mg</strong>
-                                <p>Higher than Zestiva for relaxation support and a smoother wind-down.</p>
-                            </article>
-                            <article>
-                                <strong>Magnesium Gluconate - 66mg</strong>
-                                <p>Bioavailable magnesium to support calm and body relaxation.</p>
-                            </article>
-                            <article>
-                                <strong>Natural Caffeine - 30mg</strong>
-                                <p>Lower caffeine for clarity without disrupting the evening transition.</p>
-                            </article>
-                            <article>
-                                <strong>Electrolytes</strong>
-                                <p>Na 230mg and K 160mg to support normal fluid balance.</p>
-                            </article>
-                            <article>
-                                <strong>Vitamins + Zinc</strong>
-                                <p>C, B3, B6, B12, and zinc for recovery and psychological wellbeing.</p>
-                            </article>
-                        </div>
-
-                        <div class="ingredient-info-grid">
-                            <div><span>01</span>Mix with 400-500ml water</div>
-                            <div><span>02</span>Take as your day ends</div>
-                            <div><span>03</span>Let your system settle</div>
-                            <div><span>04</span>Ease into the evening</div>
-                        </div>
-
-                        <div class="ingredient-benefit-list">
-                            <span>Calming, clear</span>
-                            <span>Clear-headed routine</span>
-                            <span>Natural wind-down</span>
-                        </div>
-
-                        <div class="detail-mini-faq detail-mini-faq-dark">
-                            <details>
-                                <summary>When should I take it?</summary>
-                                <p>Use it in the evening when you want to transition out of work mode.</p>
-                            </details>
-                            <details>
-                                <summary>Does it replace sleep aids?</summary>
-                                <p>No, it is a functional evening drink for calm and balance, not a medicine.</p>
-                            </details>
-                        </div>
-                    </div>
-                </div>
+        <section class="zestiva-how-section"><div class="zestiva-section-inner">
+            <div class="zestiva-section-heading"><span>Simple by Design</span><h2>The Evening Ritual</h2><p>A better way to transition out of the day.</p></div>
+            <div class="zestiva-use-steps">
+                <article><span>01</span><div class="zestiva-use-icon">&#9632;</div><h3>Mix</h3><p>Mix in 400-500ml water as your day ends.</p></article>
+                <article><span>02</span><div class="zestiva-use-icon">&#9670;</div><h3>Slow Down</h3><p>Take a few minutes to slow down intentionally.</p></article>
+                <article><span>03</span><div class="zestiva-use-icon">&#8635;</div><h3>Reset</h3><p>Let your system settle and reset.</p></article>
+                <article><span>04</span><div class="zestiva-use-icon">&#8594;</div><h3>Transition</h3><p>Not just what you drink - how you transition.</p></article>
             </div>
-        </section>
+        </div></section>
+
+        <section class="zestiva-comparison-section"><div class="zestiva-section-inner">
+            <div class="zestiva-section-heading zestiva-section-heading-light"><span>A Better Evening Choice</span><h2>Velora vs Common Alternatives</h2><p>Wind down naturally without trading away tomorrow morning.</p></div>
+            <div class="zestiva-comparison-shell"><div class="zestiva-comparison-table" role="table" aria-label="Velora product comparison">
+                <div class="zestiva-comparison-row zestiva-comparison-head" role="row"><div>Compare</div><div>Alcohol</div><div>Sleep Aids</div><div>Velora</div></div>
+                <div class="zestiva-comparison-row" role="row"><strong>Effect</strong><span>Heavy, numbing</span><span>Sedating</span><span>Calming, clear</span></div>
+                <div class="zestiva-comparison-row" role="row"><strong>Next Morning</strong><span>Groggy</span><span>Groggy</span><span>Clear-headed</span></div>
+                <div class="zestiva-comparison-row" role="row"><strong>Habit</strong><span>Dependency risk</span><span>Dependency risk</span><span>Daily routine safe</span></div>
+                <div class="zestiva-comparison-row" role="row"><strong>Approach</strong><span>Escape</span><span>Forced</span><span>Natural wind-down</span></div>
+            </div></div>
+        </div></section>
+
+        <section class="zestiva-faq-section"><div class="zestiva-section-inner">
+            <div class="zestiva-section-heading"><span>Good to Know</span><h2>Frequently Asked</h2></div>
+            <div class="zestiva-faq-list">
+                <details><summary>Will this make me sleepy?</summary><p>No. Velora is designed to support relaxation, not force sleep. The L-Theanine promotes calm alertness - you'll feel settled, not sedated.</p></details>
+                <details><summary>Can I take it daily?</summary><p>Yes, designed for regular use as part of your evening routine. Most users find it most effective as a consistent wind-down habit rather than occasional use.</p></details>
+                <details><summary>Does it replace sleep aids?</summary><p>Velora makes no sleep claims. It can serve as a more natural part of your wind-down routine - addressing mental noise before sleep, not replacing prescribed medication.</p></details>
+                <details><summary>When should I take it?</summary><p>In the evening or when transitioning out of your workday. Ideally 1-2 hours before you plan to rest. Works especially well on high-stress days.</p></details>
+            </div>
+        </div></section>
     </main>
 
-    <footer class="footer site-footer">
-        <div class="footer-inner">
-            <div class="footer-grid">
-                <div class="footer-brand-block">
-                    <a class="footer-logo" href="index.html#top" aria-label="REYVO home">REYVO</a>
-                    <p>Clean. Intentional. Built for daily use. A functional performance drink brand by Sharpy Innovations Pvt. Ltd.</p>
-                </div>
-                <nav class="footer-column" aria-label="Products">
-                    <h2>Products</h2>
-                    <a href="zestiva.html">Zestiva</a>
-                    <a href="velora.html">Velora</a>
-                    <a href="index.html#pricing">Shop All</a>
-                </nav>
-                <nav class="footer-column" aria-label="Company">
-                    <h2>Company</h2>
-                    <a href="index.html#about">About REYVO</a>
-                    <a href="contact-us.html">Contact Us</a>
-                    <a href="contact-us.html">FAQs</a>
-                </nav>
-                <nav class="footer-column" aria-label="Policies">
-                    <h2>Policies</h2>
-                    <a href="terms-and-conditions.html">Shipping</a>
-                    <a href="refund-return-policy.html">Returns</a>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-and-conditions.html">Terms</a>
-                </nav>
-            </div>
-        </div>
-    </footer>
-
+    <footer class="footer site-footer"><div class="footer-inner"><div class="footer-grid">
+        <div class="footer-brand-block"><a class="footer-logo" href="index.html#top" aria-label="REYVO home">REYVO</a><p>Clean. Intentional. Built for daily use. A functional performance drink brand by Sharpy Innovations Pvt. Ltd.</p></div>
+        <nav class="footer-column" aria-label="Products"><h2>Products</h2><a href="zestiva.html">Zestiva</a><a href="velora.html">Velora</a><a href="index.html#pricing">Shop All</a></nav>
+        <nav class="footer-column" aria-label="Company"><h2>Company</h2><a href="index.html#about">About REYVO</a><a href="contact-us.html">Contact Us</a><a href="contact-us.html">FAQs</a></nav>
+        <nav class="footer-column" aria-label="Policies"><h2>Policies</h2><a href="terms-and-conditions.html">Shipping</a><a href="refund-return-policy.html">Returns</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms</a></nav>
+    </div></div></footer>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="product-page.js?v=20260608-product-flow-fix"></script>
+    <script src="product-page.js?v=20260612-velora-gold"></script>
 </body>
-
 </html>

@@ -5,6 +5,24 @@ function updateProductHeader() {
   productHeader.classList.toggle("is-scrolled", window.scrollY > 40);
 }
 
+function initPurchaseScroll() {
+  const purchaseSection = document.querySelector("#product-showcase");
+  if (!purchaseSection) return;
+
+  document.querySelectorAll("[data-scroll-purchase]").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const headerOffset = productHeader?.offsetHeight ?? 0;
+      const targetTop = purchaseSection.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+      window.scrollTo({
+        top: targetTop,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      });
+    });
+  });
+}
+
 function initProductScrollAnimations() {
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
     document.querySelectorAll(".product-transition-story-copy").forEach((copy) => {
@@ -126,7 +144,10 @@ function initZestivaPackSelector() {
   const selectedPrice = selector.querySelector("[data-selected-price]");
   const selectedUnit = selector.querySelector("[data-selected-unit]");
   const selectedSaving = selector.querySelector("[data-selected-saving]");
-  const baseUnitPrice = 399 / 6;
+  const firstOption = options[0];
+  const baseUnitPrice = firstOption
+    ? Number(firstOption.dataset.packPrice) / Number(firstOption.dataset.packSize)
+    : 0;
 
   options.forEach((option) => {
     option.addEventListener("click", () => {
@@ -161,6 +182,7 @@ function initZestivaFaq() {
 
 updateProductHeader();
 window.addEventListener("scroll", updateProductHeader, { passive: true });
+initPurchaseScroll();
 initProductDetailSwitch();
 initProductScrollAnimations();
 initZestivaGallery();

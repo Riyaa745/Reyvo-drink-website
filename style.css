@@ -3263,10 +3263,10 @@ label {
 }
 
 .product-scroll-btn {
-    pointer-events: none;
     user-select: none;
     background: rgba(255, 255, 255, 0.72);
     color: #111;
+    cursor: pointer;
 }
 
 .product-showcase-section {
@@ -5246,7 +5246,7 @@ textarea {
 }
 
 .zestiva-gallery-thumbnails button.is-active {
-    border-color: #ff7a1a;
+    border: 2px solid #ff7a1a;
     box-shadow: inset 0 0 0 1px #ff7a1a;
 }
 
@@ -5563,6 +5563,86 @@ textarea {
     .zestiva-use-steps::before { display:none; }
     .zestiva-review-summary { grid-template-columns:1fr 1fr; }
     .zestiva-review-summary>a { grid-column:1/-1; }
+}
+
+/* Velora: Zestiva product system with a premium gold accent */
+.velora-detail-page {
+    --velora-gold: #d7b45e;
+    --velora-gold-deep: #a9822e;
+}
+
+.velora-detail-page .product-badge,
+.velora-detail-page .zestiva-brand,
+.velora-detail-page .zestiva-pack-kicker,
+.velora-detail-page .zestiva-section-heading span,
+.velora-detail-page .zestiva-use-steps article > span,
+.velora-detail-page .zestiva-review-grid small {
+    color: var(--velora-gold-deep);
+}
+
+.velora-detail-page .zestiva-pack-options button.is-selected,
+.velora-detail-page .zestiva-cart-btn,
+.velora-detail-page .zestiva-faq-list details[open] summary::after {
+    border-color: var(--velora-gold);
+    background: var(--velora-gold);
+    color: #111;
+}
+
+.velora-detail-page .zestiva-pack-options button.is-selected {
+    box-shadow: 0 12px 30px rgba(215, 180, 94, .25);
+}
+
+.velora-detail-page .zestiva-pack-options {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.velora-detail-page .zestiva-selected-price em {
+    color: var(--velora-gold-deep);
+}
+
+.velora-detail-page .zestiva-cart-btn:hover {
+    background: #e5c977;
+}
+
+.velora-detail-page .zestiva-trust-row span::before,
+.velora-detail-page .zestiva-use-icon,
+.velora-detail-page .zestiva-faq-list summary::after {
+    color: var(--velora-gold);
+}
+
+.velora-detail-page .zestiva-use-note {
+    border-left-color: var(--velora-gold);
+}
+
+.velora-detail-page .zestiva-faq-list details[open] {
+    border-color: rgba(215, 180, 94, .55);
+    background: #fffaf0;
+}
+
+.zestiva-detail-page .zestiva-cart-btn,
+.zestiva-detail-page .zestiva-pack-options button.is-selected {
+    border-color: #d7b45e;
+    background: #d7b45e;
+    color: #111;
+}
+
+.zestiva-detail-page .zestiva-cart-btn {
+    box-shadow: 0 12px 30px rgba(215, 180, 94, .22);
+    transition: background 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.zestiva-detail-page .zestiva-cart-btn:hover {
+    background: #e5c977;
+    box-shadow: 0 16px 36px rgba(215, 180, 94, .3);
+    transform: translateY(-1px);
+}
+
+.zestiva-detail-page .zestiva-pack-options button.is-selected {
+    box-shadow: 0 12px 30px rgba(215, 180, 94, .25);
+}
+
+.zestiva-detail-page .zestiva-pack-options button.is-selected small {
+    color: rgba(17, 17, 17, .65);
 }
 
 @media (max-width:620px) {
