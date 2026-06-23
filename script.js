@@ -319,6 +319,342 @@ function initPackSelectors() {
   });
 }
 
+function initCartDrawer() {
+  const products = {
+    zestiva: {
+      name: "Zestiva",
+      label: "Day formula",
+      flavor: "Citrus Zing",
+      image: "Assets/zestiva-img-removed.png",
+      relatedImage: "Assets/velora-img-removed.png",
+      accent: "zestiva",
+    },
+    velora: {
+      name: "Velora",
+      label: "Evening formula",
+      flavor: "Berry Bliss",
+      image: "Assets/velora-img-removed.png",
+      relatedImage: "Assets/zestiva-img-removed.png",
+      accent: "velora",
+    },
+    mix: {
+      name: "Mix Pack",
+      label: "Complete routine",
+      flavor: "Zestiva + Velora",
+      image: "Assets/pack of 12.png",
+      relatedImage: "Assets/velora-img-removed.png",
+      accent: "mix",
+    },
+  };
+
+  const cart = [];
+
+  const iconSvg = {
+    cart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6h14l-1.6 8.4a2 2 0 0 1-2 1.6H9a2 2 0 0 1-2-1.6L5.2 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>',
+    user: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
+    heart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>',
+    close: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>',
+    minus: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>',
+    plus: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>',
+  };
+
+  function ensureHeaderIcons() {
+    document.querySelectorAll(".header-nav").forEach((nav) => {
+      if (nav.querySelector(".header-actions")) return;
+
+      const actions = document.createElement("div");
+      actions.className = "header-actions";
+      actions.innerHTML = `
+        <button class="header-icon-btn wishlist-icon-btn" type="button" aria-label="Wishlist">${iconSvg.heart}</button>
+        <button class="header-icon-btn profile-icon-btn" type="button" aria-label="Profile">${iconSvg.user}</button>
+        <button class="header-icon-btn cart-icon-btn" type="button" aria-label="Open cart">
+          ${iconSvg.cart}
+          <span class="cart-count" aria-label="Cart item count">0</span>
+        </button>
+      `;
+
+      nav.append(actions);
+    });
+  }
+
+  function ensureDrawer() {
+    if (document.querySelector(".cart-drawer-shell")) return;
+
+    const drawer = document.createElement("div");
+    drawer.className = "cart-drawer-shell";
+    drawer.setAttribute("aria-hidden", "true");
+    drawer.innerHTML = `
+      <button class="cart-overlay" type="button" aria-label="Close cart"></button>
+      <aside class="cart-drawer" aria-label="Shopping cart">
+        <section class="cart-related-panel">
+          <div class="cart-panel-head">
+            <h2>You Might Like</h2>
+            <button class="cart-close-btn" type="button" aria-label="Close cart">${iconSvg.close}</button>
+          </div>
+          <div class="cart-related-list"></div>
+        </section>
+
+        <section class="cart-main-panel">
+          <div class="cart-panel-head">
+            <h2>Shopping Cart</h2>
+            <button class="cart-close-btn" type="button" aria-label="Close cart">${iconSvg.close}</button>
+          </div>
+
+          <div class="cart-shipping-meter">
+            <p><strong class="cart-shipping-text">Add to your routine</strong></p>
+            <span><i></i></span>
+          </div>
+
+          <div class="cart-items" aria-live="polite"></div>
+
+          <div class="cart-footer">
+            <div class="cart-subtotal">
+              <span>Subtotal</span>
+              <strong class="cart-subtotal-price">₹0</strong>
+            </div>
+            <label class="cart-terms">
+              <input type="checkbox">
+              <span>I agree with Terms &amp; Conditions</span>
+            </label>
+            <div class="cart-actions">
+              <a class="cart-outline-btn" href="index.html#pricing">View cart</a>
+              <a class="cart-solid-btn" href="index.html#pricing">Check Out</a>
+            </div>
+            <button class="cart-continue-btn" type="button">Or Continue Shopping</button>
+          </div>
+        </section>
+      </aside>
+    `;
+
+    document.body.append(drawer);
+  }
+
+  function getProductFromCard(card) {
+    if (card.classList.contains("product-card-velora")) return "velora";
+    if (card.classList.contains("product-card-mix")) return "mix";
+    return "zestiva";
+  }
+
+  function getHomeCartItem(button) {
+    const card = button.closest(".product-card");
+    if (!card) return null;
+
+    const key = getProductFromCard(card);
+    const select = card.querySelector(".pack-select");
+    const option = select?.selectedOptions?.[0];
+    const pack = option?.value || "6";
+    const price = Number(option?.dataset.price || 399);
+
+    return {
+      key,
+      id: `${key}-${pack}`,
+      name: products[key].name,
+      label: products[key].label,
+      flavor: products[key].flavor,
+      pack,
+      unit: option?.dataset.unit || "",
+      price,
+      image: products[key].image,
+      qty: 1,
+    };
+  }
+
+  function getDetailCartItem(button) {
+    const block = button.closest("[data-zestiva-pack-selector]");
+    if (!block) return null;
+
+    const title = block.querySelector("h2")?.textContent.trim().toLowerCase() || "zestiva";
+    const key = title.includes("velora") ? "velora" : "zestiva";
+    const selected = block.querySelector(".zestiva-pack-options .is-selected");
+    const pack = selected?.dataset.packSize || "6";
+    const price = Number(selected?.dataset.packPrice || 399);
+    const unit = block.querySelector("[data-selected-unit]")?.textContent.trim() || "";
+
+    return {
+      key,
+      id: `${key}-${pack}`,
+      name: products[key].name,
+      label: products[key].label,
+      flavor: products[key].flavor,
+      pack,
+      unit,
+      price,
+      image: products[key].image,
+      qty: 1,
+    };
+  }
+
+  function addItem(item) {
+    if (!item) return;
+    const existing = cart.find((entry) => entry.id === item.id);
+
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push(item);
+    }
+
+    renderCart(item.key);
+    openCart();
+  }
+
+  function getRelatedKeys(lastKey) {
+    const productKeysInCart = new Set(cart.filter((item) => item.key !== "mix").map((item) => item.key));
+
+    if (productKeysInCart.has("zestiva") && productKeysInCart.has("velora")) {
+      return ["zestiva", "velora"];
+    }
+
+    if (productKeysInCart.has("zestiva")) return ["velora"];
+    if (productKeysInCart.has("velora")) return ["zestiva"];
+    if (lastKey === "velora") return ["zestiva"];
+    return ["velora"];
+  }
+
+  function renderCart(lastKey = cart[cart.length - 1]?.key || "zestiva") {
+    const drawer = document.querySelector(".cart-drawer-shell");
+    const itemsNode = drawer?.querySelector(".cart-items");
+    const relatedNode = drawer?.querySelector(".cart-related-list");
+    const subtotalNode = drawer?.querySelector(".cart-subtotal-price");
+    const meterText = drawer?.querySelector(".cart-shipping-text");
+    const meterBar = drawer?.querySelector(".cart-shipping-meter i");
+
+    if (!drawer || !itemsNode || !relatedNode || !subtotalNode || !meterText || !meterBar) return;
+
+    const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+    const remaining = Math.max(499 - subtotal, 0);
+    const progress = Math.min((subtotal / 499) * 100, 100);
+
+    itemsNode.innerHTML = cart.length ? cart.map((item) => `
+      <article class="cart-item" data-id="${item.id}">
+        <figure><img src="${item.image}" alt="${item.name}"></figure>
+        <div class="cart-item-copy">
+          <div class="cart-item-top">
+            <h3>${item.name}</h3>
+            <button type="button" class="cart-remove-btn" data-cart-action="remove">Remove</button>
+          </div>
+          <p>${item.label} · ${item.flavor}</p>
+          <span>${item.pack} sachets ${item.unit ? `· ${item.unit}` : ""}</span>
+          <div class="cart-item-bottom">
+            <div class="cart-qty">
+              <button type="button" data-cart-action="decrease" aria-label="Decrease ${item.name} quantity">${iconSvg.minus}</button>
+              <strong>${item.qty}</strong>
+              <button type="button" data-cart-action="increase" aria-label="Increase ${item.name} quantity">${iconSvg.plus}</button>
+            </div>
+            <strong>₹${item.price * item.qty}</strong>
+          </div>
+        </div>
+      </article>
+    `).join("") : `
+      <div class="cart-empty-state">
+        <h3>Your cart is waiting.</h3>
+        <p>Add Zestiva, Velora, or the complete routine to start building your daily system.</p>
+      </div>
+    `;
+
+    relatedNode.innerHTML = getRelatedKeys(lastKey).map((relatedKey) => {
+      const related = products[relatedKey];
+      return `
+        <article class="cart-related-card">
+          <figure><img src="${related.image}" alt="${related.name}"></figure>
+          <span>${related.label}</span>
+          <h3>${related.name}</h3>
+          <p>${related.flavor}</p>
+          <button type="button" data-related-product="${relatedKey}">Add ${related.name}</button>
+        </article>
+      `;
+    }).join("");
+
+    subtotalNode.textContent = `₹${subtotal}`;
+    meterText.innerHTML = remaining > 0 ? `Buy <b>₹${remaining}</b> more for free shipping` : "Free shipping unlocked";
+    meterBar.style.width = `${progress}%`;
+
+    document.querySelectorAll(".cart-count").forEach((count) => {
+      count.textContent = String(cart.reduce((sum, item) => sum + item.qty, 0));
+    });
+  }
+
+  function openCart() {
+    document.body.classList.add("cart-drawer-open");
+    document.querySelector(".cart-drawer-shell")?.setAttribute("aria-hidden", "false");
+  }
+
+  function closeCart() {
+    document.body.classList.remove("cart-drawer-open");
+    document.querySelector(".cart-drawer-shell")?.setAttribute("aria-hidden", "true");
+  }
+
+  ensureHeaderIcons();
+  ensureDrawer();
+  renderCart();
+
+  document.addEventListener("click", (event) => {
+    const homeButton = event.target.closest(".pricing-btn");
+    const detailButton = event.target.closest(".zestiva-cart-btn");
+    const cartButton = event.target.closest(".cart-icon-btn");
+    const closeButton = event.target.closest(".cart-close-btn, .cart-overlay, .cart-continue-btn");
+    const actionButton = event.target.closest("[data-cart-action]");
+    const relatedButton = event.target.closest("[data-related-product]");
+
+    if (homeButton) {
+      event.preventDefault();
+      addItem(getHomeCartItem(homeButton));
+      return;
+    }
+
+    if (detailButton) {
+      event.preventDefault();
+      addItem(getDetailCartItem(detailButton));
+      return;
+    }
+
+    if (cartButton) {
+      openCart();
+      return;
+    }
+
+    if (closeButton) {
+      closeCart();
+      return;
+    }
+
+    if (actionButton) {
+      const itemNode = actionButton.closest(".cart-item");
+      const item = cart.find((entry) => entry.id === itemNode?.dataset.id);
+      if (!item) return;
+
+      const action = actionButton.dataset.cartAction;
+      if (action === "increase") item.qty += 1;
+      if (action === "decrease") item.qty -= 1;
+      if (action === "remove" || item.qty <= 0) {
+        cart.splice(cart.indexOf(item), 1);
+      }
+      renderCart(item.key);
+      return;
+    }
+
+    if (relatedButton) {
+      const key = relatedButton.dataset.relatedProduct || "zestiva";
+      addItem({
+        key,
+        id: `${key}-6`,
+        name: products[key].name,
+        label: products[key].label,
+        flavor: products[key].flavor,
+        pack: "6",
+        unit: key === "velora" ? "₹66.5 / sachet" : "₹66.5 / sachet",
+        price: 399,
+        image: products[key].image,
+        qty: 1,
+      });
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeCart();
+  });
+}
+
 function initFitSplitAccordion() {
   const accordions = [...document.querySelectorAll("[data-fit-accordion]")];
 
@@ -462,5 +798,6 @@ initSystemIntro();
 initJournalCards();
 initPricingToggle();
 initPackSelectors();
+initCartDrawer();
 initFitSplitAccordion();
 initIngredientStory();
