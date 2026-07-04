@@ -6942,3 +6942,858 @@ textarea {
     .zestiva-section-heading { margin-bottom:34px; }
     .zestiva-comparison-shell { margin-right:-14px; border-radius:12px 0 0 12px; }
 }
+
+/* Homepage refresh sections */
+.home-section-inner {
+    width: min(100% - 44px, 1180px);
+    margin: 0 auto;
+}
+
+.home-label,
+.home-kicker,
+.home-product-copy > span,
+.home-tab-btn,
+.home-email-row button {
+    font-family: "Space Mono", "Courier New", monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.home-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    width: min(880px, 100%);
+    margin: 54px auto 0;
+    border: 1px solid rgba(184, 150, 46, 0.28);
+    background: rgba(184, 150, 46, 0.22);
+    text-align: left;
+}
+
+.home-hero-stats div {
+    padding: 24px;
+    background: rgba(5, 5, 5, 0.72);
+    backdrop-filter: blur(12px);
+}
+
+.home-hero-stats strong {
+    display: block;
+    color: var(--gold-bright);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.home-hero-stats span {
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.home-manifesto,
+.home-problem,
+.home-products,
+.home-ingredients,
+.home-personas {
+    padding: clamp(76px, 10vw, 128px) 0;
+    background: #080808;
+    color: #fff;
+}
+
+.home-manifesto {
+    padding-left: clamp(22px, 5vw, 72px);
+    padding-right: clamp(22px, 5vw, 72px);
+    border-top: 1px solid rgba(184, 150, 46, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.home-label,
+.home-kicker {
+    margin: 0 0 22px;
+    color: var(--gold-bright);
+    font-size: 0.72rem;
+}
+
+.home-manifesto-line {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.22);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.15;
+    transition: color 240ms ease;
+}
+
+.home-manifesto-line.is-active {
+    color: #fff;
+}
+
+.home-statement,
+.home-process,
+.home-cta {
+    padding: clamp(76px, 10vw, 128px) 0;
+    background: var(--cream);
+    color: var(--ink);
+}
+
+.home-statement h2,
+.home-products h2,
+.home-process h2,
+.home-ingredients h2,
+.home-proof h2,
+.home-personas h2,
+.home-cta h2,
+.home-problem h2 {
+    margin: 0;
+    font-size: clamp(2.25rem, 4.6vw, 4.4rem);
+    line-height: 1.04;
+}
+
+.home-statement h2 {
+    max-width: 790px;
+}
+
+.home-statement h2 em {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.home-statement p:not(.home-kicker) {
+    max-width: 620px;
+    margin: 26px 0 0;
+    color: rgba(17, 17, 17, 0.64);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.home-text-link,
+.home-product-copy a {
+    display: inline-flex;
+    color: var(--gold-bright);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.home-text-link {
+    margin-top: 34px;
+}
+
+.home-split-heading,
+.home-ingredients-header,
+.home-products-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 36px;
+    margin-bottom: 48px;
+}
+
+.home-split-heading p,
+.home-products-header p,
+.home-personas > .home-section-inner > p {
+    max-width: 360px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.56);
+    line-height: 1.7;
+}
+
+.home-card-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.home-card-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.home-card,
+.home-badge-grid article,
+.home-persona-grid article {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+    padding: 30px;
+}
+
+.home-icon {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--gold-bright);
+    font-size: 1.8rem;
+}
+
+.home-card h3,
+.home-principles-grid h3,
+.home-process-grid h3,
+.home-badge-grid h3,
+.home-persona-grid h3 {
+    margin: 0 0 10px;
+    color: #fff;
+    font-size: 1.12rem;
+}
+
+.home-card p,
+.home-principles-grid p,
+.home-badge-grid p,
+.home-persona-grid p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.home-callout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 28px;
+    padding: 28px;
+    border: 1px solid rgba(184, 150, 46, 0.34);
+    color: var(--gold-bright);
+}
+
+.home-callout span {
+    color: rgba(255, 255, 255, 0.54);
+    text-align: right;
+}
+
+.home-problem {
+    background:
+        radial-gradient(circle at 14% 18%, rgba(216, 185, 77, 0.16), transparent 28%),
+        linear-gradient(180deg, #090909 0%, #11100c 100%);
+}
+
+.home-problem-grid {
+    gap: 18px;
+}
+
+.home-problem-card {
+    position: relative;
+    min-height: 430px;
+    overflow: hidden;
+    padding: 0;
+    border-color: rgba(216, 185, 77, 0.22);
+    background: #11100c;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+    isolation: isolate;
+    transition: transform 320ms ease, border-color 320ms ease, box-shadow 320ms ease;
+}
+
+.home-problem-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(180deg, rgba(5, 5, 5, 0.02) 22%, rgba(5, 5, 5, 0.36) 52%, rgba(5, 5, 5, 0.92) 100%),
+        radial-gradient(circle at 50% 18%, rgba(216, 185, 77, 0.22), transparent 42%);
+    pointer-events: none;
+}
+
+.home-problem-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(216, 185, 77, 0.5);
+    box-shadow: 0 34px 86px rgba(0, 0, 0, 0.42);
+}
+
+.home-problem-image {
+    height: 255px;
+    margin: 0;
+    padding: 28px 24px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-problem-image img {
+    width: min(100%, 260px);
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 22px 26px rgba(0, 0, 0, 0.38));
+    transform: scale(1);
+    transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1), filter 420ms ease;
+}
+
+.home-problem-card:hover .home-problem-image img {
+    transform: scale(1.07) rotate(-1deg);
+    filter: drop-shadow(0 30px 32px rgba(0, 0, 0, 0.48));
+}
+
+.home-problem-card h3,
+.home-problem-card p {
+    position: relative;
+    z-index: 1;
+    padding: 0 28px;
+}
+
+.home-problem-card h3 {
+    margin: 8px 0 12px;
+    color: #fff7df;
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+}
+
+.home-problem-card p {
+    margin: 0 0 30px;
+    color: rgba(255, 247, 223, 0.68);
+}
+
+.home-principles,
+.home-proof {
+    padding: clamp(76px, 10vw, 128px) 0;
+    background: #111318;
+}
+
+.home-principles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.home-principles-grid article {
+    padding: 34px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.home-principles-grid article:nth-child(2n) {
+    border-right: 0;
+}
+
+.home-principles-grid article:nth-last-child(-n + 2) {
+    border-bottom: 0;
+}
+
+.home-principles-grid span,
+.home-process-grid span,
+.home-persona-grid span {
+    display: block;
+    margin-bottom: 14px;
+    color: rgba(216, 185, 77, 0.72);
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 0.78rem;
+}
+
+.home-product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.home-product-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(160px, 32%);
+    min-height: 430px;
+    overflow: hidden;
+    padding: clamp(28px, 4vw, 48px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: radial-gradient(circle at 82% 20%, rgba(216, 185, 77, 0.18), transparent 34%), #0d0d0d;
+}
+
+.home-product-zestiva,
+.home-product-velora {
+    border-top: 3px solid var(--gold-bright);
+}
+
+.home-product-card img {
+    align-self: center;
+    justify-self: end;
+    max-height: 360px;
+    filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.48));
+}
+
+.home-product-copy h3 {
+    margin: 14px 0 4px;
+    color: var(--gold-bright);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2.1rem, 4vw, 3.5rem);
+}
+
+.home-product-variant {
+    margin: 0 0 24px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.home-product-claim {
+    max-width: 360px;
+    color: rgba(255, 255, 255, 0.76);
+    line-height: 1.7;
+}
+
+.home-dose-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 28px 0;
+}
+
+.home-dose-row span,
+.home-tabs button {
+    border: 1px solid rgba(184, 150, 46, 0.35);
+    padding: 8px 12px;
+    color: var(--gold-bright);
+    font-size: 0.82rem;
+}
+
+.home-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 48px;
+    background: rgba(17, 17, 17, 0.12);
+}
+
+.home-process-grid article {
+    padding: 28px;
+    background: var(--cream);
+}
+
+.home-process-grid h3 {
+    color: var(--ink);
+}
+
+.home-process-grid p,
+.home-process-note {
+    color: rgba(17, 17, 17, 0.58);
+    line-height: 1.7;
+}
+
+.home-process-note {
+    margin: 34px 0 0;
+    padding-top: 26px;
+    border-top: 1px solid rgba(17, 17, 17, 0.1);
+}
+
+.home-tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.home-tab-btn {
+    background: transparent;
+    cursor: pointer;
+}
+
+.home-tab-btn.is-z-active,
+.home-tab-btn.is-v-active {
+    background: var(--gold);
+    color: #050505;
+}
+
+.home-badge-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.home-dose {
+    display: block;
+    margin: 10px 0;
+    color: var(--gold-bright);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+
+.home-transparency {
+    margin-top: 22px;
+    padding: 18px 22px;
+    border: 1px solid rgba(184, 150, 46, 0.28);
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.home-proof h2,
+.home-personas h2 {
+    margin-bottom: 42px;
+}
+
+.home-review-product {
+    display: block;
+    margin-bottom: 16px;
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.home-review-product.zestiva,
+.home-review-product.both {
+    color: var(--gold-bright);
+}
+
+.home-review-product.velora {
+    color: #c7a9ef;
+}
+
+.home-review-card small {
+    display: block;
+    margin-top: 22px;
+    color: rgba(255, 255, 255, 0.36);
+}
+
+.home-persona-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 46px;
+}
+
+.home-cta {
+    text-align: center;
+}
+
+.home-cta p {
+    margin: 16px 0 34px;
+    color: rgba(17, 17, 17, 0.62);
+}
+
+.home-email-row {
+    display: flex;
+    gap: 10px;
+    width: min(100%, 470px);
+    margin: 0 auto;
+}
+
+.home-email-row input,
+.home-email-row button {
+    min-height: 52px;
+    border: 0;
+}
+
+.home-email-row input {
+    flex: 1;
+    padding: 0 18px;
+    background: rgba(17, 17, 17, 0.1);
+    color: var(--ink);
+}
+
+.home-email-row button {
+    padding: 0 24px;
+    background: var(--ink);
+    color: #fff;
+    cursor: pointer;
+}
+
+.home-cta small {
+    display: block;
+    margin-top: 16px;
+    color: rgba(17, 17, 17, 0.42);
+}
+
+@media (max-width: 991px) {
+    .home-hero-stats,
+    .home-card-grid-3,
+    .home-product-grid,
+    .home-badge-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-split-heading,
+    .home-ingredients-header,
+    .home-products-header,
+    .home-callout {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .home-callout span {
+        text-align: left;
+    }
+
+    .home-product-card {
+        grid-template-columns: 1fr;
+    }
+
+    .home-product-card img {
+        justify-self: center;
+        max-height: 300px;
+        margin-top: 20px;
+    }
+
+    .home-process-grid,
+    .home-persona-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    .home-section-inner {
+        width: min(100% - 28px, 1180px);
+    }
+
+    .home-hero-stats,
+    .home-principles-grid,
+    .home-process-grid,
+    .home-persona-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-principles-grid article,
+    .home-principles-grid article:nth-child(2n),
+    .home-principles-grid article:nth-last-child(-n + 2) {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .home-principles-grid article:last-child {
+        border-bottom: 0;
+    }
+
+    .home-card,
+    .home-badge-grid article,
+    .home-persona-grid article,
+    .home-process-grid article {
+        padding: 24px;
+    }
+
+    .home-email-row,
+    .home-tabs {
+        flex-direction: column;
+    }
+
+    .home-email-row button,
+    .home-tab-btn {
+        width: 100%;
+    }
+}
+
+/* Unified ingredient card treatment */
+.home-statement,
+.home-process,
+.home-cta {
+    background: #f1eadc;
+}
+
+.home-ingredients,
+.zestiva-features-section {
+    background: radial-gradient(circle at 82% 14%, rgba(216, 185, 77, 0.18), transparent 34%), #efe6d3;
+    color: var(--ink);
+}
+
+.home-ingredients h2,
+.zestiva-features-copy .zestiva-section-heading h2 {
+    color: var(--ink);
+}
+
+.home-ingredients .home-ingredients-header,
+.home-transparency,
+.zestiva-features-copy .zestiva-section-heading p,
+.zestiva-feature-points p {
+    color: rgba(17, 17, 17, 0.62);
+}
+
+.zestiva-features-copy .zestiva-section-heading span,
+.home-ingredients .home-kicker {
+    color: var(--gold);
+}
+
+.zestiva-feature-points article {
+    border-top-color: rgba(184, 150, 46, 0.26);
+}
+
+.zestiva-feature-points h3 {
+    color: var(--ink);
+}
+
+.home-badge-grid,
+.zestiva-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+    gap: 16px;
+}
+
+.home-badge-grid {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.zestiva-feature-grid .zestiva-flip-card:nth-child(n),
+.home-badge-grid .zestiva-flip-card:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
+    width: auto;
+    justify-self: stretch;
+}
+
+.home-badge-grid .zestiva-flip-card,
+.zestiva-feature-grid .zestiva-flip-card {
+    aspect-ratio: 0.82 / 1;
+    min-height: 280px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    perspective: none;
+}
+
+.home-badge-grid .zestiva-flip-card {
+    min-height: 300px;
+}
+
+.zestiva-flip-card-inner {
+    transform-style: flat;
+    transition: none;
+}
+
+.zestiva-flip-card:hover .zestiva-flip-card-inner,
+.zestiva-flip-card:focus .zestiva-flip-card-inner,
+.zestiva-flip-card:focus-within .zestiva-flip-card-inner {
+    transform: none;
+}
+
+.zestiva-flip-card-front,
+.zestiva-flip-card-back {
+    backface-visibility: visible;
+    border-radius: 8px;
+    border-color: rgba(184, 150, 46, 0.34);
+    box-shadow: 0 22px 54px rgba(41, 31, 12, 0.22);
+}
+
+.zestiva-flip-card-front {
+    justify-content: flex-end;
+    padding: 22px;
+    background: linear-gradient(180deg, #17140d 0%, #090807 100%);
+}
+
+.zestiva-flip-card-front::before {
+    inset: 20px 18px 86px;
+    opacity: 0.96;
+    filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.3));
+}
+
+.zestiva-flip-card-front::after {
+    background: linear-gradient(180deg, rgba(10, 9, 7, 0) 35%, rgba(8, 8, 8, 0.92) 78%);
+}
+
+.zestiva-flip-card h3 {
+    margin: 0 0 8px;
+    font-size: clamp(17px, 1.6vw, 20px);
+}
+
+.zestiva-flip-card-front strong {
+    color: var(--gold-bright);
+    font: 900 13px "Space Mono", "Courier New", monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.zestiva-flip-card-back {
+    inset: auto 0 0;
+    min-height: 56%;
+    justify-content: flex-end;
+    padding: 24px 22px;
+    background: linear-gradient(180deg, rgba(30, 26, 17, 0.3), rgba(10, 9, 7, 0.98) 30%);
+    color: #f8f3e8;
+    transform: translateY(calc(100% - 74px));
+    transition: transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.zestiva-flip-card-back h3 {
+    color: var(--gold-bright);
+}
+
+.zestiva-flip-card-back p {
+    max-height: 0;
+    margin: 0;
+    opacity: 0;
+    color: rgba(248, 243, 232, 0.78);
+    font-size: 13px;
+    line-height: 1.62;
+    transition: max-height 520ms cubic-bezier(0.16, 1, 0.3, 1), opacity 260ms ease;
+}
+
+.zestiva-flip-card:hover .zestiva-flip-card-front,
+.zestiva-flip-card:focus .zestiva-flip-card-front,
+.zestiva-flip-card:focus-within .zestiva-flip-card-front {
+    border-color: var(--gold-bright);
+    box-shadow: 0 28px 64px rgba(96, 73, 24, 0.28);
+}
+
+.zestiva-flip-card:hover .zestiva-flip-card-front::before,
+.zestiva-flip-card:focus .zestiva-flip-card-front::before,
+.zestiva-flip-card:focus-within .zestiva-flip-card-front::before {
+    opacity: 1;
+    transform: scale(1.045);
+}
+
+.zestiva-flip-card:hover .zestiva-flip-card-back,
+.zestiva-flip-card:focus .zestiva-flip-card-back,
+.zestiva-flip-card:focus-within .zestiva-flip-card-back {
+    transform: translateY(0);
+}
+
+.zestiva-flip-card:hover .zestiva-flip-card-back p,
+.zestiva-flip-card:focus .zestiva-flip-card-back p,
+.zestiva-flip-card:focus-within .zestiva-flip-card-back p {
+    max-height: 190px;
+    opacity: 1;
+}
+
+.home-transparency {
+    border-color: rgba(184, 150, 46, 0.34);
+    background: rgba(255, 248, 232, 0.38);
+}
+
+@media (max-width: 620px) {
+    .home-badge-grid,
+    .zestiva-feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Keep ingredient cards as true flip cards on homepage and product pages */
+.home-badge-grid .zestiva-flip-card,
+.zestiva-feature-grid .zestiva-flip-card {
+    perspective: 1100px;
+}
+
+.home-badge-grid .zestiva-flip-card-inner,
+.zestiva-feature-grid .zestiva-flip-card-inner {
+    transform-style: preserve-3d;
+    transition: transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-badge-grid .zestiva-flip-card:hover .zestiva-flip-card-inner,
+.home-badge-grid .zestiva-flip-card:focus .zestiva-flip-card-inner,
+.home-badge-grid .zestiva-flip-card:focus-within .zestiva-flip-card-inner,
+.zestiva-feature-grid .zestiva-flip-card:hover .zestiva-flip-card-inner,
+.zestiva-feature-grid .zestiva-flip-card:focus .zestiva-flip-card-inner,
+.zestiva-feature-grid .zestiva-flip-card:focus-within .zestiva-flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.home-badge-grid .zestiva-flip-card-front,
+.home-badge-grid .zestiva-flip-card-back,
+.zestiva-feature-grid .zestiva-flip-card-front,
+.zestiva-feature-grid .zestiva-flip-card-back {
+    inset: 0;
+    min-height: auto;
+    backface-visibility: hidden;
+}
+
+.home-badge-grid .zestiva-flip-card-front,
+.zestiva-feature-grid .zestiva-flip-card-front {
+    transform: rotateY(0deg);
+}
+
+.home-badge-grid .zestiva-flip-card-back,
+.zestiva-feature-grid .zestiva-flip-card-back {
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+.home-badge-grid .zestiva-flip-card:hover .zestiva-flip-card-back,
+.home-badge-grid .zestiva-flip-card:focus .zestiva-flip-card-back,
+.home-badge-grid .zestiva-flip-card:focus-within .zestiva-flip-card-back,
+.zestiva-feature-grid .zestiva-flip-card:hover .zestiva-flip-card-back,
+.zestiva-feature-grid .zestiva-flip-card:focus .zestiva-flip-card-back,
+.zestiva-feature-grid .zestiva-flip-card:focus-within .zestiva-flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.home-badge-grid .zestiva-flip-card-back p,
+.zestiva-feature-grid .zestiva-flip-card-back p {
+    max-height: none;
+    opacity: 1;
+}

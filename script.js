@@ -787,6 +787,120 @@ function initIngredientStory() {
   timeline.to({}, { duration: 0.6 });
 }
 
+function initHomepageRefresh() {
+  const lines = [...document.querySelectorAll(".home-manifesto-line")];
+  let activeLine = 0;
+
+  if (lines.length > 1) {
+    setInterval(() => {
+      lines.forEach((line) => line.classList.remove("is-active"));
+      activeLine = (activeLine + 1) % lines.length;
+      lines[activeLine].classList.add("is-active");
+    }, 1800);
+  }
+
+  const tabButtons = [...document.querySelectorAll("[data-home-product]")];
+  const ingredientGrid = document.querySelector("[data-home-ingredient-grid]");
+
+  if (!tabButtons.length || !ingredientGrid) return;
+
+  const ingredientCards = {
+    z: [
+      {
+        name: "Natural Caffeine",
+        strength: "70mg",
+        image: "Assets/natural-caffeine.jpg",
+        description: "Green Coffee Bean + Green Tea Extract. Steady energy, not a rush.",
+      },
+      {
+        name: "L-Theanine",
+        strength: "70mg",
+        image: "Assets/L-Theanine.jpg",
+        description: "From Green Tea. Calm alertness without the edge.",
+      },
+      {
+        name: "Electrolytes",
+        strength: "Na + K + Mg",
+        image: "Assets/Electrolytes.jpg",
+        description: "Sodium, Potassium, and Magnesium support fluid balance, hydration, and daily muscle function.",
+      },
+      {
+        name: "Green Tea Extract",
+        strength: "EGCG",
+        image: "Assets/Green Tea Extract.jpg",
+        description: "Rich in EGCG polyphenols for antioxidant support and cleaner daily performance.",
+      },
+      {
+        name: "Vitamins + Zinc",
+        strength: "Full Complex",
+        image: "Assets/vitamin+zince.jpg",
+        description: "B-vitamins, Vitamin C, and Zinc support energy metabolism, immunity, and daily resilience.",
+      },
+    ],
+    v: [
+      {
+        name: "L-Theanine",
+        strength: "100mg",
+        image: "Assets/L-Theanine.jpg",
+        description: "Higher dose than Zestiva for relaxation support and a calm, alert evening state.",
+      },
+      {
+        name: "Magnesium Gluconate",
+        strength: "66mg",
+        image: "Assets/Magnesium Gluconate.jpg",
+        description: "Highly bioavailable organic magnesium that supports calm, body relaxation, and normal muscle function.",
+      },
+      {
+        name: "Natural Caffeine",
+        strength: "30mg",
+        image: "Assets/natural-caffeine.jpg",
+        description: "Lower caffeine than Zestiva, supporting mental clarity without disrupting your wind-down.",
+      },
+      {
+        name: "Electrolytes",
+        strength: "Na + K",
+        image: "Assets/Electrolytes.jpg",
+        description: "Sodium and Potassium support normal fluid balance and gentle restoration after long days.",
+      },
+      {
+        name: "Vitamins + Zinc",
+        strength: "Full Complex",
+        image: "Assets/vitamin+zince.jpg",
+        description: "Support recovery, immune function, and normal psychological function after demanding days.",
+      },
+    ],
+  };
+
+  const renderIngredientCards = (product) => {
+    ingredientGrid.innerHTML = ingredientCards[product].map((card) => `
+      <article class="zestiva-flip-card" tabindex="0">
+        <div class="zestiva-flip-card-inner">
+          <div class="zestiva-flip-card-front" style="--card-image: url('${card.image}')">
+            <h3>${card.name}</h3><strong>${card.strength}</strong>
+          </div>
+          <div class="zestiva-flip-card-back">
+            <h3>${card.name}</h3>
+            <p>${card.description}</p>
+          </div>
+        </div>
+      </article>
+    `).join("");
+  };
+
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const product = button.dataset.homeProduct === "v" ? "v" : "z";
+
+      tabButtons.forEach((tab) => {
+        tab.classList.remove("is-z-active", "is-v-active");
+      });
+
+      button.classList.add(product === "z" ? "is-z-active" : "is-v-active");
+      renderIngredientCards(product);
+    });
+  });
+}
+
 applyBrandFont();
 updateHeaderStyle();
 window.addEventListener("scroll", updateHeaderStyle, { passive: true });
@@ -801,3 +915,4 @@ initPackSelectors();
 initCartDrawer();
 initFitSplitAccordion();
 initIngredientStory();
+initHomepageRefresh();
