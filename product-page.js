@@ -159,7 +159,7 @@ function initZestivaPackSelector() {
 
       options.forEach((button) => button.classList.toggle("is-selected", button === option));
       selectedPrice.textContent = `₹${packPrice.toLocaleString("en-IN")}`;
-      selectedUnit.textContent = `That's ₹${(packPrice / packSize).toFixed(1)} per serve`;
+      selectedUnit.textContent = `That's ₹${(packPrice / packSize).toFixed(2)} per serve`;
       selectedSaving.textContent = savedAmount
         ? `You Save ₹${savedAmount.toLocaleString("en-IN")} (${savedPercent}%)`
         : "No savings on trial pack";

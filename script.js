@@ -49,6 +49,80 @@ function updateHeaderStyle() {
   siteHeader.classList.toggle("is-scrolled", window.scrollY > 40);
 }
 
+function initFooterSocialIcons() {
+  const icons = {
+    X: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 3h3l-6.6 7.5L22 21h-6l-4.7-6.2L5.8 21H3l7-8L2.7 3h6.2l4.2 5.6L18 3Zm-1 16h1.7L8 4.9H6.2L17 19Z"/></svg>',
+    Instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>',
+    LinkedIn: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.5V19M5 5v.1M10 19v-6c0-2.3 1.5-3.8 3.6-3.8 2.2 0 3.4 1.5 3.4 4V19M10 10v9"/></svg>',
+  };
+
+  document.querySelectorAll(".footer-social a").forEach((link) => {
+    const label = link.getAttribute("aria-label");
+    if (icons[label]) link.innerHTML = icons[label];
+  });
+}
+
+function initUnifiedFooter() {
+  document.querySelectorAll(".site-footer").forEach((footer) => {
+    footer.innerHTML = `
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand-block">
+            <a class="footer-logo" href="index.html#top" aria-label="REYVO home"><img src="Assets/reyvo-logo.png" alt="REYVO"></a>
+            <p>Clean. Intentional. Built for daily use. A functional performance drink brand by Sharpy Innovations Pvt. Ltd.</p>
+            <div class="footer-social" aria-label="Social links">
+              <a href="https://x.com/reyvoindia" target="_blank" rel="noopener" aria-label="X">X</a>
+              <a href="https://www.instagram.com/reyvoindia" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+              <a href="https://www.linkedin.com/company/reyvo" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            </div>
+          </div>
+          <nav class="footer-column" aria-label="Products">
+            <h2>Products</h2>
+            <a href="zestiva.html">Zestiva - Citrus Zing</a>
+            <a href="velora.html">Velora - Berry Bliss</a>
+            <a href="index.html#pricing">Shop All</a>
+          </nav>
+          <nav class="footer-column" aria-label="Company">
+            <h2>Company</h2>
+            <a href="about-us.html">About REYVO</a>
+            <a href="contact-us.html">Contact Us</a>
+            <a href="contact-us.html">FAQs</a>
+          </nav>
+          <nav class="footer-column" aria-label="Learn">
+            <h2>Learn</h2>
+            <a href="blog.html">Journal / Blog</a>
+            <a href="index.html#learn">Why caffeine dips</a>
+            <a href="index.html#learn">Hydration &amp; focus</a>
+          </nav>
+          <nav class="footer-column" aria-label="Policies">
+            <h2>Policies</h2>
+            <a href="terms-and-conditions.html">Shipping</a>
+            <a href="refund-return-policy.html">Returns</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-and-conditions.html">Terms</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>FSSAI Cat. 14.1.4.3 · Sharpy Innovations Pvt. Ltd., A-203, Inspire BKC, Bandra Kurla Complex, Bandra (E), Mumbai - 400051 · hello@reyvo.in · +91 98765 43210</p>
+          <p>© 2026 Sharpy Innovations Pvt. Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    `;
+  });
+}
+
+function initHeaderBlogLink() {
+  document.querySelectorAll(".header-nav").forEach((nav) => {
+    if (nav.querySelector('a[href="blog.html"]')) return;
+
+    const link = document.createElement("a");
+    link.href = "blog.html";
+    link.textContent = "Blog";
+    const shopButton = nav.querySelector(".shop-btn");
+    nav.insertBefore(link, shopButton);
+  });
+}
+
 function initCursor() {
   if (!isLandingPage || !window.matchMedia("(pointer: fine)").matches) return;
 
@@ -360,7 +434,18 @@ function initCartDrawer() {
 
   function ensureHeaderIcons() {
     document.querySelectorAll(".header-nav").forEach((nav) => {
-      if (nav.querySelector(".header-actions")) return;
+      const header = nav.closest(".site-header");
+      if (!header || header.querySelector(":scope > .header-actions")) return;
+
+      nav.id ||= `primary-navigation-${Math.random().toString(36).slice(2, 8)}`;
+
+      const menuButton = document.createElement("button");
+      menuButton.className = "header-menu-toggle";
+      menuButton.type = "button";
+      menuButton.setAttribute("aria-label", "Open navigation menu");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-controls", nav.id);
+      menuButton.innerHTML = '<span></span><span></span><span></span>';
 
       const actions = document.createElement("div");
       actions.className = "header-actions";
@@ -373,7 +458,32 @@ function initCartDrawer() {
         </button>
       `;
 
-      nav.append(actions);
+      header.insertBefore(menuButton, nav);
+      header.append(actions);
+
+      const closeMenu = () => {
+        header.classList.remove("menu-open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+      };
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = header.classList.toggle("menu-open");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+      });
+      nav.addEventListener("click", (event) => {
+        if (event.target.closest("a")) closeMenu();
+      });
+      document.addEventListener("click", (event) => {
+        if (!header.contains(event.target)) closeMenu();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
+      });
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 760) closeMenu();
+      });
     });
   }
 
@@ -901,7 +1011,10 @@ function initHomepageRefresh() {
   });
 }
 
+initUnifiedFooter();
+initHeaderBlogLink();
 applyBrandFont();
+initFooterSocialIcons();
 updateHeaderStyle();
 window.addEventListener("scroll", updateHeaderStyle, { passive: true });
 
