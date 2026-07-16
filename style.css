@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;800;900&family=Playfair+Display:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap");
 
 @font-face {
-    font-family: "Davioza Molegs";
+    font-family: "Reyvo Brand";
     src: url("Assets/fonts/DaviozaMolegs.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
@@ -66,7 +66,7 @@ h2 {
 }
 
 .brand-word {
-    font-family: "Davioza Molegs", "Times New Roman", serif;
+    font-family: "Reyvo Brand", "Times New Roman", serif;
     font-weight: 400;
     letter-spacing: 0.02em;
 }
@@ -5414,7 +5414,7 @@ textarea {
     display: inline-flex;
     margin-bottom: 22px;
     color: #fff;
-    font-family: "Davioza Molegs", "Times New Roman", serif;
+    font-family: "Reyvo Brand", "Times New Roman", serif;
     font-size: 31px;
     line-height: 1;
     letter-spacing: 0.12em;
@@ -7937,7 +7937,9 @@ label {
 }
 
 .brand-word {
-    font-family: "DM Sans", Calibri, "Segoe UI", Arial, sans-serif !important;
+    font-family: "Reyvo Brand", "Times New Roman", serif !important;
+    font-weight: 400;
+    letter-spacing: 0.02em;
 }
 
 [class*="price"],
