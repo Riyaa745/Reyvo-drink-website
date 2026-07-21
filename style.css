@@ -7449,6 +7449,18 @@ textarea {
     line-height: 1.7;
 }
 
+.home-product-profile {
+    max-width: 430px;
+    margin: -10px 0 24px;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 0.88rem;
+    line-height: 1.65;
+}
+
+.home-product-profile strong {
+    color: rgba(255, 255, 255, 0.86);
+}
+
 .home-dose-row {
     display: flex;
     flex-wrap: wrap;
