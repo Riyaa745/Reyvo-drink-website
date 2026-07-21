@@ -1,10 +1,48 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;800;900&family=Playfair+Display:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap");
-
 @font-face {
     font-family: "Reyvo Brand";
     src: url("Assets/fonts/DaviozaMolegs.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Castellar";
+    src: url("Assets/fonts/Castellar.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "General Sans";
+    src: url("Assets/fonts/GeneralSans-Variable.woff2") format("woff2");
+    font-weight: 200 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "General Sans";
+    src: url("Assets/fonts/GeneralSans-VariableItalic.woff2") format("woff2");
+    font-weight: 200 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Switzer";
+    src: url("Assets/fonts/Switzer-Variable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Switzer";
+    src: url("Assets/fonts/Switzer-VariableItalic.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: italic;
     font-display: swap;
 }
 
@@ -36,7 +74,7 @@ html {
 
 body {
     margin: 0;
-    font-family: "DM Sans", Calibri, "Segoe UI", Arial, sans-serif;
+    font-family: "Switzer";
     background: var(--black);
     color: #fff;
     letter-spacing: 0;
@@ -61,12 +99,12 @@ a {
 
 h1,
 h2 {
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-family: "General Sans";
     letter-spacing: 0;
 }
 
 .brand-word {
-    font-family: "Reyvo Brand", "Times New Roman", serif;
+    font-family: "Reyvo Brand";
     font-weight: 400;
     letter-spacing: 0.02em;
 }
@@ -78,7 +116,7 @@ h2 {
 .system-time,
 .footer-policy-links,
 label {
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
 }
 
 /* Shared header and homepage-style navigation */
@@ -255,7 +293,7 @@ label {
     border-radius: 999px;
     background: var(--gold);
     color: #080808;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 10px;
     font-weight: 700;
 }
@@ -396,7 +434,7 @@ label {
 
 .cart-related-card span {
     color: var(--gold);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -422,7 +460,7 @@ label {
     border-radius: 6px;
     background: #111;
     color: #fff;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 12px;
     font-weight: 700;
     cursor: pointer;
@@ -627,7 +665,7 @@ label {
     gap: 10px;
     margin-bottom: 22px;
     color: rgba(17, 17, 17, 0.76);
-    font-family: "DM Sans", Calibri, "Segoe UI", Arial, sans-serif;
+    font-family: "Switzer";
     font-size: 14px;
 }
 
@@ -745,7 +783,7 @@ label {
     margin: 0 auto 30px;
     max-width: 1280px;
     color: #fff;
-    font-size: clamp(3rem, 5.8vw, 5.9rem);
+    font-size: clamp(2.6rem, 4.8vw, 4.9rem);
     font-weight: 700;
     line-height: 0.95;
 }
@@ -827,7 +865,7 @@ label {
     display: flex;
     width: max-content;
     gap: 28px;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -893,7 +931,7 @@ label {
     max-width: 640px;
     margin: 0;
     color: #fffaf0;
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-family: "General Sans";
     font-size: clamp(48px, 7.4vw, 104px);
     font-weight: 700;
     line-height: 0.94;
@@ -997,7 +1035,7 @@ label {
     display: inline-flex;
     margin-bottom: 6px;
     color: var(--orange);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 12px;
     font-weight: 700;
 }
@@ -1060,7 +1098,7 @@ label {
 .about-pattern-copy h2 {
     margin: 0;
     color: #141414;
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-family: "General Sans";
     font-size: clamp(42px, 5.4vw, 76px);
     font-weight: 700;
     line-height: 1.02;
@@ -1117,7 +1155,7 @@ label {
 
 .founder-name {
     color: #141414;
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-family: "General Sans";
     font-size: clamp(30px, 3.2vw, 42px);
     font-weight: 700;
     line-height: 1;
@@ -1127,7 +1165,7 @@ label {
 .founder-role {
     margin-top: -12px;
     color: var(--gold);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -1183,7 +1221,7 @@ label {
 .about-values-lead h2 {
     margin: 0;
     color: #fff;
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-family: "General Sans";
     font-size: clamp(44px, 6.2vw, 86px);
     font-weight: 700;
     line-height: 0.98;
@@ -1283,7 +1321,7 @@ label {
 .philosophy-card-copy span,
 .about-values-list span {
     color: var(--gold-bright);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -1293,7 +1331,7 @@ label {
 .about-values-list h3 {
     margin: 0;
     color: #fff;
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-family: "General Sans";
     font-size: clamp(22px, 2vw, 30px);
     font-weight: 700;
     line-height: 1.1;
@@ -1414,8 +1452,8 @@ label {
 }
 
 .about-values-list .brand-word {
-    font-family: inherit;
-    font-weight: inherit;
+    font-family: "Reyvo Brand";
+    font-weight: 400;
     letter-spacing: inherit;
 }
 
@@ -1523,7 +1561,7 @@ label {
     gap: 14px;
     margin-bottom: 28px;
     color: var(--gold-bright);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 12px;
     letter-spacing: 0.12em;
 }
@@ -1636,7 +1674,7 @@ label {
 
 .section-kicker {
     color: var(--gold-bright);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 11px;
     font-weight: 900;
     letter-spacing: 0.18em;
@@ -1645,7 +1683,7 @@ label {
 
 .section-title {
     margin: 16px 0 24px;
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-family: "General Sans";
     font-size: clamp(48px, 6vw, 86px);
     font-weight: 700;
     line-height: 0.94;
@@ -1777,7 +1815,7 @@ label {
     padding: 10px 16px;
     background: rgba(184, 150, 46, 0.15);
     color: var(--gold);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 11px;
     font-weight: 900;
     letter-spacing: 0.12em;
@@ -1832,7 +1870,7 @@ label {
     border-radius: 999px;
     background: rgba(184, 150, 46, 0.16);
     color: var(--gold);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 10px;
     font-weight: 900;
     letter-spacing: 0.12em;
@@ -1925,7 +1963,7 @@ label {
 
 .table-head div {
     color: var(--ink);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -1989,7 +2027,7 @@ label {
     display: block;
     margin-bottom: 8px;
     color: rgba(15, 15, 18, 0.55);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 10px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -2352,7 +2390,7 @@ label {
     border: 1px solid rgba(184, 150, 46, 0.7);
     border-radius: 8px;
     color: var(--gold-bright);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 12px;
     font-weight: 700;
     transition: background 260ms ease, color 260ms ease, transform 260ms ease;
@@ -2469,7 +2507,7 @@ label {
 .stack-card p {
     margin: 0 0 12px;
     color: var(--gold-bright);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -2617,7 +2655,7 @@ label {
 .formulation-card small {
     margin-top: auto;
     color: var(--gold-bright);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 10px;
     font-weight: 900;
     letter-spacing: 0.09em;
@@ -2820,7 +2858,7 @@ label {
     right: 24px;
     bottom: 22px;
     color: var(--accent);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 9px;
     font-weight: 900;
     letter-spacing: 0.08em;
@@ -2842,7 +2880,7 @@ label {
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.04);
     color: rgba(255, 255, 255, 0.72);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 11px;
     transition: border-color 260ms ease, color 260ms ease, transform 260ms ease;
 }
@@ -2902,7 +2940,7 @@ label {
 .fit-split-subtitle {
     margin: 0;
     color: #8b6d20;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: clamp(12px, 1.2vw, 15px);
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -2972,7 +3010,7 @@ label {
 }
 
 .fit-accordion-head strong {
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 11px;
     font-weight: 900;
     letter-spacing: 0.04em;
@@ -3120,7 +3158,7 @@ label {
     padding: 10px 18px;
     background: transparent;
     color: rgba(17, 17, 17, 0.62);
-    font: 800 13px/1 "DM Sans", sans-serif;
+    font: 800 13px/1 "Switzer";
     cursor: pointer;
     transition: background 260ms ease, color 260ms ease, transform 260ms ease;
 }
@@ -3191,7 +3229,7 @@ label {
     padding: 6px 10px;
     background: var(--orange);
     color: #fff;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -3499,7 +3537,7 @@ label {
 
 .product-card .pricing-note {
     color: #d8b94d;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 11px;
     font-weight: 900;
     letter-spacing: 0.12em;
@@ -3524,7 +3562,7 @@ label {
 .pack-picker label {
     margin: 0;
     color: #d8b94d;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 11px;
     font-weight: 900;
     letter-spacing: 0.12em;
@@ -3541,7 +3579,7 @@ label {
         linear-gradient(135deg, rgba(184, 150, 46, 0.12), rgba(255, 255, 255, 0.035)),
         #111115;
     color: #fff;
-    font: 900 13px/1 "DM Sans", sans-serif;
+    font: 900 13px/1 "Switzer";
     cursor: pointer;
     outline: none;
     transition: border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
@@ -3569,7 +3607,7 @@ label {
 
 .selected-pack-price {
     color: #fff;
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-family: "General Sans";
     font-size: clamp(32px, 3vw, 44px);
     line-height: 0.95;
 }
@@ -3608,7 +3646,7 @@ label {
     border-radius: 8px;
     background: linear-gradient(135deg, #f5c94b, #b8962e);
     color: #111;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     letter-spacing: 0.06em;
     box-shadow: 0 16px 32px rgba(184, 150, 46, 0.2);
 }
@@ -3815,7 +3853,7 @@ label {
 .news-category {
     margin: 0 0 12px;
     color: var(--gold-bright);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -3839,7 +3877,7 @@ label {
 .news-meta {
     margin-top: auto;
     color: rgba(255, 255, 255, 0.36);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 10px;
     letter-spacing: 0.08em;
 }
@@ -3854,7 +3892,7 @@ label {
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 6px;
     color: #fff;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 13px;
     font-weight: 700;
     transition: border-color 240ms ease, background 240ms ease, color 240ms ease, transform 240ms ease;
@@ -3906,7 +3944,7 @@ label {
 .switch-kicker {
     margin: 0 0 24px;
     color: var(--gold-bright);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 12px;
     letter-spacing: 0.24em;
     text-transform: uppercase;
@@ -3944,7 +3982,7 @@ label {
     min-height: 62px;
     padding: 0 30px;
     border-radius: 7px;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 14px;
     font-weight: 800;
     letter-spacing: 0.04em;
@@ -4057,7 +4095,7 @@ label {
     padding: 0 16px;
     background: rgba(184, 150, 46, 0.1);
     color: #efd48a;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 11px;
     font-weight: 900;
     letter-spacing: 0.14em;
@@ -4104,7 +4142,7 @@ label {
     padding: 0 22px;
     background: rgba(184, 150, 46, 0.1);
     color: #fff;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 12px;
     font-weight: 900;
     letter-spacing: 0.07em;
@@ -4177,7 +4215,7 @@ label {
     display: block;
     margin-bottom: 10px;
     color: #efd48a;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -4232,13 +4270,13 @@ label {
     padding: 0 12px;
     background: #111115;
     color: #fff;
-    font: 900 14px "DM Sans", sans-serif;
+    font: 900 14px "Switzer";
 }
 
 .product-pack-price {
     display: block;
     color: #fff;
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-family: "General Sans";
     font-size: clamp(32px, 3vw, 44px);
     line-height: 1;
 }
@@ -4656,7 +4694,7 @@ label {
     background: rgba(255, 255, 255, 0.78);
     color: #111;
     cursor: pointer;
-    font: 900 12px "DM Sans", sans-serif;
+    font: 900 12px "Switzer";
     text-transform: uppercase;
 }
 
@@ -4906,7 +4944,7 @@ label {
     display: block;
     margin-bottom: 10px;
     color: var(--accent);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 11px;
     font-weight: 900;
     letter-spacing: 0.12em;
@@ -4951,7 +4989,7 @@ label {
     display: block;
     margin-bottom: 12px;
     color: #fff;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 12px;
     font-weight: 900;
     letter-spacing: 0.08em;
@@ -4970,7 +5008,7 @@ label {
     border-radius: 6px;
     background: #141418;
     color: #fff;
-    font: 900 13px "DM Sans", sans-serif;
+    font: 900 13px "Switzer";
     text-transform: uppercase;
 }
 
@@ -5379,7 +5417,7 @@ textarea {
     border-radius: 8px;
     padding: 14px 16px;
     color: var(--ink);
-    font: 500 16px "DM Sans", Arial, sans-serif;
+    font: 500 16px "Switzer";
 }
 
 textarea {
@@ -5414,7 +5452,7 @@ textarea {
     display: inline-flex;
     margin-bottom: 22px;
     color: #fff;
-    font-family: "Reyvo Brand", "Times New Roman", serif;
+    font-family: "Reyvo Brand";
     font-size: 31px;
     line-height: 1;
     letter-spacing: 0.12em;
@@ -5462,7 +5500,7 @@ textarea {
 .footer-column h2 {
     margin: 0 0 8px;
     color: rgba(184, 150, 46, 0.92);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 10px;
     font-weight: 400;
     letter-spacing: 0.18em;
@@ -5492,7 +5530,7 @@ textarea {
 .footer-bottom p {
     margin: 0;
     color: rgba(235, 238, 243, 0.34);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 12px;
     line-height: 1.7;
 }
@@ -6073,7 +6111,7 @@ textarea {
     }
 
     .landing-hero h1 {
-        font-size: clamp(2.35rem, 11vw, 3.45rem);
+        font-size: clamp(2.05rem, 9vw, 2.9rem);
     }
 
     .landing-hero h1 .hero-line {
@@ -6657,7 +6695,7 @@ textarea {
 .zestiva-brand {
     margin: 0 0 8px;
     color: #8b6d20;
-    font: 900 12px "Space Mono", "Courier New", monospace;
+    font: 900 12px "General Sans";
     letter-spacing: 0.24em;
 }
 
@@ -6691,7 +6729,7 @@ textarea {
     display: block;
     margin-bottom: 12px;
     color: rgba(17, 17, 17, 0.58);
-    font: 900 10px "Space Mono", "Courier New", monospace;
+    font: 900 10px "General Sans";
     letter-spacing: 0.13em;
     text-transform: uppercase;
 }
@@ -6746,7 +6784,7 @@ textarea {
 
 .zestiva-selected-price strong {
     color: #111;
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: "General Sans";
     font-size: clamp(44px, 5vw, 64px);
     font-style: italic;
     line-height: 1;
@@ -6754,7 +6792,7 @@ textarea {
 
 .zestiva-selected-price span {
     color: rgba(17, 17, 17, 0.58);
-    font: 400 11px "Space Mono", "Courier New", monospace;
+    font: 400 11px "General Sans";
 }
 
 .zestiva-selected-price em {
@@ -6846,7 +6884,7 @@ textarea {
 /* Zestiva supporting sections */
 .zestiva-section-inner { width:min(1240px,calc(100% - 40px)); margin:0 auto; }
 .zestiva-section-heading { max-width:760px; margin-bottom:48px; }
-.zestiva-section-heading span { color:var(--gold); font:900 10px "Space Mono","Courier New",monospace; letter-spacing:.14em; text-transform:uppercase; }
+.zestiva-section-heading span { color:var(--gold); font:900 10px "General Sans"; letter-spacing:.14em; text-transform:uppercase; }
 .zestiva-section-heading h2 { margin:10px 0 12px; color:#111; font-size:clamp(42px,6vw,78px); font-weight:900; line-height:.92; text-transform:uppercase; }
 .zestiva-section-heading p { margin:0; color:rgba(17,17,17,.58); font-size:16px; line-height:1.6; }
 .zestiva-section-heading-light h2 { color:#fff; }
@@ -6870,7 +6908,7 @@ textarea {
 .zestiva-flip-card:hover .zestiva-flip-card-front,.zestiva-flip-card:focus .zestiva-flip-card-front { border-color:#d7b45e; box-shadow:0 22px 54px rgba(210,173,87,.18); }
 .zestiva-flip-card:hover .zestiva-flip-card-front::before,.zestiva-flip-card:focus .zestiva-flip-card-front::before { opacity:1; transform:scale(1.025); }
 .zestiva-flip-card h3 { margin:0 0 7px; font-size:17px; line-height:1.2; }
-.zestiva-flip-card-front strong { color:#d7b45e; font:900 13px "Space Mono",monospace; }
+.zestiva-flip-card-front strong { color:#d7b45e; font:900 13px "General Sans"; }
 .zestiva-flip-card-back { justify-content:center; background:linear-gradient(145deg,#1b1811,#080808); color:#f8f3e8; transform:rotateY(180deg); }
 .zestiva-flip-card-back h3 { color:#d7b45e; }
 .zestiva-flip-card-back p { margin:0; color:rgba(248,243,232,.72); font-size:12px; line-height:1.65; }
@@ -6890,7 +6928,7 @@ textarea {
 .zestiva-use-steps { position:relative; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; }
 .zestiva-use-steps::before { content:""; position:absolute; top:49px; left:12%; right:12%; height:1px; background:rgba(17,17,17,.14); }
 .zestiva-use-steps article { position:relative; z-index:1; text-align:center; }
-.zestiva-use-steps article>span { display:block; margin-bottom:10px; color:var(--gold); font:900 10px "Space Mono",monospace; }
+.zestiva-use-steps article>span { display:block; margin-bottom:10px; color:var(--gold); font:900 10px "General Sans"; }
 .zestiva-use-icon { display:grid; place-items:center; width:72px; height:72px; margin:0 auto 20px; border-radius:50%; background:#fff; color:var(--gold); font-size:24px; box-shadow:0 14px 32px rgba(50,35,18,.1); }
 .zestiva-use-steps h3 { margin:0 0 8px; color:#111; font-size:24px; }
 .zestiva-use-steps p { max-width:220px; margin:0 auto; color:rgba(17,17,17,.58); font-size:13px; line-height:1.6; }
@@ -6906,7 +6944,7 @@ textarea {
 .zestiva-comparison-row strong { color:#fff; font-size:13px; }
 .zestiva-comparison-row:hover>* { background:rgba(255,255,255,.035); color:rgba(255,255,255,.8); }
 .zestiva-comparison-row:hover>*:last-child { background:rgba(255,122,26,.16); color:#fff; }
-.zestiva-comparison-head>* { min-height:58px; color:rgba(255,255,255,.72); font:900 10px "Space Mono",monospace; letter-spacing:.12em; text-transform:uppercase; }
+.zestiva-comparison-head>* { min-height:58px; color:rgba(255,255,255,.72); font:900 10px "General Sans"; letter-spacing:.12em; text-transform:uppercase; }
 .zestiva-comparison-head>*:last-child { background:var(--gold); color:#fff; }
 .zestiva-comparison-head>*:last-child::before { display:none; }
 .zestiva-comparison-row:last-child>* { border-bottom:0; }
@@ -6944,7 +6982,7 @@ textarea {
 .zestiva-benefits-marquee { overflow:hidden; padding:28px 0; background:var(--gold); }
 .zestiva-benefits-track { display:flex; width:max-content; animation:zestivaMarquee 28s linear infinite; }
 .zestiva-benefits-track>div { display:flex; align-items:center; }
-.zestiva-benefits-track span { display:inline-flex; align-items:center; margin-right:54px; color:#fff; font:700 12px "Space Mono",monospace; letter-spacing:.08em; text-transform:uppercase; white-space:nowrap; }
+.zestiva-benefits-track span { display:inline-flex; align-items:center; margin-right:54px; color:#fff; font:700 12px "General Sans"; letter-spacing:.08em; text-transform:uppercase; white-space:nowrap; }
 .zestiva-benefits-track span::before { content:"\2713"; margin-right:9px; color:#c5f900; font-weight:900; }
 @keyframes zestivaMarquee { to { transform:translateX(-50%); } }
 
@@ -7057,7 +7095,7 @@ textarea {
 .home-product-copy > span,
 .home-tab-btn,
 .home-email-row button {
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
@@ -7082,7 +7120,7 @@ textarea {
 .home-hero-stats strong {
     display: block;
     color: var(--gold-bright);
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: "General Sans";
     font-size: clamp(1.55rem, 2.4vw, 2.1rem);
     line-height: 1;
     margin-bottom: 10px;
@@ -7118,13 +7156,17 @@ textarea {
     font-size: 0.72rem;
 }
 
+.home-statement .home-kicker {
+    font-weight: 700;
+}
+
 .home-manifesto-line {
     max-width: 1180px;
     margin: 0 auto;
     padding: 18px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     color: rgba(255, 255, 255, 0.22);
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: "General Sans";
     font-size: clamp(2rem, 4vw, 3.4rem);
     line-height: 1.15;
     transition: color 240ms ease;
@@ -7375,7 +7417,7 @@ textarea {
     display: block;
     margin-bottom: 14px;
     color: rgba(216, 185, 77, 0.72);
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 0.78rem;
 }
 
@@ -7434,7 +7476,7 @@ textarea {
 .home-product-copy h3 {
     margin: 14px 0 4px;
     color: var(--gold-bright);
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: "General Sans";
     font-size: clamp(2.1rem, 4vw, 3.5rem);
 }
 
@@ -7531,7 +7573,7 @@ textarea {
     display: block;
     margin: 10px 0;
     color: var(--gold-bright);
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: "General Sans";
     font-size: 1.9rem;
     font-weight: 500;
 }
@@ -7551,7 +7593,7 @@ textarea {
 .home-review-product {
     display: block;
     margin-bottom: 16px;
-    font-family: "Space Mono", "Courier New", monospace;
+    font-family: "General Sans";
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -7919,7 +7961,7 @@ input,
 textarea,
 select,
 button {
-    font-family: "DM Sans", Calibri, "Segoe UI", Arial, sans-serif !important;
+    font-family: "Switzer" !important;
 }
 
 h1,
@@ -7928,7 +7970,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif !important;
+    font-family: "General Sans" !important;
 }
 
 .eyebrow,
@@ -7945,11 +7987,11 @@ h6 {
 .blog-card-body > span,
 .blog-meta,
 label {
-    font-family: "Space Mono", "Courier New", monospace !important;
+    font-family: "General Sans" !important;
 }
 
 .brand-word {
-    font-family: "Reyvo Brand", "Times New Roman", serif !important;
+    font-family: "Reyvo Brand" !important;
     font-weight: 400;
     letter-spacing: 0.02em;
 }
@@ -7964,7 +8006,7 @@ label {
 .home-hero-stats strong,
 .quantity-control,
 .cart-item-price {
-    font-family: "DM Sans", Calibri, "Segoe UI", Arial, sans-serif !important;
+    font-family: "Switzer" !important;
     font-style: normal;
 }
 
@@ -8056,7 +8098,7 @@ label {
 
 .zestiva-flip-card-front strong {
     color: var(--gold-bright);
-    font: 900 13px "Space Mono", "Courier New", monospace;
+    font: 900 13px "General Sans";
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -8179,4 +8221,47 @@ label {
 .zestiva-feature-grid .zestiva-flip-card-back p {
     max-height: none;
     opacity: 1;
+}
+
+/* Brand typography system supplied by REYVO */
+*,
+*::before,
+*::after {
+    font-family: "Switzer" !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "General Sans" !important;
+    font-weight: 600 !important;
+}
+
+.our-story-lede,
+.premium-fit-lede,
+.product-transition-copy > p,
+.home-products-header > p,
+.home-ingredients-header > p,
+.zestiva-section-heading > p,
+.about-section-heading > p {
+    font-family: "General Sans" !important;
+    font-weight: 400 !important;
+}
+
+.product-transition-copy h1,
+.zestiva-shop-copy > h2,
+.home-product-copy > h3 {
+    font-family: "Castellar" !important;
+    font-weight: 400 !important;
+}
+
+.brand,
+.brand-word,
+.zestiva-brand,
+.footer-logo {
+    font-family: "Reyvo Brand" !important;
+    font-weight: 400 !important;
 }
