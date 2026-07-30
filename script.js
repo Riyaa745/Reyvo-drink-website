@@ -450,7 +450,6 @@ function initCartDrawer() {
       const actions = document.createElement("div");
       actions.className = "header-actions";
       actions.innerHTML = `
-        <button class="header-icon-btn wishlist-icon-btn" type="button" aria-label="Wishlist">${iconSvg.heart}</button>
         <button class="header-icon-btn profile-icon-btn" type="button" aria-label="Profile">${iconSvg.user}</button>
         <button class="header-icon-btn cart-icon-btn" type="button" aria-label="Open cart">
           ${iconSvg.cart}

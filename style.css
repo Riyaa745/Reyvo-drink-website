@@ -7978,6 +7978,152 @@ textarea {
     }
 }
 
+/* Header, navigation, and homepage type hierarchy */
+.header-nav a:not(.shop-btn) {
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.landing-header .header-nav a[href$="#learn"],
+.landing-header .header-nav .shop-btn {
+    display: none !important;
+}
+
+.landing-hero h1 {
+    font-family: "General Sans" !important;
+    max-width: 1320px;
+    font-size: clamp(3rem, 5vw, 6rem);
+    line-height: 0.94;
+}
+
+.landing-hero h1 .hero-line,
+.landing-hero h1 .hero-line-three {
+    font-family: "General Sans" !important;
+    font-size: 1em;
+    line-height: inherit;
+}
+
+.landing-hero h1 .hero-line-three {
+    max-width: 920px;
+    margin: 0.12em auto 0;
+    white-space: normal;
+}
+
+/* Homepage section hierarchy */
+.home-split-heading,
+.home-products-header {
+    display: block;
+}
+
+.home-split-heading .home-kicker,
+.home-products-header .home-kicker {
+    margin: 0 0 18px;
+    max-width: none;
+    color: var(--gold-bright);
+    line-height: 1.2;
+}
+
+.home-products-header .home-kicker {
+    font-weight: 800 !important;
+}
+
+.home-split-heading h2,
+.home-products-header h2 {
+    max-width: 940px;
+}
+
+.home-products-header h2 {
+    color: #fff;
+}
+
+.home-kicker,
+.home-label {
+    color: var(--gold-bright);
+    font-family: "General Sans" !important;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.home-kicker .brand-word {
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+.home-manifesto .home-label {
+    width: min(100%, 1180px);
+    margin: 0 auto 34px;
+}
+
+.home-manifesto-line,
+.home-statement h2,
+.home-principles h3,
+.home-personas h2 {
+    letter-spacing: -0.018em;
+}
+
+.home-personas .home-kicker {
+    margin-bottom: 18px;
+}
+
+.home-personas > .home-section-inner > .home-kicker {
+    max-width: none;
+    color: var(--gold-bright);
+}
+
+.home-personas h2 {
+    max-width: 790px;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2.4rem, 4.5vw, 4.15rem);
+}
+
+.home-persona-grid {
+    margin-top: 42px;
+}
+
+@media (max-width: 760px) {
+    .site-header {
+        padding: 14px 16px;
+    }
+
+    .header-actions {
+        gap: 8px;
+    }
+
+    .header-icon-btn,
+    .header-menu-toggle {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+    }
+
+    .landing-header .header-nav {
+        top: calc(100% + 10px);
+        left: 16px;
+        right: 16px;
+        padding: 8px 14px;
+        border-radius: 16px;
+        text-align: center;
+    }
+
+    .landing-header .header-nav a:not(.shop-btn) {
+        padding: 17px 12px;
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 1;
+    }
+
+    .landing-header .header-nav a:last-child {
+        border-bottom: 0;
+    }
+
+    .landing-hero h1 .hero-line-three {
+        white-space: normal;
+    }
+}
+
 /* REYVO Journal */
 .blog-page {
     background: #080808;
