@@ -8619,3 +8619,153 @@ h6 {
     font-family: "Reyvo Brand" !important;
     font-weight: 400 !important;
 }
+
+/* About page typography and image-free story layout */
+.about-story-section .our-story-inner {
+    display: block;
+    max-width: 1180px;
+}
+
+.about-story-section .our-story-content {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(360px, 1.18fr);
+    column-gap: clamp(44px, 8vw, 110px);
+    align-items: end;
+}
+
+.about-story-section .our-story-tag,
+.about-story-section .our-story-content h1 {
+    grid-column: 1;
+}
+
+.about-story-section .our-story-lede {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    margin: 0;
+    padding: clamp(28px, 4vw, 44px);
+    border-left: 1px solid rgba(216, 185, 77, 0.55);
+    background: linear-gradient(90deg, rgba(216, 185, 77, 0.09), transparent);
+}
+
+.about-story-section .story-proof-grid {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+}
+
+.about-story-section .our-story-content h1,
+.about-pattern-copy h2,
+.about-section-heading h2,
+.about-values-lead h2,
+.about-switch-section .premium-fit-inner h2 {
+    font-size: clamp(2.25rem, 4.6vw, 4.4rem);
+    line-height: 1.04;
+}
+
+.about-story-section .mini-tag,
+.about-pattern-section .mini-tag,
+.about-philosophy-section .mini-tag,
+.about-values-section .mini-tag,
+.about-switch-section .switch-kicker {
+    font-size: 18px;
+}
+
+.about-switch-section .switch-kicker {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto 24px;
+    color: var(--gold-bright);
+    letter-spacing: 0.12em;
+}
+
+.about-switch-section .switch-kicker .tag-line {
+    background: linear-gradient(90deg, var(--gold), var(--orange));
+}
+
+.about-switch-section .switch-kicker p {
+    margin: 0;
+}
+
+@media (max-width: 760px) {
+    .about-story-section .our-story-content {
+        display: block;
+    }
+
+    .about-story-section .our-story-lede {
+        margin-top: 28px;
+        padding: 22px;
+    }
+
+    .about-story-section .our-story-content h1,
+    .about-pattern-copy h2,
+    .about-section-heading h2,
+    .about-values-lead h2,
+    .about-switch-section .premium-fit-inner h2 {
+        font-size: clamp(2.25rem, 11vw, 3.25rem);
+    }
+}
+
+/* About flip-card refinements */
+.about-story-section .story-proof-grid article,
+.about-story-section .story-flip-card-inner {
+    min-height: 375px;
+}
+
+.about-story-section .story-card-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 375px;
+    object-fit: cover;
+}
+
+.about-story-section .story-card-content {
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    padding: clamp(28px, 3vw, 42px);
+    overflow: hidden;
+    text-align: center;
+}
+
+.about-story-section .story-card-content > span,
+.about-philosophy-section .philosophy-card-copy > span {
+    display: none;
+}
+
+.about-story-section .story-proof-grid strong {
+    margin: 0;
+    font-size: clamp(22px, 2vw, 28px);
+}
+
+.about-story-section .story-proof-grid p {
+    max-width: 310px;
+    font-size: clamp(16px, 1.35vw, 18px);
+    line-height: 1.65;
+}
+
+/* Homepage kickers match the About page label treatment */
+.landing-page .home-kicker,
+.landing-page .home-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 18px;
+    font-weight: 400 !important;
+    letter-spacing: 0.12em;
+}
+
+.landing-page .home-kicker::before,
+.landing-page .home-label::before {
+    content: "";
+    flex: 0 0 54px;
+    width: 54px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), var(--orange));
+}
+
+.landing-page .home-kicker .brand-word {
+    display: inline-block;
+    line-height: 1;
+    transform: translateY(3px);
+}
