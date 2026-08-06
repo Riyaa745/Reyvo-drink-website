@@ -1108,6 +1108,9 @@ label {
 
 .about-pattern-copy h2 span {
     color: var(--gold);
+        text-transform: lowercase;
+    font-style: italic;
+
 }
 
 .about-pattern-text {
@@ -6830,22 +6833,37 @@ textarea {
 }
 
 .zestiva-trust-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 16px;
-    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .zestiva-trust-row span {
-    color: rgba(17, 17, 17, 0.58);
-    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 8px 10px;
+    border: 1px solid rgba(184, 150, 46, 0.22);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.58);
+    color: rgba(17, 17, 17, 0.7);
+    font-size: 10px;
     font-weight: 800;
+    line-height: 1.2;
 }
 
-.zestiva-trust-row span::before {
-    content: "\2713";
-    margin-right: 5px;
+.zestiva-trust-row svg {
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
     color: var(--gold);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 @media (max-width: 991px) {
@@ -6879,12 +6897,39 @@ textarea {
     .zestiva-shop-actions {
         grid-template-columns: 1fr;
     }
+
+    .zestiva-trust-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 /* Zestiva supporting sections */
 .zestiva-section-inner { width:min(1240px,calc(100% - 40px)); margin:0 auto; }
 .zestiva-section-heading { max-width:760px; margin-bottom:48px; }
-.zestiva-section-heading span { color:var(--gold); font:900 10px "General Sans"; letter-spacing:.14em; text-transform:uppercase; }
+.zestiva-section-heading > span {
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:var(--gold);
+    font:400 18px "General Sans";
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+.zestiva-section-heading > span::before {
+    content:"";
+    flex:0 0 54px;
+    width:54px;
+    height:1px;
+    background:linear-gradient(90deg,var(--gold),var(--orange));
+}
+.zestiva-pack-kicker {
+    display:block;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.13em;
+}
+.zestiva-how-section .zestiva-section-heading > span,
+.zestiva-reviews-section .zestiva-section-heading > span { justify-content:center; }
 .zestiva-section-heading h2 { margin:10px 0 12px; color:#111; font-size:clamp(42px,6vw,78px); font-weight:900; line-height:.92; text-transform:uppercase; }
 .zestiva-section-heading p { margin:0; color:rgba(17,17,17,.58); font-size:16px; line-height:1.6; }
 .zestiva-section-heading-light h2 { color:#fff; }
