@@ -6843,8 +6843,8 @@ textarea {
     display: flex;
     align-items: center;
     gap: 8px;
-    min-height: 46px;
-    padding: 8px 10px;
+    min-height: 76px;
+    padding: 10px 12px;
     border: 1px solid rgba(184, 150, 46, 0.22);
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.58);
@@ -6864,6 +6864,13 @@ textarea {
     stroke-width: 1.7;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
+
+.zestiva-trust-row img {
+    flex: 0 0 58px;
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
 }
 
 @media (max-width: 991px) {
