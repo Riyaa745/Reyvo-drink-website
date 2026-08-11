@@ -1010,6 +1010,64 @@ function initHomepageRefresh() {
   });
 }
 
+function initStoryCardAutoFlip() {
+  const flipDelay = 2000;
+
+  const setupCardGroup = (selector) => {
+    const cards = [...document.querySelectorAll(selector)];
+    if (!cards.length) return;
+
+    let activeIndex = -1;
+    let timer = null;
+    let isInteracting = false;
+
+    const clearAutoFlip = () => {
+      cards.forEach((card) => card.classList.remove("is-auto-flipped"));
+    };
+
+    const scheduleNextFlip = () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        if (isInteracting) return;
+        clearAutoFlip();
+        activeIndex = (activeIndex + 1) % cards.length;
+        cards[activeIndex].classList.add("is-auto-flipped");
+        scheduleNextFlip();
+      }, flipDelay);
+    };
+
+    const pauseOnCard = () => {
+      isInteracting = true;
+      window.clearTimeout(timer);
+      clearAutoFlip();
+    };
+
+    const resumeAfterInteraction = () => {
+      window.setTimeout(() => {
+        const stillInteracting = cards.some((card) =>
+          card.matches(":hover") || card.contains(document.activeElement)
+        );
+        if (stillInteracting) return;
+        isInteracting = false;
+        clearAutoFlip();
+        scheduleNextFlip();
+      }, 0);
+    };
+
+    cards.forEach((card) => {
+      card.addEventListener("mouseenter", pauseOnCard);
+      card.addEventListener("mouseleave", resumeAfterInteraction);
+      card.addEventListener("focusin", pauseOnCard);
+      card.addEventListener("focusout", resumeAfterInteraction);
+    });
+
+    scheduleNextFlip();
+  };
+
+  setupCardGroup(".about-story-section .story-flip-card");
+  setupCardGroup(".about-philosophy-section .philosophy-card");
+}
+
 initUnifiedFooter();
 initHeaderBlogLink();
 applyBrandFont();
@@ -1028,3 +1086,4 @@ initCartDrawer();
 initFitSplitAccordion();
 initIngredientStory();
 initHomepageRefresh();
+initStoryCardAutoFlip();

@@ -983,7 +983,8 @@ label {
 }
 
 .story-flip-card:hover .story-flip-card-inner,
-.story-flip-card:focus-visible .story-flip-card-inner {
+.story-flip-card:focus-visible .story-flip-card-inner,
+.story-flip-card.is-auto-flipped .story-flip-card-inner {
     transform: rotateY(180deg);
 }
 
@@ -1268,7 +1269,8 @@ label {
 }
 
 .philosophy-card:hover .philosophy-card-inner,
-.philosophy-card:focus-visible .philosophy-card-inner {
+.philosophy-card:focus-visible .philosophy-card-inner,
+.philosophy-card.is-auto-flipped .philosophy-card-inner {
     transform: rotateY(180deg);
 }
 
@@ -4397,7 +4399,7 @@ label {
     max-height: min(66vh, 560px);
     object-fit: contain;
     filter: drop-shadow(0 32px 36px rgba(84, 60, 32, 0.2));
-    animation: productFloat 6s ease-in-out infinite;
+    animation: productFloat 6s ease-in-out infinite; 
 }
 
 .product-transition-copy {
@@ -6978,6 +6980,34 @@ textarea {
 .zestiva-use-steps p { max-width:220px; margin:0 auto; color:rgba(17,17,17,.58); font-size:13px; line-height:1.6; }
 .zestiva-use-note { max-width:620px; margin:50px auto 0; border-left:3px solid var(--gold); border-radius:7px; padding:18px 22px; background:rgba(255,255,255,.55); color:rgba(17,17,17,.58); font-size:13px; font-style:italic; line-height:1.7; }
 
+.product-use-banner {
+    background: #f2efe8;
+}
+
+.product-use-banner .home-process-banner,
+.product-use-banner .home-process-banner img {
+    display: block;
+    width: 100%;
+}
+
+.product-use-banner .home-process-banner img {
+    height: auto;
+}
+
+.product-use-note-wrap {
+    padding: clamp(30px, 4vw, 52px) max(22px, calc((100% - 1180px) / 2));
+}
+
+.product-use-note-wrap .zestiva-use-note {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 22px 28px;
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    line-height: 1.75;
+    text-align: center;
+}
+
 .zestiva-comparison-section { padding:clamp(88px,10vw,140px) 0; background:radial-gradient(circle at 80% 12%,rgba(255,122,26,.12),transparent 30%),#0c0c10; color:#fff; }
 .zestiva-comparison-shell { border:1px solid rgba(255,122,26,.24); border-radius:16px; padding:10px; background:rgba(255,255,255,.025); box-shadow:0 35px 90px rgba(0,0,0,.28); overflow-x:auto; }
 .zestiva-comparison-table { min-width:760px; border-radius:10px; overflow:hidden; }
@@ -7029,6 +7059,60 @@ textarea {
 .zestiva-benefits-track span { display:inline-flex; align-items:center; margin-right:54px; color:#fff; font:700 12px "General Sans"; letter-spacing:.08em; text-transform:uppercase; white-space:nowrap; }
 .zestiva-benefits-track span::before { content:"\2713"; margin-right:9px; color:#c5f900; font-weight:900; }
 @keyframes zestivaMarquee { to { transform:translateX(-50%); } }
+
+.zestiva-trust-marquee {
+    overflow: hidden;
+    padding: 18px 0;
+    border-top: 1px solid rgba(184, 150, 46, 0.22);
+    border-bottom: 1px solid rgba(184, 150, 46, 0.22);
+    background: #f8f0e4;
+}
+
+.zestiva-trust-track {
+    display: flex;
+    width: max-content;
+    animation: zestivaTrustMarquee 32s linear infinite;
+}
+
+.zestiva-trust-set {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-right: 18px;
+}
+
+.zestiva-trust-set span {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 190px;
+    min-height: 78px;
+    padding: 10px 18px;
+    border: 1px solid rgba(184, 150, 46, 0.26);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.68);
+    color: #111;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.zestiva-trust-set img {
+    flex: 0 0 56px;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+.zestiva-trust-marquee:hover .zestiva-trust-track {
+    animation-play-state: paused;
+}
+
+@keyframes zestivaTrustMarquee {
+    to { transform: translateX(-50%); }
+}
 
 @media (max-width:991px) {
     .zestiva-features-layout { grid-template-columns:1fr; }
@@ -7826,7 +7910,7 @@ textarea {
 }
 
 .landing-hero .floating {
-    width: clamp(270px, 29vw, 500px);
+    width: clamp(210px, 23vw, 390px);
     min-width: 0;
 }
 
@@ -7974,7 +8058,7 @@ textarea {
     }
 
     .landing-hero .floating {
-        width: clamp(230px, 34vw, 390px);
+        width: clamp(190px, 28vw, 320px);
     }
 }
 
@@ -7985,7 +8069,7 @@ textarea {
     }
 
     .landing-hero .floating {
-        width: 60vw;
+        width: 44vw;
         opacity: 0.23;
     }
 
@@ -8036,7 +8120,7 @@ textarea {
 .landing-hero h1 {
     font-family: "General Sans" !important;
     max-width: 1320px;
-    font-size: clamp(3rem, 5vw, 6rem);
+    font-size: clamp(2rem, 3.3vw, 3.7rem);
     line-height: 0.94;
 }
 
@@ -8048,9 +8132,9 @@ textarea {
 }
 
 .landing-hero h1 .hero-line-three {
-    max-width: 920px;
+    max-width: none;
     margin: 0.12em auto 0;
-    white-space: normal;
+    white-space: nowrap;
 }
 
 /* Homepage section hierarchy */
@@ -8164,7 +8248,28 @@ textarea {
     }
 
     .landing-hero h1 .hero-line-three {
-        white-space: normal;
+        white-space: nowrap;
+    }
+}
+
+/* Keep the second hero statement on one uninterrupted row. */
+.landing-hero h1 .hero-line-three {
+    max-width: none;
+    font-size: 1em !important;
+    white-space: nowrap !important;
+}
+
+/* Keep the hero statement to exactly two lines on small screens. */
+@media (max-width: 620px) {
+    .landing-hero h1 {
+        font-size: clamp(1.25rem, 5.7vw, 1.6rem);
+        letter-spacing: -0.025em;
+    }
+
+    .landing-hero h1 .hero-line,
+    .landing-hero h1 .hero-line-three {
+        max-width: none;
+        white-space: nowrap;
     }
 }
 
@@ -8227,7 +8332,7 @@ textarea {
 
 .blog-card-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px;
 }
 
@@ -8813,4 +8918,510 @@ h6 {
     display: inline-block;
     line-height: 1;
     transform: translateY(3px);
+}
+
+/* About page: five belief cards in one row. */
+.about-philosophy-section .philosophy-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.about-philosophy-section .philosophy-card,
+.about-philosophy-section .philosophy-card-inner {
+    min-height: 310px;
+}
+
+.about-philosophy-section .philosophy-card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 18px;
+    background: #f8f0e4;
+    text-align: center;
+}
+
+.about-philosophy-section .philosophy-card-image::after {
+    display: none;
+}
+
+.about-philosophy-section .philosophy-card-image h3 {
+    margin: 0;
+    color: #111;
+    font-size: clamp(18px, 1.5vw, 24px);
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.about-philosophy-section .philosophy-card-copy {
+    align-items: center;
+    padding: 22px 18px;
+    background: #050505;
+    text-align: center;
+}
+
+.about-philosophy-section .philosophy-card-copy p {
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+    .about-philosophy-section .philosophy-grid {
+        grid-template-columns: repeat(5, 240px);
+        overflow-x: auto;
+        padding-bottom: 14px;
+        scroll-snap-type: x proximity;
+    }
+
+    .about-philosophy-section .philosophy-card {
+        scroll-snap-align: start;
+    }
+}
+
+/* Product ingredient sections: heading, five cards, then supporting points. */
+.zestiva-detail-page .zestiva-features-layout,
+.velora-detail-page .zestiva-features-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.zestiva-detail-page .zestiva-features-copy,
+.velora-detail-page .zestiva-features-copy {
+    display: contents;
+}
+
+.zestiva-detail-page .zestiva-features-copy .zestiva-section-heading,
+.velora-detail-page .zestiva-features-copy .zestiva-section-heading {
+    order: 1;
+    max-width: 780px;
+    margin: 0 auto 10px;
+    text-align: center;
+}
+
+.zestiva-detail-page .zestiva-features-copy .zestiva-section-heading > span,
+.velora-detail-page .zestiva-features-copy .zestiva-section-heading > span {
+    justify-content: center;
+}
+
+.zestiva-detail-page .zestiva-feature-grid,
+.velora-detail-page .zestiva-feature-grid {
+    order: 2;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+    gap: 14px;
+}
+
+.zestiva-detail-page .zestiva-feature-grid .zestiva-flip-card:nth-child(n),
+.velora-detail-page .zestiva-feature-grid .zestiva-flip-card:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+}
+
+.zestiva-detail-page .zestiva-feature-points,
+.velora-detail-page .zestiva-feature-points {
+    order: 3;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    width: 100%;
+}
+
+.zestiva-detail-page .zestiva-feature-points article,
+.velora-detail-page .zestiva-feature-points article {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 14px;
+    min-height: 180px;
+    padding: 28px 24px;
+    border: 1px solid rgba(210, 173, 87, 0.3);
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(216, 185, 77, 0.1), rgba(255, 255, 255, 0.025));
+}
+
+.zestiva-detail-page .zestiva-feature-points svg,
+.velora-detail-page .zestiva-feature-points svg {
+    width: 24px;
+    height: 24px;
+    margin: 2px 0 0;
+}
+
+.zestiva-detail-page .zestiva-feature-points h3,
+.velora-detail-page .zestiva-feature-points h3 {
+    font-size: 20px;
+}
+
+.zestiva-detail-page .zestiva-feature-points p,
+.velora-detail-page .zestiva-feature-points p {
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .zestiva-detail-page .zestiva-feature-grid,
+    .velora-detail-page .zestiva-feature-grid {
+        grid-template-columns: repeat(5, 230px);
+        overflow-x: auto;
+        padding-bottom: 12px;
+    }
+}
+
+@media (max-width: 700px) {
+    .zestiva-detail-page .zestiva-feature-points,
+    .velora-detail-page .zestiva-feature-points {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Homepage-only requested section styling. */
+.landing-page .home-statement-visual {
+    border: 0;
+    background: transparent;
+}
+
+.landing-page .home-statement-visual::after {
+    display: none;
+}
+
+.landing-page .home-statement-visual img {
+    mix-blend-mode: multiply;
+    filter: none;
+}
+
+.landing-page .home-manifesto-line {
+    font-size: 36px;
+}
+
+.landing-page .home-problem-card {
+    border-color: rgba(17, 17, 17, 0.12);
+    background: #fff;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+}
+
+.landing-page .home-problem-card::after {
+    display: none;
+}
+
+.landing-page .home-problem-image {
+    width: 100%;
+    height: 270px;
+    padding: 0;
+}
+
+.landing-page .home-problem-image img {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    object-fit: cover;
+    filter: none;
+}
+
+.landing-page .home-problem-card:hover .home-problem-image img {
+    filter: none;
+}
+
+.landing-page .home-problem-card h3 {
+    color: #111;
+}
+
+.landing-page .home-problem-card p {
+    color: rgba(17, 17, 17, 0.68);
+}
+
+.landing-page .home-tabs .home-tab-btn {
+    padding: 10px 14px;
+    border: 1px solid #111;
+    background: #fff;
+    color: #111;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.landing-page .home-tabs .home-tab-btn.is-z-active,
+.landing-page .home-tabs .home-tab-btn.is-v-active {
+    border-color: var(--gold);
+    background: var(--gold);
+    color: #050505;
+}
+
+/* Directional entrances for the Who Drinks REYVO cards. */
+.landing-page .home-personas {
+    overflow: hidden;
+}
+
+.landing-page .home-personas .home-persona-grid article {
+    opacity: 0;
+    transition:
+        opacity 1500ms cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1900ms cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 260ms ease;
+    will-change: opacity, transform;
+}
+
+.landing-page .home-personas .home-persona-grid article:nth-child(1) {
+    transform: translateX(-110vw);
+    transition-delay: 100ms;
+}
+
+.landing-page .home-personas .home-persona-grid article:nth-child(2) {
+    transform: translateY(-100vh);
+    transition-delay: 550ms;
+}
+
+.landing-page .home-personas .home-persona-grid article:nth-child(3) {
+    transform: translateX(110vw);
+    transition-delay: 1000ms;
+}
+
+.landing-page .home-personas .home-persona-grid article:nth-child(4) {
+    transform: translateY(100vh);
+    transition-delay: 1450ms;
+}
+
+.landing-page .home-personas.visible .home-persona-grid article {
+    opacity: 1;
+    transform: translate(0, 0);
+    will-change: auto;
+}
+
+.landing-page .home-personas.visible .home-persona-grid article:hover {
+    transform: translateY(-6px);
+    transition-delay: 0ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .landing-page .home-personas .home-persona-grid article {
+        opacity: 1;
+        transform: none;
+        transition: border-color 260ms ease;
+    }
+}
+
+/* Exact circular construction for the What REYVO Is animation. */
+.landing-page .home-statement-visual .reyvo-assembly {
+    overflow: hidden;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.landing-page .home-statement-visual .reyvo-assembly::after {
+    display: none;
+}
+
+.landing-page .home-statement.visible .reyvo-assembly::after {
+    opacity: 1;
+}
+
+.landing-page .home-statement-visual .reyvo-assembly .reyvo-piece {
+    max-width: none;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    clip-path: none;
+}
+
+.landing-page .home-statement-visual .reyvo-piece-1 {
+    top: 0;
+    left: 25%;
+    width: 50%;
+    height: 32%;
+}
+
+.landing-page .home-statement-visual .reyvo-piece-2 {
+    top: 10%;
+    left: 62%;
+    width: 38%;
+    height: 40%;
+}
+
+.landing-page .home-statement-visual .reyvo-piece-3 {
+    top: 50%;
+    left: 62%;
+    width: 38%;
+    height: 40%;
+}
+
+.landing-page .home-statement-visual .reyvo-piece-4 {
+    top: 68%;
+    left: 25%;
+    width: 50%;
+    height: 32%;
+}
+
+.landing-page .home-statement-visual .reyvo-piece-5 {
+    top: 50%;
+    left: 0;
+    width: 38%;
+    height: 40%;
+}
+
+.landing-page .home-statement-visual .reyvo-piece-6 {
+    top: 10%;
+    left: 0;
+    width: 38%;
+    height: 40%;
+}
+
+.landing-page .home-statement-visual .reyvo-assembly .reyvo-piece-center {
+    z-index: 4;
+    top: 22.5%;
+    left: 22.5%;
+    width: 55%;
+    height: 55%;
+    clip-path: circle(49% at 50% 50%);
+    object-fit: contain;
+    mix-blend-mode: normal;
+    clip-path: none;
+    transform: scale(0) rotate(-20deg);
+}
+
+.landing-page .home-statement.visible .reyvo-assembly .reyvo-piece-center {
+    transform: scale(1) rotate(0deg);
+}
+
+/* Scroll-triggered assembly in the What REYVO Is section. */
+.landing-page .home-statement {
+    overflow: hidden;
+}
+
+.landing-page .home-statement-visual {
+    overflow: visible;
+}
+
+.reyvo-assembly {
+    position: relative;
+    width: min(100%, 620px);
+    aspect-ratio: 1;
+    overflow: visible;
+}
+
+.landing-page .home-statement-visual .reyvo-assembly img {
+    position: absolute;
+    display: block;
+    max-height: none;
+    margin: 0;
+    object-fit: cover;
+    filter: none;
+    opacity: 0;
+    transition:
+        opacity 900ms ease,
+        transform 1800ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reyvo-piece-1 {
+    top: 2%;
+    left: 27%;
+    width: 46%;
+    height: 29%;
+    clip-path: polygon(0 0, 100% 0, 100% 28%, 82% 100%, 18% 100%, 0 28%);
+    transform: translateY(-90vh) rotate(-5deg);
+    transition-delay: 100ms !important;
+}
+
+.reyvo-piece-2 {
+    top: 9%;
+    left: 63%;
+    width: 35%;
+    height: 39%;
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%, 15% 55%);
+    transform: translate(90vw, -35vh) rotate(6deg);
+    transition-delay: 450ms !important;
+}
+
+.reyvo-piece-3 {
+    top: 50%;
+    left: 63%;
+    width: 35%;
+    height: 39%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 18% 100%, 15% 45%);
+    transform: translate(90vw, 35vh) rotate(6deg);
+    transition-delay: 800ms !important;
+}
+
+.reyvo-piece-4 {
+    top: 72%;
+    left: 28%;
+    width: 45%;
+    height: 26%;
+    clip-path: polygon(18% 0, 82% 0, 100% 72%, 100% 100%, 0 100%, 0 72%);
+    transform: translateY(90vh) rotate(5deg);
+    transition-delay: 1150ms !important;
+}
+
+.reyvo-piece-5 {
+    top: 50%;
+    left: 2%;
+    width: 37%;
+    height: 39%;
+    clip-path: polygon(0 0, 100% 0, 85% 45%, 82% 100%, 0 100%);
+    transform: translate(-90vw, 35vh) rotate(-6deg);
+    transition-delay: 1500ms !important;
+}
+
+.reyvo-piece-6 {
+    top: 9%;
+    left: 2%;
+    width: 37%;
+    height: 39%;
+    clip-path: polygon(0 0, 82% 0, 100% 55%, 85% 100%, 0 100%);
+    transform: translate(-90vw, -35vh) rotate(-6deg);
+    transition-delay: 1850ms !important;
+}
+
+.landing-page .home-statement-visual .reyvo-piece-center {
+    z-index: 3;
+    top: 22.5%;
+    left: 22.5%;
+    width: 55%;
+    height: 55%;
+    object-fit: contain;
+    transform: scale(0.15) rotate(-18deg);
+    transition-delay: 2400ms !important;
+}
+
+.landing-page .home-statement-visual .reyvo-assembly-complete {
+    z-index: 5;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(0.985);
+    transition:
+        opacity 900ms ease 3900ms,
+        transform 1100ms cubic-bezier(0.16, 1, 0.3, 1) 3900ms;
+}
+
+.landing-page .home-statement.visible .reyvo-piece {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg);
+}
+
+.landing-page .home-statement.visible .reyvo-piece-center {
+    transform: scale(1) rotate(0deg);
+}
+
+.landing-page .home-statement.visible .reyvo-assembly-complete {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@media (max-width: 991px) {
+    .reyvo-assembly {
+        width: min(100%, 580px);
+        margin: 0 auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .landing-page .home-statement-visual .reyvo-piece {
+        display: none;
+    }
+
+    .landing-page .home-statement-visual .reyvo-assembly-complete {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
