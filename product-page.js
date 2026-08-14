@@ -72,6 +72,18 @@ function initProductScrollAnimations() {
         ease: "power3.out",
       }, 0.42)
       .to({}, { duration: 0.35 });
+  } else if (transition && transitionVisual && heroCopy && storyCopy && mobile) {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: transition,
+        start: "top 76%",
+        end: "bottom 35%",
+        scrub: 0.65,
+      },
+    })
+      .fromTo(heroCopy, { x: -28, autoAlpha: 0.35 }, { x: 0, autoAlpha: 1, duration: 0.35, ease: "power2.out" })
+      .fromTo(transitionVisual, { xPercent: -14, autoAlpha: 0.55 }, { xPercent: 0, autoAlpha: 1, duration: 0.55, ease: "power2.out" }, 0.08)
+      .fromTo(storyCopy, { x: 34, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.45, ease: "power2.out" }, 0.42);
   } else if (storyCopy) {
     storyCopy.style.opacity = "1";
     storyCopy.style.transform = "none";
@@ -134,6 +146,43 @@ function initZestivaGallery() {
   thumbnails.forEach((button, index) => button.addEventListener("click", () => showImage(index)));
   gallery.querySelector(".is-prev")?.addEventListener("click", () => showImage(activeIndex - 1));
   gallery.querySelector(".is-next")?.addEventListener("click", () => showImage(activeIndex + 1));
+
+  let touchStartX = 0;
+  gallery.querySelector(".zestiva-gallery-main")?.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+  gallery.querySelector(".zestiva-gallery-main")?.addEventListener("touchend", (event) => {
+    const distance = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(distance) < 45) return;
+    showImage(activeIndex + (distance < 0 ? 1 : -1));
+  }, { passive: true });
+}
+
+function initProductMobileSliders() {
+  if (!window.matchMedia("(max-width: 760px)").matches) return;
+
+  document.querySelectorAll(".zestiva-feature-grid, .zestiva-review-grid").forEach((slider) => {
+    if (slider.children.length < 2) return;
+    let timer;
+
+    const start = () => {
+      window.clearInterval(timer);
+      timer = window.setInterval(() => {
+        const card = slider.firstElementChild;
+        const gap = parseFloat(getComputedStyle(slider).gap) || 14;
+        const step = card.getBoundingClientRect().width + gap;
+        const atEnd = slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 5;
+        slider.scrollTo({ left: atEnd ? 0 : slider.scrollLeft + step, behavior: "smooth" });
+      }, 3600);
+    };
+
+    const pause = () => window.clearInterval(timer);
+    slider.addEventListener("touchstart", pause, { passive: true });
+    slider.addEventListener("touchend", () => window.setTimeout(start, 1800), { passive: true });
+    slider.addEventListener("pointerenter", pause);
+    slider.addEventListener("pointerleave", start);
+    start();
+  });
 }
 
 function initZestivaPackSelector() {
@@ -188,3 +237,4 @@ initProductScrollAnimations();
 initZestivaGallery();
 initZestivaPackSelector();
 initZestivaFaq();
+initProductMobileSliders();

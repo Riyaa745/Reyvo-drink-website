@@ -86,7 +86,7 @@ function initUnifiedFooter() {
             <h2>Company</h2>
             <a href="about-us.html">About REYVO</a>
             <a href="contact-us.html">Contact Us</a>
-            <a href="contact-us.html">FAQs</a>
+            <a href="faq.html">FAQs</a>
           </nav>
           <nav class="footer-column" aria-label="Learn">
             <h2>Learn</h2>
@@ -421,7 +421,18 @@ function initCartDrawer() {
     },
   };
 
-  const cart = [];
+  const cart = (() => {
+    try {
+      const savedCart = JSON.parse(localStorage.getItem("reyvoCart") || "[]");
+      return Array.isArray(savedCart) ? savedCart : [];
+    } catch {
+      return [];
+    }
+  })();
+
+  function saveCart() {
+    localStorage.setItem("reyvoCart", JSON.stringify(cart));
+  }
 
   const iconSvg = {
     cart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6h14l-1.6 8.4a2 2 0 0 1-2 1.6H9a2 2 0 0 1-2-1.6L5.2 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>',
@@ -450,7 +461,7 @@ function initCartDrawer() {
       const actions = document.createElement("div");
       actions.className = "header-actions";
       actions.innerHTML = `
-        <button class="header-icon-btn profile-icon-btn" type="button" aria-label="Profile">${iconSvg.user}</button>
+        <a class="header-icon-btn profile-icon-btn" href="profile.html" aria-label="Profile">${iconSvg.user}</a>
         <button class="header-icon-btn cart-icon-btn" type="button" aria-label="Open cart">
           ${iconSvg.cart}
           <span class="cart-count" aria-label="Cart item count">0</span>
@@ -462,12 +473,14 @@ function initCartDrawer() {
 
       const closeMenu = () => {
         header.classList.remove("menu-open");
+        document.body.classList.remove("mobile-menu-open");
         menuButton.setAttribute("aria-expanded", "false");
         menuButton.setAttribute("aria-label", "Open navigation menu");
       };
 
       menuButton.addEventListener("click", () => {
         const isOpen = header.classList.toggle("menu-open");
+        document.body.classList.toggle("mobile-menu-open", isOpen);
         menuButton.setAttribute("aria-expanded", String(isOpen));
         menuButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
       });
@@ -517,19 +530,24 @@ function initCartDrawer() {
           <div class="cart-items" aria-live="polite"></div>
 
           <div class="cart-footer">
-            <div class="cart-subtotal">
-              <span>Subtotal</span>
-              <strong class="cart-subtotal-price">₹0</strong>
+            <div class="cart-totals">
+              <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <strong class="cart-subtotal-price">₹0</strong>
+              </div>
+              <div class="cart-shipping-row">
+                <span>Shipping</span>
+                <strong class="cart-shipping-price">₹0</strong>
+              </div>
+              <div class="cart-total-row">
+                <span>Total</span>
+                <strong class="cart-total-price">₹0</strong>
+              </div>
             </div>
-            <label class="cart-terms">
-              <input type="checkbox">
-              <span>I agree with Terms &amp; Conditions</span>
-            </label>
             <div class="cart-actions">
-              <a class="cart-outline-btn" href="index.html#pricing">View cart</a>
-              <a class="cart-solid-btn" href="index.html#pricing">Check Out</a>
+              <button class="cart-continue-btn" type="button">Continue Shopping</button>
+              <a class="cart-solid-btn" href="checkout.html">Proceed to Checkout</a>
             </div>
-            <button class="cart-continue-btn" type="button">Or Continue Shopping</button>
           </div>
         </section>
       </aside>
@@ -603,6 +621,7 @@ function initCartDrawer() {
       cart.push(item);
     }
 
+    saveCart();
     renderCart(item.key);
     openCart();
   }
@@ -611,7 +630,7 @@ function initCartDrawer() {
     const productKeysInCart = new Set(cart.filter((item) => item.key !== "mix").map((item) => item.key));
 
     if (productKeysInCart.has("zestiva") && productKeysInCart.has("velora")) {
-      return ["zestiva", "velora"];
+      return [];
     }
 
     if (productKeysInCart.has("zestiva")) return ["velora"];
@@ -625,14 +644,18 @@ function initCartDrawer() {
     const itemsNode = drawer?.querySelector(".cart-items");
     const relatedNode = drawer?.querySelector(".cart-related-list");
     const subtotalNode = drawer?.querySelector(".cart-subtotal-price");
+    const shippingNode = drawer?.querySelector(".cart-shipping-price");
+    const totalNode = drawer?.querySelector(".cart-total-price");
     const meterText = drawer?.querySelector(".cart-shipping-text");
     const meterBar = drawer?.querySelector(".cart-shipping-meter i");
 
-    if (!drawer || !itemsNode || !relatedNode || !subtotalNode || !meterText || !meterBar) return;
+    if (!drawer || !itemsNode || !relatedNode || !subtotalNode || !shippingNode || !totalNode || !meterText || !meterBar) return;
 
     const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
     const remaining = Math.max(499 - subtotal, 0);
     const progress = Math.min((subtotal / 499) * 100, 100);
+    const shipping = subtotal === 0 || subtotal >= 499 ? 0 : 49;
+    const total = subtotal + shipping;
 
     itemsNode.innerHTML = cart.length ? cart.map((item) => `
       <article class="cart-item" data-id="${item.id}">
@@ -661,7 +684,10 @@ function initCartDrawer() {
       </div>
     `;
 
-    relatedNode.innerHTML = getRelatedKeys(lastKey).map((relatedKey) => {
+    const relatedKeys = getRelatedKeys(lastKey);
+    drawer.querySelector(".cart-related-panel")?.classList.toggle("is-hidden", relatedKeys.length === 0);
+    drawer.querySelector(".cart-drawer")?.classList.toggle("has-no-related", relatedKeys.length === 0);
+    relatedNode.innerHTML = relatedKeys.map((relatedKey) => {
       const related = products[relatedKey];
       return `
         <article class="cart-related-card">
@@ -674,7 +700,9 @@ function initCartDrawer() {
       `;
     }).join("");
 
-    subtotalNode.textContent = `₹${subtotal}`;
+    subtotalNode.textContent = `₹${subtotal.toLocaleString("en-IN")}`;
+    shippingNode.textContent = shipping ? `₹${shipping}` : "Free";
+    totalNode.textContent = `₹${total.toLocaleString("en-IN")}`;
     meterText.innerHTML = remaining > 0 ? `Buy <b>₹${remaining}</b> more for free shipping` : "Free shipping unlocked";
     meterBar.style.width = `${progress}%`;
 
@@ -738,6 +766,7 @@ function initCartDrawer() {
       if (action === "remove" || item.qty <= 0) {
         cart.splice(cart.indexOf(item), 1);
       }
+      saveCart();
       renderCart(item.key);
       return;
     }
@@ -1068,6 +1097,57 @@ function initStoryCardAutoFlip() {
   setupCardGroup(".about-philosophy-section .philosophy-card");
 }
 
+function initAboutMobileCardSliders() {
+  if (!window.matchMedia("(max-width: 760px)").matches) return;
+
+  const sliderSelectors = [
+    ".about-story-section .story-proof-grid",
+    ".about-philosophy-section .philosophy-grid",
+  ];
+
+  sliderSelectors.forEach((selector) => {
+    const slider = document.querySelector(selector);
+    if (!slider || slider.children.length < 2) return;
+
+    let timer;
+    let resumeTimer;
+
+    const start = () => {
+      window.clearInterval(timer);
+      timer = window.setInterval(() => {
+        const firstCard = slider.firstElementChild;
+        if (!firstCard) return;
+
+        const styles = window.getComputedStyle(slider);
+        const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+        const step = firstCard.getBoundingClientRect().width + gap;
+        const atEnd = slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 4;
+
+        slider.scrollTo({
+          left: atEnd ? 0 : slider.scrollLeft + step,
+          behavior: "smooth",
+        });
+      }, 3200);
+    };
+
+    const pause = () => {
+      window.clearInterval(timer);
+      window.clearTimeout(resumeTimer);
+    };
+
+    const resume = () => {
+      pause();
+      resumeTimer = window.setTimeout(start, 2200);
+    };
+
+    slider.addEventListener("touchstart", pause, { passive: true });
+    slider.addEventListener("touchend", resume, { passive: true });
+    slider.addEventListener("pointerenter", pause);
+    slider.addEventListener("pointerleave", resume);
+    start();
+  });
+}
+
 initUnifiedFooter();
 initHeaderBlogLink();
 applyBrandFont();
@@ -1087,3 +1167,4 @@ initFitSplitAccordion();
 initIngredientStory();
 initHomepageRefresh();
 initStoryCardAutoFlip();
+initAboutMobileCardSliders();

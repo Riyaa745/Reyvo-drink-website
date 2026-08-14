@@ -1,0 +1,21 @@
+.billing-toggle { display:flex; align-items:center; gap:10px; color:#49443d; font-size:13px; font-weight:700; cursor:pointer; }
+.billing-toggle input { width:18px; height:18px; accent-color:#b8962e; }
+.billing-fields { display:grid; gap:17px; margin:0; padding:20px; border:1px solid rgba(17,17,17,.13); border-radius:9px; }
+.billing-fields[hidden] { display:none; }
+.billing-fields legend { padding:0 7px; font-size:14px; font-weight:800; }
+.coupon-form { display:grid; gap:8px; margin-top:20px; padding:18px 0; border-top:1px solid rgba(17,17,17,.13); border-bottom:1px solid rgba(17,17,17,.13); }
+.coupon-form > label { font-size:12px; font-weight:800; }
+.coupon-form > div { display:grid; grid-template-columns:1fr auto; }
+.coupon-form input { min-width:0; height:44px; padding:0 12px; border:1px solid rgba(17,17,17,.13); border-right:0; border-radius:7px 0 0 7px; background:#fff; font:inherit; text-transform:uppercase; }
+.coupon-form button { padding:0 18px; border:0; border-radius:0 7px 7px 0; background:#111; color:#fff; font-weight:800; cursor:pointer; }
+.coupon-form p { min-height:17px; margin:0; color:#7d2929; font-size:11px; }
+.coupon-form p.success { color:#286438; }
+.discount-row { color:#2c6c3b; }
+.auth-tabs { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:22px; padding:5px; border-radius:9px; background:#eee7da; }
+.auth-tabs button { min-height:40px; border:0; border-radius:6px; background:transparent; color:#625c52; font-weight:800; cursor:pointer; }
+.auth-tabs button.is-active { background:#111; color:#fff; }
+.forgot-link { justify-self:start; padding:4px 0; border:0; background:transparent; color:#725811; font:700 12px "DM Sans"; cursor:pointer; }
+.secondary-action { min-height:46px; padding:0 16px; border:1px solid #111; border-radius:99px; background:transparent; color:#111; font-weight:800; cursor:pointer; }
+.otp-fields, [data-password-login] { display:grid; gap:12px; }
+.otp-fields[hidden], [data-password-login][hidden], [data-login-otp-field][hidden], .reset-form[hidden], [data-reset-details][hidden] { display:none; }
+.reset-form h3 { margin:0 0 4px; font-size:24px; }
